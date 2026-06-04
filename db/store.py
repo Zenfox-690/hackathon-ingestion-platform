@@ -90,3 +90,47 @@ def add_user(chat_id):
     )
 
     conn.commit()
+
+
+def add_filter(chat_id, keyword):
+
+    cursor.execute(
+        """
+        INSERT INTO filters
+        (chat_id, keyword)
+        VALUES (?, ?)
+        """,
+        (
+            str(chat_id),
+            keyword.lower()
+        )
+    )
+
+    conn.commit()
+
+
+def get_filters(chat_id):
+
+    cursor.execute(
+        """
+        SELECT keyword
+        FROM filters
+        WHERE chat_id = ?
+        """,
+        (str(chat_id),)
+    )
+
+    rows = cursor.fetchall()
+
+    return [row[0] for row in rows]
+
+
+def get_users():
+
+    cursor.execute(
+        "SELECT chat_id FROM users"
+    )
+
+    rows = cursor.fetchall()
+
+    return [row[0] for row in rows]

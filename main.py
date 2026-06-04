@@ -4,7 +4,6 @@ from fetcher.unstop import UnstopFetcher
 
 from bot.notifier import send_message
 from db.store import get_new_hackathons
-from filters.keywords import matches_keywords
 from logs.logger import log
 
 
@@ -53,18 +52,14 @@ def run_pipeline():
 
     log(f"[NEW] {len(new_items)}")
 
-    filtered = [
-        h for h in new_items
-        if matches_keywords(h)
-    ]
+    for hackathon in new_items:
+        print(hackathon["name"])
 
-    log(f"[FILTERED] {len(filtered)}")
+    log(f"[SENDING] {len(new_items)} to notifier")
 
-    for hackathon in filtered:
+    for hackathon in new_items:
 
         send_message(hackathon)
-
-    log(f"[FILTERED] {len(filtered)} matched keywords")
 
 
 if __name__ == "__main__":
