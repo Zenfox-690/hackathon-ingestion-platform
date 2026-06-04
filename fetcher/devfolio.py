@@ -9,7 +9,7 @@ class DevfolioFetcher(BaseFetcher):
     def fetch(self):
         with sync_playwright() as p:
 
-            browser = p.chromium.launch(headless=False)
+            browser = p.chromium.launch(headless=True)
 
             context = browser.new_context(
                 user_agent=(
@@ -53,6 +53,10 @@ class DevfolioFetcher(BaseFetcher):
 
                 if validate_hackathon(hackathon):
                     hackathons.append(hackathon)
+
+            with open("cache/devfolio.html", "w", encoding="utf-8") as f:
+                f.write(page.content())
+
             page.screenshot(path="debug.png")
             browser.close()
 
