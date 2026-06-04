@@ -11,8 +11,8 @@ CHAT_ID = os.getenv("CHAT_ID")
 
 def send_message(hackathon):
     text = (
-        f"🚀 New Hackathon\n\n"
-        f"{hackathon['name']}\n"
+        f"🚀 *New Hackathon*\n\n"
+        f"*{hackathon['name']}*\n"
         f"Deadline: {hackathon['deadline']}\n"
         f"Source: {hackathon['source']}\n\n"
         f"{hackathon['link']}"
@@ -24,8 +24,10 @@ def send_message(hackathon):
         url,
         data={
             "chat_id": CHAT_ID,
-            "text": text
-        }
+            "text": text,
+            "parse_mode": "Markdown"
+        },
+        timeout=15
     )
 
     response.raise_for_status()

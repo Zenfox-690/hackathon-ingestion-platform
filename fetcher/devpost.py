@@ -4,9 +4,12 @@ import requests
 def fetch_hackathons():
     url = "https://devpost.com/api/hackathons"
 
-    response = requests.get(url)
-
-    response.raise_for_status()
+    try:
+        response = requests.get(url, timeout=15)
+        response.raise_for_status()
+    except requests.RequestException as e:
+        print(f"[ERROR] {e}")
+        return []
 
     data = response.json()
 
