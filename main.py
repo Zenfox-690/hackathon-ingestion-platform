@@ -1,10 +1,9 @@
 from fetcher.devpost import fetch_hackathons
+from bot.notifier import send_message
 
 
 hackathons = fetch_hackathons()
 
-print(f"Fetched {len(hackathons)} hackathons\n")
+first = hackathons[0]
 
-for hackathon in hackathons[:5]:
-    print(hackathon)
-    print("-" * 50)
+send_message(first)
