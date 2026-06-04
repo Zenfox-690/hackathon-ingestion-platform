@@ -16,6 +16,19 @@ CREATE TABLE IF NOT EXISTS hackathons (
 )
 """)
 
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS users (
+    chat_id TEXT PRIMARY KEY
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS filters (
+    chat_id TEXT,
+    keyword TEXT
+)
+""")
 conn.commit()
 
 
@@ -67,3 +80,13 @@ def get_new_hackathons(hackathons):
             print(f"[NEW] {hackathon['name']}")
 
     return new_items
+
+
+def add_user(chat_id):
+
+    cursor.execute(
+        "INSERT OR IGNORE INTO users VALUES (?)",
+        (str(chat_id),)
+    )
+
+    conn.commit()
