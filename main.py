@@ -3,11 +3,18 @@ from bot.notifier import send_message
 from db.store import get_new_hackathons
 
 
-hackathons = fetch_hackathons()
+def run_pipeline():
+    print("[PIPELINE] Running...")
 
-new_items = get_new_hackathons(hackathons)
+    hackathons = fetch_hackathons()
 
-print(f"New hackathons: {len(new_items)}")
+    new_items = get_new_hackathons(hackathons)
 
-for hackathon in new_items:
-    send_message(hackathon)
+    print(f"[NEW] {len(new_items)} hackathons")
+
+    for hackathon in new_items:
+        send_message(hackathon)
+
+
+if __name__ == "__main__":
+    run_pipeline()
