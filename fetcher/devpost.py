@@ -3,6 +3,7 @@ import requests
 
 def fetch_hackathons():
     url = "https://devpost.com/api/hackathons"
+    seen_links = set()
 
     try:
         response = requests.get(url, timeout=15)
@@ -16,10 +17,17 @@ def fetch_hackathons():
     hackathons = []
 
     for item in data["hackathons"]:
+        link = item["url"]
+
+        if not link or link in seen_links:
+            continue
+
+        seen_links.add(link)
+
         hackathons.append({
             "name": item["title"],
             "deadline": item.get("submission_period_dates"),
-            "link": item["url"],
+            "link": link,
             "source": "Devpost"
         })
 

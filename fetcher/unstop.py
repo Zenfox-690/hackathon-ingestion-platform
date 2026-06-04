@@ -1,5 +1,6 @@
 from playwright.sync_api import sync_playwright
 
+from config import FETCH_LIMIT, HEADLESS
 from fetcher.base import BaseFetcher
 
 
@@ -9,7 +10,7 @@ class UnstopFetcher(BaseFetcher):
 
         with sync_playwright() as p:
 
-            browser = p.chromium.launch(headless=True)
+            browser = p.chromium.launch(headless=HEADLESS)
 
             context = browser.new_context(
                 user_agent=(
@@ -28,8 +29,9 @@ class UnstopFetcher(BaseFetcher):
             cards = page.locator("a[href*='/hackathons/']")
 
             hackathons = []
+            seen_links = set()
 
-            count = min(cards.count(), 10)
+            count = min(cards.count(), FETCH_LIMIT)
 
             for i in range(count):
 
@@ -42,6 +44,11 @@ class UnstopFetcher(BaseFetcher):
                 if link and link.startswith("/"):
 
                     link = f"https://unstop.com{link}"
+
+                if not link or link in seen_links:
+                    continue
+
+                seen_links.add(link)
 
                 hackathon = {
                     "name": title,

@@ -4,6 +4,8 @@ from fetcher.unstop import UnstopFetcher
 
 from bot.notifier import send_message
 from db.store import get_new_hackathons
+from filters.keywords import matches_keywords
+from logs.logger import log
 
 
 def run_pipeline():
@@ -22,11 +24,14 @@ def run_pipeline():
 
         try:
 
-            print(f"\n[{name}] Fetching...")
+            log(f"\n[{name}] Fetching...")
 
             data = fetch_function()
 
-            print(f"[{name}] {len(data)} fetched")
+            if not data:
+                log(f"[WARNING] {name} returned no data")
+
+            log(f"[{name}] {len(data)} fetched")
 
             source_counts[name] = len(data)
 
@@ -34,23 +39,32 @@ def run_pipeline():
 
         except Exception as e:
 
-            print(f"[{name}] ERROR: {e}")
+            log(f"[{name}] ERROR: {e}")
 
-    print(f"\n[TOTAL] {len(all_hackathons)} fetched")
+    log(f"\n[TOTAL] {len(all_hackathons)} fetched")
 
-    print("\n[SOURCE SUMMARY]")
+    log("\n[SOURCE SUMMARY]")
 
     for source, count in source_counts.items():
 
-        print(f"{source}: {count}")
+        log(f"{source}: {count}")
 
     new_items = get_new_hackathons(all_hackathons)
 
-    print(f"[NEW] {len(new_items)}")
+    log(f"[NEW] {len(new_items)}")
 
-    for hackathon in new_items:
+    filtered = [
+        h for h in new_items
+        if matches_keywords(h)
+    ]
+
+    log(f"[FILTERED] {len(filtered)}")
+
+    for hackathon in filtered:
 
         send_message(hackathon)
+
+    log(f"[FILTERED] {len(filtered)} matched keywords")
 
 
 if __name__ == "__main__":
