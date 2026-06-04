@@ -1,24 +1,18 @@
-from fetcher.devpost import fetch_hackathons
-from bot.notifier import send_message
-from db.store import get_new_hackathons
+from fetcher.devfolio import DevfolioFetcher
 
 
-def run_pipeline():
-    print("\n[PIPELINE] Running...")
+fetcher = DevfolioFetcher()
 
-    hackathons = fetch_hackathons()
+try:
+    hackathons = fetcher.fetch()
 
-    print(f"[FETCHED] {len(hackathons)}")
+except Exception as e:
+    print(f"[ERROR] {e}")
 
-    new_items = get_new_hackathons(hackathons)
+    hackathons = []
 
-    print(f"[NEW] {len(new_items)}")
+print(f"\nFetched: {len(hackathons)}\n")
 
-    for hackathon in new_items:
-        send_message(hackathon)
-
-    print("[PIPELINE] Complete")
-
-
-if __name__ == "__main__":
-    run_pipeline()
+for hackathon in hackathons:
+    print(hackathon)
+    print("-" * 50)
