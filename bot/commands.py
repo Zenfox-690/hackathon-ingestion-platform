@@ -1,6 +1,7 @@
 from db.store import (
     add_user,
     add_filter,
+    get_filters,
     get_upcoming
 )
 
@@ -34,6 +35,29 @@ async def filter_command(update, context):
     await update.message.reply_text(
         f"Filter added: {keyword}"
     )
+
+
+async def filters_command(update, context):
+
+    chat_id = update.effective_chat.id
+
+    filters = get_filters(chat_id)
+
+    if not filters:
+
+        await update.message.reply_text(
+            "No filters set."
+        )
+
+        return
+
+    text = "Your filters:\n\n"
+
+    for keyword in filters:
+
+        text += f"- {keyword}\n"
+
+    await update.message.reply_text(text)
 
 
 async def upcoming_command(update, context):

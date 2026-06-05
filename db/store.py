@@ -32,6 +32,15 @@ CREATE TABLE IF NOT EXISTS filters (
 conn.commit()
 
 
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS notified (
+    chat_id TEXT,
+    fingerprint TEXT,
+    PRIMARY KEY (chat_id, fingerprint)
+)
+""")
+
+
 def generate_fingerprint(hackathon):
 
     raw = (
@@ -148,3 +157,37 @@ def get_upcoming(limit=5):
     )
 
     return cursor.fetchall()
+
+
+def already_notified(chat_id, fingerprint):
+
+    cursor.execute(
+        """
+        SELECT 1
+        FROM notified
+        WHERE chat_id = ?
+        AND fingerprint = ?
+        """,
+        (
+            str(chat_id),
+            fingerprint
+        )
+    )
+
+    return cursor.fetchone() is not None
+
+
+def mark_notified(chat_id, fingerprint):
+
+    cursor.execute(
+        """
+        INSERT OR IGNORE INTO notified
+        VALUES (?, ?)
+        """,
+        (
+            str(chat_id),
+            fingerprint
+        )
+    )
+
+    conn.commit()

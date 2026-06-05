@@ -30,6 +30,13 @@ app.add_handler(
 
 app.add_handler(
     CommandHandler(
+        "filters",
+        filters_command
+    )
+)
+
+app.add_handler(
+    CommandHandler(
         "upcoming",
         upcoming_command
     )

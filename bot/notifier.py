@@ -9,7 +9,10 @@ load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 from db.store import (
     get_users,
-    get_filters
+    get_filters,
+    already_notified,
+    mark_notified,
+    generate_fingerprint
 )
 
 
@@ -24,6 +27,14 @@ def send_message(hackathon):
         if filters and not matches_filters(
             hackathon,
             filters
+        ):
+            continue
+
+        fingerprint = generate_fingerprint(hackathon)
+
+        if already_notified(
+            chat_id,
+            fingerprint
         ):
             continue
 
@@ -51,6 +62,11 @@ def send_message(hackathon):
         )
 
         response.raise_for_status()
+
+        mark_notified(
+            chat_id,
+            fingerprint
+        )
 
         print(f"[TELEGRAM] Sent to {chat_id}")
 
