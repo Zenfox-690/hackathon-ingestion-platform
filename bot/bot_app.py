@@ -14,10 +14,14 @@ from bot.commands import (
     upcoming_command,
     unfilter_command,
     clearfilters_command,
-    help_command
+    help_command,
+    stats_command
 )
+from startup_checks import validate_environment
 
 load_dotenv()
+
+validate_environment()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
@@ -64,6 +68,13 @@ app.add_handler(
     CommandHandler(
         "help",
         help_command
+    )
+)
+
+app.add_handler(
+    CommandHandler(
+        "stats",
+        stats_command
     )
 )
 

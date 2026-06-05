@@ -1,3 +1,5 @@
+import time
+
 from fetcher.devpost import fetch_hackathons
 from fetcher.devfolio import DevfolioFetcher
 from fetcher.unstop import UnstopFetcher
@@ -5,6 +7,7 @@ from fetcher.unstop import UnstopFetcher
 from bot.notifier import send_message
 from db.store import get_new_hackathons
 from logs.logger import log
+from startup_checks import validate_environment
 
 
 def run_pipeline():
@@ -25,7 +28,16 @@ def run_pipeline():
 
             log(f"\n[{name}] Fetching...")
 
+            start = time.time()
+
             data = fetch_function()
+
+            duration = round(
+                time.time() - start,
+                2
+            )
+
+            log(f"[{name}] completed in {duration}s")
 
             if not data:
                 log(f"[WARNING] {name} returned no data")
@@ -63,4 +75,5 @@ def run_pipeline():
 
 
 if __name__ == "__main__":
+    validate_environment()
     run_pipeline()

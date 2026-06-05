@@ -6,3 +6,4 @@ hackathons.db
 cache/
 debug.png
 playwright-report/
+logs/

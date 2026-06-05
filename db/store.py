@@ -162,7 +162,7 @@ def clear_filters(chat_id):
     )
 
     conn.commit()
-    
+
 
 def get_users():
 
@@ -221,3 +221,30 @@ def mark_notified(chat_id, fingerprint):
     )
 
     conn.commit()
+
+
+def get_stats():
+
+    cursor.execute(
+        "SELECT COUNT(*) FROM hackathons"
+    )
+
+    hackathons = cursor.fetchone()[0]
+
+    cursor.execute(
+        "SELECT COUNT(*) FROM users"
+    )
+
+    users = cursor.fetchone()[0]
+
+    cursor.execute(
+        "SELECT COUNT(*) FROM filters"
+    )
+
+    filters = cursor.fetchone()[0]
+
+    return {
+        "hackathons": hackathons,
+        "users": users,
+        "filters": filters
+    }

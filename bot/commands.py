@@ -4,12 +4,16 @@ from db.store import (
     remove_filter,
     clear_filters,
     get_filters,
-    get_upcoming
+    get_upcoming,
+    get_stats
 )
+from logs.logger import log
 
 async def start_command(update, context):
 
     chat_id = update.effective_chat.id
+
+    log(f"/start used by {chat_id}")
 
     add_user(chat_id)
 
@@ -21,6 +25,8 @@ async def start_command(update, context):
 async def filter_command(update, context):
 
     chat_id = update.effective_chat.id
+
+    log(f"/filter used by {chat_id}")
 
     if not context.args:
 
@@ -43,6 +49,8 @@ async def unfilter_command(update, context):
 
     chat_id = update.effective_chat.id
 
+    log(f"/unfilter used by {chat_id}")
+
     if not context.args:
 
         await update.message.reply_text(
@@ -64,6 +72,8 @@ async def clearfilters_command(update, context):
 
     chat_id = update.effective_chat.id
 
+    log(f"/clearfilters used by {chat_id}")
+
     clear_filters(chat_id)
 
     await update.message.reply_text(
@@ -74,6 +84,8 @@ async def clearfilters_command(update, context):
 async def filters_command(update, context):
 
     chat_id = update.effective_chat.id
+
+    log(f"/filters used by {chat_id}")
 
     filters = get_filters(chat_id)
 
@@ -95,6 +107,10 @@ async def filters_command(update, context):
 
 
 async def upcoming_command(update, context):
+
+    chat_id = update.effective_chat.id
+
+    log(f"/upcoming used by {chat_id}")
 
     hackathons = get_upcoming()
 
@@ -121,14 +137,33 @@ async def upcoming_command(update, context):
 
 async def help_command(update, context):
 
+    chat_id = update.effective_chat.id
+
+    log(f"/help used by {chat_id}")
+
     text = (
         "🚀 Commands\n\n"
         "/start - Register\n"
+        "/stats - System statistics\n"
         "/filter ai - Add filter\n"
         "/unfilter ai - Remove filter\n"
         "/filters - View filters\n"
         "/clearfilters - Remove all filters\n"
         "/upcoming - View hackathons\n"
+    )
+
+    await update.message.reply_text(text)
+
+
+async def stats_command(update, context):
+
+    stats = get_stats()
+
+    text = (
+        "📊 System Stats\n\n"
+        f"Hackathons: {stats['hackathons']}\n"
+        f"Users: {stats['users']}\n"
+        f"Filters: {stats['filters']}"
     )
 
     await update.message.reply_text(text)

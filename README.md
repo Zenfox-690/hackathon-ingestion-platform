@@ -1,14 +1,29 @@
 # Hackathon Alert System
 
 ## Overview
+
 Automated pipeline that fetches hackathons from Devpost,
 deduplicates them using SQLite,
 and delivers alerts through Telegram.
 
 ## Architecture
-Devpost API → Fetcher → SQLite → Telegram Bot
+
+```
+Scheduler
+↓
+Multi-source fetchers
+↓
+Normalization
+↓
+SQLite storage
+↓
+User filtering
+↓
+Telegram delivery
+```
 
 ## Features
+
 - Automated ingestion
 - Persistent deduplication
 - Telegram notifications
@@ -16,6 +31,7 @@ Devpost API → Fetcher → SQLite → Telegram Bot
 - Modular fetchers
 
 ## Tech Stack
+
 - Python
 - Requests
 - SQLite
@@ -23,5 +39,6 @@ Devpost API → Fetcher → SQLite → Telegram Bot
 - Schedule
 
 ## Run
+
 pip install -r requirements.txt
 python scheduler.py
