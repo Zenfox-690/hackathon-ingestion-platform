@@ -134,3 +134,17 @@ def get_users():
     rows = cursor.fetchall()
 
     return [row[0] for row in rows]
+
+
+def get_upcoming(limit=5):
+
+    cursor.execute(
+        """
+        SELECT name, deadline, source
+        FROM hackathons
+        LIMIT ?
+        """,
+        (limit,)
+    )
+
+    return cursor.fetchall()

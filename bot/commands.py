@@ -1,6 +1,7 @@
 from db.store import (
     add_user,
-    add_filter
+    add_filter,
+    get_upcoming
 )
 
 async def start_command(update, context):
@@ -33,3 +34,28 @@ async def filter_command(update, context):
     await update.message.reply_text(
         f"Filter added: {keyword}"
     )
+
+
+async def upcoming_command(update, context):
+
+    hackathons = get_upcoming()
+
+    if not hackathons:
+
+        await update.message.reply_text(
+            "No hackathons found."
+        )
+
+        return
+
+    text = "🚀 Upcoming Hackathons\n\n"
+
+    for name, deadline, source in hackathons:
+
+        text += (
+            f"{name}\n"
+            f"Deadline: {deadline}\n"
+            f"Source: {source}\n\n"
+        )
+
+    await update.message.reply_text(text)

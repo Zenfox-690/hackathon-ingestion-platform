@@ -9,7 +9,8 @@ from telegram.ext import (
 
 from bot.commands import (
     start_command,
-    filter_command
+    filter_command,
+    upcoming_command
 )
 
 load_dotenv()
@@ -25,6 +26,13 @@ app.add_handler(
 
 app.add_handler(
     CommandHandler("filter", filter_command)
+)
+
+app.add_handler(
+    CommandHandler(
+        "upcoming",
+        upcoming_command
+    )
 )
 
 print("Bot running...")
