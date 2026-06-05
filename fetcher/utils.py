@@ -1,5 +1,7 @@
 REQUIRED_KEYS = {
     "name",
+    "description",
+    "tags",
     "deadline",
     "prize",
     "link",

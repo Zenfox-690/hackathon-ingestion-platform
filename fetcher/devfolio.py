@@ -52,6 +52,8 @@ class DevfolioFetcher(BaseFetcher):
 
                 hackathon = {
                     "name": title,
+                    "description": "",
+                    "tags": [],
                     "deadline": "Unknown",
                     "prize": "Unknown",
                     "link": link,

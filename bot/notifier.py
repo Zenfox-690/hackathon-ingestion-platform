@@ -14,6 +14,9 @@ from db.store import (
     mark_notified,
     generate_fingerprint
 )
+from filters.relevance import (
+    calculate_score
+)
 
 
 def send_message(hackathon):
@@ -24,11 +27,16 @@ def send_message(hackathon):
 
         filters = get_filters(chat_id)
 
-        if filters and not matches_filters(
-            hackathon,
-            filters
-        ):
-            continue
+        if filters:
+            score = calculate_score(
+                hackathon,
+                filters
+            )
+
+            if not score:
+                continue
+        else:
+            score = 0
 
         fingerprint = generate_fingerprint(hackathon)
 
@@ -41,6 +49,7 @@ def send_message(hackathon):
         text = (
             f"🚀 *New Hackathon*\n\n"
             f"*{hackathon['name']}*\n"
+            f"Relevance: {score}\n"
             f"Deadline: {hackathon['deadline']}\n"
             f"Source: {hackathon['source']}\n\n"
             f"{hackathon['link']}"
@@ -70,11 +79,3 @@ def send_message(hackathon):
 
         print(f"[TELEGRAM] Sent to {chat_id}")
 
-def matches_filters(hackathon, filters):
-
-    title = hackathon["name"].lower()
-
-    return any(
-        keyword in title
-        for keyword in filters
-    )

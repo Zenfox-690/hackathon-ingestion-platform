@@ -26,6 +26,8 @@ def fetch_hackathons():
 
         hackathons.append({
             "name": item["title"],
+            "description": "",
+            "tags": [],
             "deadline": item.get("submission_period_dates"),
             "link": link,
             "source": "Devpost"
