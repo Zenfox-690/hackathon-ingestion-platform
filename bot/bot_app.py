@@ -10,7 +10,11 @@ from telegram.ext import (
 from bot.commands import (
     start_command,
     filter_command,
-    upcoming_command
+    filters_command,
+    upcoming_command,
+    unfilter_command,
+    clearfilters_command,
+    help_command
 )
 
 load_dotenv()
@@ -39,6 +43,27 @@ app.add_handler(
     CommandHandler(
         "upcoming",
         upcoming_command
+    )
+)
+
+app.add_handler(
+    CommandHandler(
+        "unfilter",
+        unfilter_command
+    )
+)
+
+app.add_handler(
+    CommandHandler(
+        "clearfilters",
+        clearfilters_command
+    )
+)
+
+app.add_handler(
+    CommandHandler(
+        "help",
+        help_command
     )
 )
 

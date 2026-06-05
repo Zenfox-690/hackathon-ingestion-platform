@@ -134,6 +134,36 @@ def get_filters(chat_id):
     return [row[0] for row in rows]
 
 
+def remove_filter(chat_id, keyword):
+
+    cursor.execute(
+        """
+        DELETE FROM filters
+        WHERE chat_id = ?
+        AND keyword = ?
+        """,
+        (
+            str(chat_id),
+            keyword.lower()
+        )
+    )
+
+    conn.commit()
+
+
+def clear_filters(chat_id):
+
+    cursor.execute(
+        """
+        DELETE FROM filters
+        WHERE chat_id = ?
+        """,
+        (str(chat_id),)
+    )
+
+    conn.commit()
+    
+
 def get_users():
 
     cursor.execute(
