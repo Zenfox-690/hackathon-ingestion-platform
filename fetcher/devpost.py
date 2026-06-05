@@ -1,5 +1,7 @@
 import requests
 
+from utils.dates import normalize_date
+
 
 def fetch_hackathons():
     url = "https://devpost.com/api/hackathons"
@@ -28,7 +30,7 @@ def fetch_hackathons():
             "name": item["title"],
             "description": "",
             "tags": [],
-            "deadline": item.get("submission_period_dates"),
+            "deadline": normalize_date(item.get("submission_period_dates")) or item.get("submission_period_dates"),
             "link": link,
             "source": "Devpost"
         })

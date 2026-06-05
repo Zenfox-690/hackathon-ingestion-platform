@@ -3,6 +3,7 @@ from playwright.sync_api import sync_playwright
 from config import FETCH_LIMIT, HEADLESS
 from fetcher.base import BaseFetcher
 from fetcher.utils import validate_hackathon
+from utils.dates import normalize_date
 
 
 class DevfolioFetcher(BaseFetcher):
@@ -54,7 +55,7 @@ class DevfolioFetcher(BaseFetcher):
                     "name": title,
                     "description": "",
                     "tags": [],
-                    "deadline": "Unknown",
+                    "deadline": normalize_date("Unknown") or "Unknown",
                     "prize": "Unknown",
                     "link": link,
                     "source": "Devfolio"

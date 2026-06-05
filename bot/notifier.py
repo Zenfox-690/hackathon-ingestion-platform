@@ -1,12 +1,16 @@
 import os
-import requests
-
 from dotenv import load_dotenv
+from telegram import (
+    Bot,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup
+)
 
 
 load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
+bot = Bot(BOT_TOKEN)
 from db.store import (
     get_users,
     get_filters,
@@ -55,22 +59,30 @@ def send_message(hackathon):
             f"{hackathon['link']}"
         )
 
-        url = (
-            f"https://api.telegram.org/"
-            f"bot{BOT_TOKEN}/sendMessage"
+        keyboard = [
+            [
+                InlineKeyboardButton(
+                    "Open",
+                    url=hackathon["link"]
+                )
+            ]
+        ]
+
+        reply_markup = InlineKeyboardMarkup(
+            keyboard
         )
 
-        response = requests.post(
-            url,
-            data={
-                "chat_id": chat_id,
-                "text": text,
-                "parse_mode": "Markdown"
-            },
-            timeout=15
-        )
+        try:
+            bot.send_message(
+                chat_id=chat_id,
+                text=text,
+                parse_mode="Markdown",
+                reply_markup=reply_markup
+            )
 
-        response.raise_for_status()
+        except Exception as e:
+            print(f"[TELEGRAM] Error sending to {chat_id}: {e}")
+            continue
 
         mark_notified(
             chat_id,

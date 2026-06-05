@@ -2,6 +2,7 @@ from playwright.sync_api import sync_playwright
 
 from config import FETCH_LIMIT, HEADLESS
 from fetcher.base import BaseFetcher
+from utils.dates import normalize_date
 
 
 class UnstopFetcher(BaseFetcher):
@@ -54,7 +55,7 @@ class UnstopFetcher(BaseFetcher):
                     "name": title,
                     "description": "",
                     "tags": [],
-                    "deadline": "Unknown",
+                    "deadline": normalize_date("Unknown") or "Unknown",
                     "prize": "Unknown",
                     "link": link,
                     "source": "Unstop"

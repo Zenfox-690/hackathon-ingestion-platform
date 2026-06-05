@@ -6,7 +6,8 @@ from db.store import (
     get_filters,
     get_upcoming,
     get_stats,
-    get_users
+    get_users,
+    search_hackathons
 )
 from logs.logger import log
 import os
@@ -17,6 +18,19 @@ async def start_command(update, context):
     chat_id = update.effective_chat.id
 
     log(f"/start used by {chat_id}")
+
+    add_user(chat_id)
+
+    await update.message.reply_text(
+        "Subscribed successfully."
+    )
+
+
+async def register_command(update, context):
+
+    chat_id = update.effective_chat.id
+
+    log(f"/register used by {chat_id}")
 
     add_user(chat_id)
 
@@ -147,6 +161,7 @@ async def help_command(update, context):
     text = (
         "🚀 Commands\n\n"
         "/start - Register\n"
+        "/register - Register for latest updates\n"
         "/ping - Health check\n"
         "/stats - System statistics\n"
         "/filter ai - Add filter\n"
@@ -209,3 +224,41 @@ async def ping_command(update, context):
     await update.message.reply_text(
         "✅ Bot operational"
     )
+
+
+async def search_command(update, context):
+
+    if not context.args:
+
+        await update.message.reply_text(
+            "Usage: /search ai"
+        )
+
+        return
+
+    query = " ".join(
+        context.args
+    )
+
+    results = search_hackathons(query)
+
+    if not results:
+
+        await update.message.reply_text(
+            "No results found."
+        )
+
+        return
+
+    text = "🔍 Search Results\n\n"
+
+    for name, deadline, source, link in results:
+
+        text += (
+            f"{name}\n"
+            f"Deadline: {deadline}\n"
+            f"Source: {source}\n"
+            f"{link}\n\n"
+        )
+
+    await update.message.reply_text(text)

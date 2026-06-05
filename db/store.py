@@ -43,9 +43,13 @@ CREATE TABLE IF NOT EXISTS notified (
 
 def generate_fingerprint(hackathon):
 
+    deadline = hackathon.get("deadline") or ""
+    if hasattr(deadline, "isoformat"):
+        deadline = deadline.isoformat()
+
     raw = (
         hackathon["name"].lower().strip()
-        + hackathon["deadline"].lower().strip()
+        + str(deadline).lower().strip()
     )
 
     return hashlib.sha256(raw.encode()).hexdigest()
@@ -179,15 +183,16 @@ def get_upcoming(limit=5):
 
     cursor.execute(
         """
-        SELECT name, deadline, source
+        SELECT name, deadline, source, link
         FROM hackathons
+        WHERE deadline IS NOT NULL
+        ORDER BY deadline ASC
         LIMIT ?
         """,
         (limit,)
     )
 
     return cursor.fetchall()
-
 
 def already_notified(chat_id, fingerprint):
 
@@ -248,3 +253,21 @@ def get_stats():
         "users": users,
         "filters": filters
     }
+
+
+def search_hackathons(query):
+
+    cursor.execute(
+        """
+        SELECT name, deadline, source, link
+        FROM hackathons
+        WHERE lower(name)
+        LIKE ?
+        LIMIT 10
+        """,
+        (
+            f"%{query.lower()}%",
+        )
+    )
+
+    return cursor.fetchall()

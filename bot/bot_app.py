@@ -15,6 +15,7 @@ from bot.commands import (
     unfilter_command,
     clearfilters_command,
     help_command,
+    register_command,
     ping_command,
     stats_command,
     sources_command
@@ -70,6 +71,13 @@ app.add_handler(
     CommandHandler(
         "help",
         help_command
+    )
+)
+
+app.add_handler(
+    CommandHandler(
+        "register",
+        register_command
     )
 )
 
