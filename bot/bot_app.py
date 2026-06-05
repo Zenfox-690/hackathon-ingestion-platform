@@ -15,7 +15,9 @@ from bot.commands import (
     unfilter_command,
     clearfilters_command,
     help_command,
-    stats_command
+    ping_command,
+    stats_command,
+    sources_command
 )
 from startup_checks import validate_environment
 
@@ -73,8 +75,22 @@ app.add_handler(
 
 app.add_handler(
     CommandHandler(
+        "ping",
+        ping_command
+    )
+)
+
+app.add_handler(
+    CommandHandler(
         "stats",
         stats_command
+    )
+)
+
+app.add_handler(
+    CommandHandler(
+        "sources",
+        sources_command
     )
 )
 

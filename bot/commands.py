@@ -5,9 +5,12 @@ from db.store import (
     clear_filters,
     get_filters,
     get_upcoming,
-    get_stats
+    get_stats,
+    get_users
 )
 from logs.logger import log
+import os
+from datetime import datetime
 
 async def start_command(update, context):
 
@@ -144,26 +147,65 @@ async def help_command(update, context):
     text = (
         "🚀 Commands\n\n"
         "/start - Register\n"
+        "/ping - Health check\n"
         "/stats - System statistics\n"
         "/filter ai - Add filter\n"
         "/unfilter ai - Remove filter\n"
         "/filters - View filters\n"
         "/clearfilters - Remove all filters\n"
         "/upcoming - View hackathons\n"
+        "/sources - View active sources\n"
     )
 
     await update.message.reply_text(text)
 
 
 async def stats_command(update, context):
+    chat_id = update.effective_chat.id
+
+    log(f"/stats used by {chat_id}")
+
+    started = datetime.now().strftime(
+        "%Y-%m-%d %H:%M:%S"
+    )
 
     stats = get_stats()
 
+    users = get_users()
+
     text = (
         "📊 System Stats\n\n"
-        f"Hackathons: {stats['hackathons']}\n"
-        f"Users: {stats['users']}\n"
+        f"Started: {started}\n\n"
+        "Sources:\n"
+        "- Devpost\n"
+        "- Devfolio\n"
+        "- Unstop\n\n"
+        f"Stored hackathons: {stats['hackathons']}\n"
+        f"Users: {len(users)}\n"
         f"Filters: {stats['filters']}"
     )
 
     await update.message.reply_text(text)
+
+
+async def sources_command(update, context):
+
+    text = (
+        "🌐 Active Sources\n\n"
+        "- Devpost\n"
+        "- Devfolio\n"
+        "- Unstop"
+    )
+
+    await update.message.reply_text(text)
+
+
+async def ping_command(update, context):
+
+    chat_id = update.effective_chat.id
+
+    log(f"/ping used by {chat_id}")
+
+    await update.message.reply_text(
+        "✅ Bot operational"
+    )

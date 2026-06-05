@@ -8,18 +8,24 @@ and delivers alerts through Telegram.
 
 ## Architecture
 
-```
-Scheduler
-↓
-Multi-source fetchers
-↓
-Normalization
-↓
-SQLite storage
-↓
-User filtering
-↓
-Telegram delivery
+```mermaid
+flowchart TD
+
+	A[Scheduler] --> B[Fetchers]
+
+	B --> C[Devpost API]
+	B --> D[Devfolio Scraper]
+	B --> E[Unstop Scraper]
+
+	B --> F[Normalization Engine]
+
+	F --> G[(SQLite Database)]
+
+	G --> H[User Filters]
+
+	H --> I[Telegram Bot]
+
+	I --> J[Users]
 ```
 
 ## Features
@@ -40,5 +46,9 @@ Telegram delivery
 
 ## Run
 
+Install dependencies and start the scheduler:
+
+```bash
 pip install -r requirements.txt
 python scheduler.py
+```
