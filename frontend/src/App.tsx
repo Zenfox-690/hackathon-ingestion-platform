@@ -79,11 +79,14 @@ export const App: React.FC<{ initialNow?: Date }> = ({ initialNow }) => {
       setLoading(true)
       setError(null)
       const base = import.meta.env.BASE_URL || './'
+      const cleanBase = base.endsWith('/') ? base : `${base}/`
       const candidates = [
-        `${base}data/hackathons.json`,
-        `${base}hackathons.json`,
+        `${cleanBase}data/hackathons.json`,
+        `${cleanBase}hackathons.json`,
         './data/hackathons.json',
-        './hackathons.json'
+        './hackathons.json',
+        '/data/hackathons.json',
+        '/hackathons.json'
       ]
 
       let loaded = false
