@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "1.0.0",
-    "generated_at": "2026-10-17T17:55:28.323909+00:00",
+    "generated_at": "2026-10-17T18:43:15.864920+00:00",
     "total_count": 40,
     "active_count": 19,
     "open_count": 19,
@@ -20,28 +20,7 @@
       "Unknown": 0
     },
     "benefits_count": 0,
-    "supplementary_links": [
-      {
-        "name": "All open hackathons",
-        "url": "https://devfolio.co/hackathons/open",
-        "source": "Devfolio"
-      },
-      {
-        "name": "All past hackathons",
-        "url": "https://devfolio.co/hackathons/past",
-        "source": "Devfolio"
-      },
-      {
-        "name": "All upcoming hackathons",
-        "url": "https://devfolio.co/hackathons/upcoming",
-        "source": "Devfolio"
-      },
-      {
-        "name": "Your hackathons",
-        "url": "https://devfolio.co/hackathons/applied",
-        "source": "Devfolio"
-      }
-    ]
+    "supplementary_links": []
   },
   "hackathons": [
     {
@@ -57,7 +36,7 @@
       "reg_ends_at": "2026-10-18T10:30:00+00:00",
       "starts_at": "2026-10-24T04:30:00+00:00",
       "ends_at": "2026-10-25T04:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 69 participants",
+      "description": "Devfolio Hackathon (In-Person) • 119 participants",
       "tags": [
         "no restrictions"
       ],
@@ -66,7 +45,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:39.328858+00:00",
-      "updated_at": "2026-10-17T06:42:24.392699+00:00"
+      "updated_at": "2026-10-17T18:43:12.174872+00:00"
     },
     {
       "id": "c9a970c865e91beb91641c6b4ecc2f04f5a99a5312dbef78e5f370b34f3a5c6e",
@@ -81,7 +60,7 @@
       "reg_ends_at": "2026-10-18T22:59:00+00:00",
       "starts_at": "2026-10-09T11:00:00+00:00",
       "ends_at": "2026-10-18T22:59:00+00:00",
-      "description": "Devfolio Hackathon (Online) • 265 participants",
+      "description": "Devfolio Hackathon (Online) • 297 participants",
       "tags": [
         "blockchain"
       ],
@@ -90,7 +69,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:39.329343+00:00",
-      "updated_at": "2026-10-17T06:42:24.397303+00:00"
+      "updated_at": "2026-10-17T18:43:12.175402+00:00"
     },
     {
       "id": "df5c2ed84bdac8c3987bb3687d00db4a1f18684cc7d46da7fd655d3bb35268dc",
@@ -105,7 +84,7 @@
       "reg_ends_at": "2026-10-19T18:29:00+00:00",
       "starts_at": "2026-10-30T06:30:00+00:00",
       "ends_at": "2026-11-01T06:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 451 participants",
+      "description": "Devfolio Hackathon (In-Person) • 473 participants",
       "tags": [
         "no restrictions"
       ],
@@ -114,7 +93,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:05.528453+00:00",
-      "updated_at": "2026-10-17T06:42:24.401528+00:00"
+      "updated_at": "2026-10-17T18:43:12.175852+00:00"
     },
     {
       "id": "0c27fa11a469921bf3fd768a45992218da965ef7337a642064bea81c370b3810",
@@ -129,7 +108,7 @@
       "reg_ends_at": "2026-10-20T17:30:00+00:00",
       "starts_at": "2026-10-23T02:30:00+00:00",
       "ends_at": "2026-10-24T04:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 671 participants",
+      "description": "Devfolio Hackathon (In-Person) • 705 participants",
       "tags": [
         "no restrictions"
       ],
@@ -138,7 +117,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.156334+00:00",
-      "updated_at": "2026-10-17T06:42:22.156334+00:00"
+      "updated_at": "2026-10-17T18:43:12.176307+00:00"
     },
     {
       "id": "7eb6226498e382f9f4f3d3fe6dab915904bf090aaf99117c31ef7ebda80cd29d",
@@ -153,7 +132,7 @@
       "reg_ends_at": "2026-10-20T18:29:00+00:00",
       "starts_at": "2026-10-26T04:30:00+00:00",
       "ends_at": "2026-10-27T04:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 591 participants",
+      "description": "Devfolio Hackathon (In-Person) • 697 participants",
       "tags": [
         "no restrictions"
       ],
@@ -162,7 +141,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.157310+00:00",
-      "updated_at": "2026-10-17T06:42:22.157310+00:00"
+      "updated_at": "2026-10-17T18:43:12.177159+00:00"
     },
     {
       "id": "fc0a85a4c32212b9c8c0eeae05a954ad70cbe2cb41961163b1f600303a54b36e",
@@ -177,7 +156,7 @@
       "reg_ends_at": "2026-10-20T18:29:00+00:00",
       "starts_at": "2026-10-28T04:30:00+00:00",
       "ends_at": "2026-10-31T08:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 55654 participants",
+      "description": "Devfolio Hackathon (In-Person) • 55728 participants",
       "tags": [
         "ai",
         "blockchain"
@@ -187,7 +166,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.156825+00:00",
-      "updated_at": "2026-10-17T06:42:22.156825+00:00"
+      "updated_at": "2026-10-17T18:43:12.176740+00:00"
     },
     {
       "id": "8056dfadda3d2a25723f0951f33290452d9a66567952bfe4ebd7c54b6d8f3e38",
@@ -202,7 +181,7 @@
       "reg_ends_at": "2026-10-22T18:29:00+00:00",
       "starts_at": "2026-10-24T02:30:00+00:00",
       "ends_at": "2026-10-25T07:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 14 participants",
+      "description": "Devfolio Hackathon (In-Person) • 21 participants",
       "tags": [
         "ai",
         "blockchain",
@@ -213,7 +192,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.157738+00:00",
-      "updated_at": "2026-10-17T06:42:22.157738+00:00"
+      "updated_at": "2026-10-17T18:43:12.177607+00:00"
     },
     {
       "id": "46ff8644ea994687e2899dd95e35b90c1d19c3b317c579acb92d2dadd91622b6",
@@ -228,7 +207,7 @@
       "reg_ends_at": "2026-10-22T18:30:00+00:00",
       "starts_at": "2026-10-24T03:30:00+00:00",
       "ends_at": "2026-10-24T11:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 284 participants",
+      "description": "Devfolio Hackathon (In-Person) • 292 participants",
       "tags": [
         "no restrictions"
       ],
@@ -237,7 +216,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.158603+00:00",
-      "updated_at": "2026-10-17T06:42:22.158603+00:00"
+      "updated_at": "2026-10-17T18:43:12.178504+00:00"
     },
     {
       "id": "5c8e8ab1eb64bf5857237516e05eb4d8487c4ccd1dcb64557a80b6abb706babc",
@@ -252,7 +231,7 @@
       "reg_ends_at": "2026-10-22T18:30:00+00:00",
       "starts_at": "2026-10-23T15:30:00+00:00",
       "ends_at": "2026-10-25T03:30:00+00:00",
-      "description": "Devfolio Hackathon (Online) • 235 participants",
+      "description": "Devfolio Hackathon (Online) • 325 participants",
       "tags": [
         "no restrictions"
       ],
@@ -261,7 +240,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.158163+00:00",
-      "updated_at": "2026-10-17T06:42:22.158163+00:00"
+      "updated_at": "2026-10-17T18:43:12.178021+00:00"
     },
     {
       "id": "0e18b6cf877bc442f9b92302350398fce6b84b05d01ac2f92ff5367616b259a8",
@@ -287,7 +266,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.681773+00:00",
-      "updated_at": "2026-10-17T06:42:24.355492+00:00"
+      "updated_at": "2026-10-17T18:43:10.944927+00:00"
     },
     {
       "id": "0eb7c2439cf598ef226ea070a283b510e1c204beb1e6960ade0831258487e593",
@@ -302,7 +281,7 @@
       "reg_ends_at": "2026-10-23T18:29:00+00:00",
       "starts_at": "2026-10-30T14:30:00+00:00",
       "ends_at": "2026-11-01T02:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 40 participants",
+      "description": "Devfolio Hackathon (In-Person) • 74 participants",
       "tags": [
         "no restrictions"
       ],
@@ -311,7 +290,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.159035+00:00",
-      "updated_at": "2026-10-17T06:42:22.159035+00:00"
+      "updated_at": "2026-10-17T18:43:12.178924+00:00"
     },
     {
       "id": "3761ca667cd0e31ab7fef56188477e274bc928a246e0e449c979dafd01b606cd",
@@ -337,7 +316,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682738+00:00",
-      "updated_at": "2026-10-17T06:42:24.367781+00:00"
+      "updated_at": "2026-10-17T18:43:10.946213+00:00"
     },
     {
       "id": "cc2ee936e7b684d7a2be4c7970a4e9803fd4de884497fa1180c1bcfb254f8ba4",
@@ -363,7 +342,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683693+00:00",
-      "updated_at": "2026-10-17T06:42:24.380515+00:00"
+      "updated_at": "2026-10-17T18:43:10.947246+00:00"
     },
     {
       "id": "d42e9e7a3a26094f889a24da2d42db7091922f0fe8cded3e6675fa7dde87c1eb",
@@ -389,7 +368,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683061+00:00",
-      "updated_at": "2026-10-17T06:42:24.372534+00:00"
+      "updated_at": "2026-10-17T18:43:10.946561+00:00"
     },
     {
       "id": "217df90ac79aac131c2781832923cdbd0008da857d0d570ce7c2aa3473acd327",
@@ -415,7 +394,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.684520+00:00",
-      "updated_at": "2026-10-17T06:42:24.388206+00:00"
+      "updated_at": "2026-10-17T18:43:10.947899+00:00"
     },
     {
       "id": "489bccb776ef6fd0d33420755a4a5e5f9462b2c7f23eecca67f980026671d63a",
@@ -439,7 +418,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.684002+00:00",
-      "updated_at": "2026-10-17T06:42:24.384093+00:00"
+      "updated_at": "2026-10-17T18:43:10.947575+00:00"
     },
     {
       "id": "f7ef434afdaf86a0ce6f761098a0baaa3830decace5bb41cf6fc2bf47c6e6dde",
@@ -465,7 +444,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682065+00:00",
-      "updated_at": "2026-10-17T06:42:24.359689+00:00"
+      "updated_at": "2026-10-17T18:43:10.945493+00:00"
     },
     {
       "id": "75fbaa9ae6bdf7931b0b96953052a0d4f41a713d678e05c207ed921d7e5d9b4a",
@@ -491,7 +470,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682393+00:00",
-      "updated_at": "2026-10-17T06:42:24.363975+00:00"
+      "updated_at": "2026-10-17T18:43:10.945855+00:00"
     },
     {
       "id": "b5946c918f7d9c8b115319c3714c2347b822d72a6631288d201a8904a2477378",
@@ -517,7 +496,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683379+00:00",
-      "updated_at": "2026-10-17T06:42:24.376570+00:00"
+      "updated_at": "2026-10-17T18:43:10.946891+00:00"
     },
     {
       "id": "36c1fdfc244d341c69d3fc5f5bdf8d4ee3b0f6543de03250689cf35c04f3373a",
