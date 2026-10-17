@@ -1,0 +1,17 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.git/
+.github/
+.env
+hackathons.db
+logs/
+cache/
+debug.png
+.pytest_cache/
+.coverage
+coverage.json
+coverage.xml
+frontend/node_modules/
+frontend/dist/

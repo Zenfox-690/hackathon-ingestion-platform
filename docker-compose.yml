@@ -1,0 +1,45 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hackathon-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - sqlite-storage:/app/storage
+    environment:
+      - FETCH_LIMIT=10
+      - HEADLESS=True
+    command: ["uvicorn", "api.app:app", "--host", "0.0.0.0", "--port", "8000"]
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: hackathon-dashboard
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hackathon-scraper
+    profiles:
+      - manual
+    volumes:
+      - ./data:/app/data
+      - sqlite-storage:/app/storage
+    environment:
+      - FETCH_LIMIT=10
+      - HEADLESS=True
+    command: ["python", "main.py", "--no-telegram"]
+
+volumes:
+  sqlite-storage:

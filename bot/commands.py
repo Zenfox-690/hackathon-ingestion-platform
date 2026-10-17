@@ -1,17 +1,18 @@
+from datetime import datetime
+
 from db.store import (
-    add_user,
     add_filter,
-    remove_filter,
+    add_user,
     clear_filters,
     get_filters,
-    get_upcoming,
     get_stats,
+    get_upcoming,
     get_users,
-    search_hackathons
+    remove_filter,
+    search_hackathons,
 )
 from logs.logger import log
-import os
-from datetime import datetime
+
 
 async def start_command(update, context):
 
@@ -21,9 +22,7 @@ async def start_command(update, context):
 
     add_user(chat_id)
 
-    await update.message.reply_text(
-        "Subscribed successfully."
-    )
+    await update.message.reply_text("Subscribed successfully.")
 
 
 async def register_command(update, context):
@@ -34,9 +33,7 @@ async def register_command(update, context):
 
     add_user(chat_id)
 
-    await update.message.reply_text(
-        "Subscribed successfully."
-    )
+    await update.message.reply_text("Subscribed successfully.")
 
 
 async def filter_command(update, context):
@@ -46,10 +43,7 @@ async def filter_command(update, context):
     log(f"/filter used by {chat_id}")
 
     if not context.args:
-
-        await update.message.reply_text(
-            "Usage: /filter ai"
-        )
+        await update.message.reply_text("Usage: /filter ai")
 
         return
 
@@ -57,9 +51,7 @@ async def filter_command(update, context):
 
     add_filter(chat_id, keyword)
 
-    await update.message.reply_text(
-        f"Filter added: {keyword}"
-    )
+    await update.message.reply_text(f"Filter added: {keyword}")
 
 
 async def unfilter_command(update, context):
@@ -69,10 +61,7 @@ async def unfilter_command(update, context):
     log(f"/unfilter used by {chat_id}")
 
     if not context.args:
-
-        await update.message.reply_text(
-            "Usage: /unfilter ai"
-        )
+        await update.message.reply_text("Usage: /unfilter ai")
 
         return
 
@@ -80,9 +69,7 @@ async def unfilter_command(update, context):
 
     remove_filter(chat_id, keyword)
 
-    await update.message.reply_text(
-        f"Removed filter: {keyword}"
-    )
+    await update.message.reply_text(f"Removed filter: {keyword}")
 
 
 async def clearfilters_command(update, context):
@@ -93,9 +80,7 @@ async def clearfilters_command(update, context):
 
     clear_filters(chat_id)
 
-    await update.message.reply_text(
-        "All filters cleared."
-    )
+    await update.message.reply_text("All filters cleared.")
 
 
 async def filters_command(update, context):
@@ -107,17 +92,13 @@ async def filters_command(update, context):
     filters = get_filters(chat_id)
 
     if not filters:
-
-        await update.message.reply_text(
-            "No filters set."
-        )
+        await update.message.reply_text("No filters set.")
 
         return
 
     text = "Your filters:\n\n"
 
     for keyword in filters:
-
         text += f"- {keyword}\n"
 
     await update.message.reply_text(text)
@@ -132,22 +113,19 @@ async def upcoming_command(update, context):
     hackathons = get_upcoming()
 
     if not hackathons:
-
-        await update.message.reply_text(
-            "No hackathons found."
-        )
+        await update.message.reply_text("No hackathons found.")
 
         return
 
     text = "🚀 Upcoming Hackathons\n\n"
 
-    for name, deadline, source in hackathons:
-
-        text += (
-            f"{name}\n"
-            f"Deadline: {deadline}\n"
-            f"Source: {source}\n\n"
-        )
+    for row in hackathons:
+        if len(row) >= 4:
+            name, deadline, source, link = row[:4]
+            text += f"{name}\nDeadline: {deadline}\nSource: {source}\n{link}\n\n"
+        else:
+            name, deadline, source = row[:3]
+            text += f"{name}\nDeadline: {deadline}\nSource: {source}\n\n"
 
     await update.message.reply_text(text)
 
@@ -180,9 +158,7 @@ async def stats_command(update, context):
 
     log(f"/stats used by {chat_id}")
 
-    started = datetime.now().strftime(
-        "%Y-%m-%d %H:%M:%S"
-    )
+    started = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     stats = get_stats()
 
@@ -205,12 +181,7 @@ async def stats_command(update, context):
 
 async def sources_command(update, context):
 
-    text = (
-        "🌐 Active Sources\n\n"
-        "- Devpost\n"
-        "- Devfolio\n"
-        "- Unstop"
-    )
+    text = "🌐 Active Sources\n\n- Devpost\n- Devfolio\n- Unstop"
 
     await update.message.reply_text(text)
 
@@ -221,44 +192,28 @@ async def ping_command(update, context):
 
     log(f"/ping used by {chat_id}")
 
-    await update.message.reply_text(
-        "✅ Bot operational"
-    )
+    await update.message.reply_text("✅ Bot operational")
 
 
 async def search_command(update, context):
 
     if not context.args:
-
-        await update.message.reply_text(
-            "Usage: /search ai"
-        )
+        await update.message.reply_text("Usage: /search ai")
 
         return
 
-    query = " ".join(
-        context.args
-    )
+    query = " ".join(context.args)
 
     results = search_hackathons(query)
 
     if not results:
-
-        await update.message.reply_text(
-            "No results found."
-        )
+        await update.message.reply_text("No results found.")
 
         return
 
     text = "🔍 Search Results\n\n"
 
     for name, deadline, source, link in results:
-
-        text += (
-            f"{name}\n"
-            f"Deadline: {deadline}\n"
-            f"Source: {source}\n"
-            f"{link}\n\n"
-        )
+        text += f"{name}\nDeadline: {deadline}\nSource: {source}\n{link}\n\n"
 
     await update.message.reply_text(text)

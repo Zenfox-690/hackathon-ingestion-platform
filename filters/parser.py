@@ -4,19 +4,12 @@ def parse_filters(filters):
     negative = []
 
     for keyword in filters:
-
         keyword = keyword.strip().lower()
 
         if keyword.startswith("-"):
-
-            negative.append(
-                keyword[1:]
-            )
+            negative.append(keyword[1:])
 
         else:
-
-            positive.append(
-                keyword.replace("+", "")
-            )
+            positive.append(keyword.replace("+", ""))
 
     return positive, negative

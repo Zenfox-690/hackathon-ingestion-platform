@@ -7,3 +7,12 @@ cache/
 debug.png
 playwright-report/
 logs/
+.pytest_cache/
+.coverage
+coverage.json
+coverage.xml
+
+# Frontend artifacts
+frontend/node_modules/
+frontend/dist/
+*.tmp

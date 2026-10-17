@@ -1,12 +1,4 @@
-REQUIRED_KEYS = {
-    "name",
-    "description",
-    "tags",
-    "deadline",
-    "prize",
-    "link",
-    "source"
-}
+REQUIRED_KEYS = {"name", "description", "tags", "deadline", "prize", "link", "source"}
 
 
 def validate_hackathon(data):
