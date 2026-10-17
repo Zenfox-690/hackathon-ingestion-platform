@@ -10,7 +10,9 @@ from playwright.sync_api import sync_playwright
 from config import FETCH_LIMIT, HEADLESS
 from fetcher.base import BaseFetcher
 from fetcher.utils import validate_hackathon
+from filters.benefits import extract_special_benefits
 from utils.dates import normalize_date
+from utils.format import normalize_participation_format
 from utils.urls import canonicalize_url
 
 NAV_SLUGS = {"applied", "open", "upcoming", "past", "discover", "home", "blog"}
@@ -93,13 +95,16 @@ def parse_devfolio_cards_from_html(html_content: str, limit: int = FETCH_LIMIT):
                             if tname and tname.strip():
                                 tags.append(tname.strip().lower())
 
-                        # Determine online / in-person format
+                        # Determine online / in-person / hybrid / unknown format
                         is_online = item.get("is_online")
                         if is_online is None and isinstance(item.get("hackathon_setting"), dict):
                             is_online = item["hackathon_setting"].get("is_online")
-                        if is_online is None:
-                            is_online = True
-                        location = "Online" if is_online else "In-Person"
+                        raw_loc = None
+                        if is_online is True:
+                            raw_loc = "Online"
+                        elif is_online is False:
+                            raw_loc = "In-Person"
+                        location = normalize_participation_format(raw_loc)
 
                         # Organizer / Description
                         participants = item.get("participants_count") or 0
@@ -121,6 +126,7 @@ def parse_devfolio_cards_from_html(html_content: str, limit: int = FETCH_LIMIT):
                             "link": canon_link,
                             "source": "Devfolio",
                         }
+                        hackathon["benefits"] = extract_special_benefits(hackathon)
 
                         if validate_hackathon(hackathon):
                             hackathons.append(hackathon)

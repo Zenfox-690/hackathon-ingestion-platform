@@ -3,6 +3,7 @@ from typing import Any, Dict, List
 import requests
 
 from fetcher.base import BaseFetcher
+from filters.benefits import extract_special_benefits
 from utils.dates import normalize_date, parse_date_range
 from utils.urls import canonicalize_url
 
@@ -36,14 +37,12 @@ def parse_devpost_items(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         if isinstance(prize, (int, float)):
             prize = f"${prize:,.0f}"
 
-        # Extract location/host
-        location = (
+        raw_location = (
             item.get("displayed_location", {}).get("location")
             if isinstance(item.get("displayed_location"), dict)
-            else "Online"
+            else None
         )
-        if not location:
-            location = "Online"
+        location = raw_location or ("Online" if "online" in (item.get("title") or "").lower() else "Unknown")
 
         # Date and submission period parsing
         sub_period = item.get("submission_period_dates") or ""
@@ -52,21 +51,21 @@ def parse_devpost_items(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
         open_state = item.get("open_state") or ""
 
-        hackathons.append(
-            {
-                "name": (item.get("title") or "").strip(),
-                "description": (item.get("organization_name") or "").strip(),
-                "tags": sorted(list(set(tags))),
-                "deadline": deadline,
-                "reg_starts_at": reg_start or "",
-                "reg_ends_at": reg_end or "",
-                "source_status": open_state,
-                "prize": str(prize),
-                "location": location,
-                "link": link,
-                "source": "Devpost",
-            }
-        )
+        hack_dict = {
+            "name": (item.get("title") or "").strip(),
+            "description": (item.get("organization_name") or "").strip(),
+            "tags": sorted(list(set(tags))),
+            "deadline": deadline,
+            "reg_starts_at": reg_start or "",
+            "reg_ends_at": reg_end or "",
+            "source_status": open_state,
+            "prize": str(prize),
+            "location": location,
+            "link": link,
+            "source": "Devpost",
+        }
+        hack_dict["benefits"] = extract_special_benefits(hack_dict)
+        hackathons.append(hack_dict)
 
     return hackathons
 

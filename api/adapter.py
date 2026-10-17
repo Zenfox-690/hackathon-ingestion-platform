@@ -3,6 +3,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import db.store as store
 from utils.dates import evaluate_hackathon_status, normalize_date
+from utils.format import normalize_participation_format
 
 
 class HackathonDataAdapter:
@@ -12,6 +13,8 @@ class HackathonDataAdapter:
     def get_all(include_sections: bool = False) -> List[Dict[str, Any]]:
         records = store.get_all_public_hackathons(include_sections=include_sections)
         for r in records:
+            r["location"] = normalize_participation_format(r.get("location"))
+            r["benefits"] = r.get("benefits") or []
             r["status"] = evaluate_hackathon_status(
                 deadline=r.get("deadline"),
                 reg_starts_at=r.get("reg_starts_at"),
@@ -26,6 +29,8 @@ class HackathonDataAdapter:
     def get_by_id(cls, hackathon_id: str) -> Optional[Dict[str, Any]]:
         rec = store.get_hackathon_by_id(hackathon_id)
         if rec:
+            rec["location"] = normalize_participation_format(rec.get("location"))
+            rec["benefits"] = rec.get("benefits") or []
             rec["status"] = evaluate_hackathon_status(
                 deadline=rec.get("deadline"),
                 reg_starts_at=rec.get("reg_starts_at"),
@@ -43,6 +48,7 @@ class HackathonDataAdapter:
         source: Optional[str] = None,
         tag: Optional[str] = None,
         status: Optional[str] = None,
+        format: Optional[str] = None,
         sort_by: str = "deadline",
         sort_order: str = "asc",
         page: int = 1,
@@ -55,6 +61,7 @@ class HackathonDataAdapter:
         src_clean = source.strip().lower() if source else None
         tag_clean = tag.strip().lower() if tag else None
         status_clean = status.strip().lower() if status else None
+        format_clean = format.strip().lower() if format else None
 
         for item in all_records:
             # Skip section links
@@ -93,6 +100,12 @@ class HackathonDataAdapter:
                     if item_status != status_clean:
                         continue
 
+            # Format filter
+            if format_clean:
+                item_format = (item.get("location") or "unknown").lower()
+                if format_clean != item_format:
+                    continue
+
             filtered.append(item)
 
         # Sorting
@@ -127,20 +140,27 @@ class HackathonDataAdapter:
     def get_stats(cls) -> Dict[str, Any]:
         all_records = cls.get_all(include_sections=False)
         sources: Dict[str, int] = {}
+        formats: Dict[str, int] = {"Online": 0, "In-Person": 0, "Hybrid": 0, "Unknown": 0}
         status_counts: Dict[str, int] = {"open": 0, "upcoming": 0, "ended": 0, "unknown": 0}
+        total_benefits = 0
 
         for item in all_records:
             s = item.get("source", "Unknown")
             sources[s] = sources.get(s, 0) + 1
+            loc = item.get("location", "Unknown")
+            formats[loc] = formats.get(loc, 0) + 1
             st = item.get("status", "unknown")
             status_counts[st] = status_counts.get(st, 0) + 1
+            total_benefits += len(item.get("benefits", []))
 
         supplementary = store.get_supplementary_links()
 
         return {
             "total_hackathons": len(all_records),
             "sources": sources,
+            "formats": formats,
             "status_counts": status_counts,
+            "total_benefits": total_benefits,
             "active_hackathons": status_counts["open"] + status_counts["upcoming"],
             "supplementary_links": supplementary,
         }

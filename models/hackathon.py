@@ -5,7 +5,9 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field, field_validator, model_validator
 
+from filters.benefits import extract_special_benefits
 from utils.dates import evaluate_hackathon_status, normalize_date
+from utils.format import normalize_participation_format
 from utils.urls import canonicalize_url
 
 
@@ -14,6 +16,25 @@ class HackathonStatus(str, Enum):
     UPCOMING = "upcoming"
     ENDED = "ended"
     UNKNOWN = "unknown"
+
+
+class SpecialBenefit(BaseModel):
+    """Explicitly advertised participant benefit, credit, or tool grant."""
+
+    id: Optional[str] = None
+    name: str = Field(..., description="Benefit or provider name, e.g. AWS Cloud Credits")
+    category: str = Field(default="Cloud Credits", description="Benefit category")
+    description: str = Field(default="", description="Short benefit summary")
+    requires_separate_application: bool = Field(
+        default=False, description="Whether a separate application/form is needed"
+    )
+    application_deadline: Optional[str] = Field(
+        default=None, description="Separate application deadline ISO timestamp, if explicitly advertised"
+    )
+    application_url: Optional[str] = Field(default=None, description="Application or claim form URL")
+    source_url: Optional[str] = Field(default=None, description="Official hackathon page or evidence URL")
+    eligibility: Optional[str] = Field(default=None, description="Stated eligibility requirements")
+    confidence: str = Field(default="unverified", description="'verified' or 'unverified'")
 
 
 class Hackathon(BaseModel):
@@ -37,7 +58,12 @@ class Hackathon(BaseModel):
     description: Optional[str] = Field(default="", description="Summary or description")
     tags: List[str] = Field(default_factory=list, description="Associated skill/topic tags")
     prize: Optional[str] = Field(default="Unknown", description="Prize amount or summary")
-    location: Optional[str] = Field(default="Online", description="Online or physical location")
+    location: Optional[str] = Field(
+        default="Online", description="Participation format: Online, In-Person, Hybrid, or Unknown"
+    )
+    benefits: List[SpecialBenefit] = Field(
+        default_factory=list, description="Extracted participant perks, cloud credits, and benefits"
+    )
     created_at: Optional[str] = Field(default=None, description="ISO timestamp when first discovered")
     updated_at: Optional[str] = Field(default=None, description="ISO timestamp of last update")
 
@@ -127,9 +153,9 @@ class Hackathon(BaseModel):
     @field_validator("location", mode="before")
     @classmethod
     def clean_location(cls, v: Any) -> str:
-        if not v or not str(v).strip():
+        if v is None:
             return "Online"
-        return str(v).strip()
+        return normalize_participation_format(v)
 
     @model_validator(mode="after")
     def compute_fields(self) -> "Hackathon":
@@ -147,6 +173,21 @@ class Hackathon(BaseModel):
                 dl = self.deadline or ""
                 raw = f"name:{self.name.lower().strip()}:{str(dl).lower().strip()}"
             self.fingerprint = hashlib.sha256(raw.encode()).hexdigest()
+
+        # Extract special benefits if not explicitly populated
+        if not self.benefits:
+            extracted = extract_special_benefits(
+                {
+                    "fingerprint": self.fingerprint,
+                    "name": self.name,
+                    "description": self.description,
+                    "prize": self.prize,
+                    "tags": self.tags,
+                    "link": self.link,
+                    "url": self.link,
+                }
+            )
+            self.benefits = [SpecialBenefit(**b) for b in extracted]
 
         return self
 
@@ -171,6 +212,7 @@ class Hackathon(BaseModel):
             "tags": self.tags,
             "prize": self.prize,
             "location": self.location,
+            "benefits": [b.model_dump() if hasattr(b, "model_dump") else b for b in self.benefits],
             "status": self.status.value,
             "created_at": self.created_at,
             "updated_at": self.updated_at,

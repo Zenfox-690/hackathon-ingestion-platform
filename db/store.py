@@ -6,7 +6,9 @@ import sys
 from typing import Any, Dict, List, Optional, Tuple
 
 from db.migrations import apply_migrations
+from filters.benefits import extract_special_benefits
 from utils.dates import evaluate_hackathon_status
+from utils.format import normalize_participation_format
 from utils.urls import canonicalize_url
 
 # Default module-level connection and cursor for backward-compatibility
@@ -56,6 +58,7 @@ def get_new_hackathons(
     columns = _get_table_columns(target_cursor)
     has_metadata_cols = "description" in columns
     has_v3_cols = "reg_ends_at" in columns
+    has_v4_cols = "benefits" in columns
 
     for hackathon in hackathons:
         raw_link = (hackathon.get("link") or "").strip()
@@ -107,13 +110,60 @@ def get_new_hackathons(
         ends_at = hackathon.get("ends_at") or ""
         source_status = hackathon.get("source_status") or ""
         is_section_link = 1 if hackathon.get("is_section_link") else 0
+        loc = normalize_participation_format(hackathon.get("location"))
+        hackathon["location"] = loc
+
+        benefits = hackathon.get("benefits")
+        if not benefits:
+            benefits = extract_special_benefits(hackathon)
+            hackathon["benefits"] = benefits
+        benefits_json = json.dumps(benefits)
 
         if not existing_row:
-            if has_v3_cols:
+            if has_v4_cols:
                 desc = hackathon.get("description") or ""
                 tags = json.dumps(hackathon.get("tags") or [])
                 prize = hackathon.get("prize") or "Unknown"
-                loc = hackathon.get("location") or "Online"
+                created_at = hackathon.get("created_at") or now_iso
+                updated_at = hackathon.get("updated_at") or now_iso
+                raw_data = json.dumps({k: v for k, v in hackathon.items() if k not in ("raw_data",)})
+
+                target_cursor.execute(
+                    """
+                    INSERT INTO hackathons (
+                        fingerprint, name, deadline, source, link,
+                        description, tags, prize, location, created_at, updated_at, raw_data,
+                        reg_starts_at, reg_ends_at, starts_at, ends_at, source_status, is_section_link,
+                        benefits
+                    )
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        fingerprint,
+                        name,
+                        deadline,
+                        hackathon.get("source", ""),
+                        hackathon.get("link", ""),
+                        desc,
+                        tags,
+                        prize,
+                        loc,
+                        created_at,
+                        updated_at,
+                        raw_data,
+                        reg_starts_at,
+                        reg_ends_at,
+                        starts_at,
+                        ends_at,
+                        source_status,
+                        is_section_link,
+                        benefits_json,
+                    ),
+                )
+            elif has_v3_cols:
+                desc = hackathon.get("description") or ""
+                tags = json.dumps(hackathon.get("tags") or [])
+                prize = hackathon.get("prize") or "Unknown"
                 created_at = hackathon.get("created_at") or now_iso
                 updated_at = hackathon.get("updated_at") or now_iso
                 raw_data = json.dumps({k: v for k, v in hackathon.items() if k not in ("raw_data",)})
@@ -218,8 +268,13 @@ def get_new_hackathons(
                         updates.append("prize = ?")
                         params.append(new_prize)
 
-                    new_loc = hackathon.get("location")
-                    if new_loc and (not curr_loc or curr_loc in ("", "Online")):
+                    new_loc = normalize_participation_format(hackathon.get("location"))
+                    if (
+                        new_loc
+                        and new_loc != "Unknown"
+                        and curr_loc in ("", "Unknown", "Online")
+                        and new_loc != curr_loc
+                    ):
                         updates.append("location = ?")
                         params.append(new_loc)
 
@@ -239,6 +294,13 @@ def get_new_hackathons(
                         if source_status:
                             updates.append("source_status = ?")
                             params.append(source_status)
+
+                    if has_v4_cols:
+                        target_cursor.execute("SELECT benefits FROM hackathons WHERE fingerprint = ?", (existing_fp,))
+                        b_row = target_cursor.fetchone()
+                        if b_row and (not b_row[0] or b_row[0] == "[]") and benefits:
+                            updates.append("benefits = ?")
+                            params.append(benefits_json)
 
                     if updates:
                         updates.append("updated_at = ?")
@@ -516,12 +578,91 @@ def get_all_public_hackathons(
     columns = _get_table_columns(target_cursor)
     has_meta = "description" in columns
     has_v3 = "is_section_link" in columns
+    has_v4 = "benefits" in columns
 
     where_clause = ""
     if has_v3 and not include_sections:
         where_clause = "WHERE is_section_link = 0 OR is_section_link IS NULL"
 
-    if has_v3:
+    if has_v4:
+        target_cursor.execute(
+            f"""
+            SELECT fingerprint, name, deadline, source, link,
+                   description, tags, prize, location, created_at, updated_at,
+                   reg_starts_at, reg_ends_at, starts_at, ends_at, source_status, is_section_link,
+                   benefits
+            FROM hackathons
+            {where_clause}
+            ORDER BY created_at DESC, deadline ASC
+            """
+        )
+        rows = target_cursor.fetchall()
+        result = []
+        for r in rows:
+            tags = []
+            try:
+                tags = json.loads(r[6]) if r[6] else []
+            except Exception:
+                pass
+
+            st = evaluate_hackathon_status(
+                deadline=r[2],
+                reg_starts_at=r[11],
+                reg_ends_at=r[12],
+                starts_at=r[13],
+                ends_at=r[14],
+                source_status=r[15],
+            )
+
+            b_list = []
+            try:
+                if len(r) > 17 and r[17]:
+                    b_list = json.loads(r[17])
+            except Exception:
+                b_list = []
+
+            if not b_list:
+                b_list = extract_special_benefits(
+                    {
+                        "fingerprint": r[0],
+                        "name": r[1],
+                        "description": r[5] or "",
+                        "tags": tags,
+                        "prize": r[7] or "Unknown",
+                        "link": r[4],
+                    }
+                )
+
+            loc = normalize_participation_format(r[8])
+
+            result.append(
+                {
+                    "fingerprint": r[0],
+                    "id": r[0],
+                    "name": r[1],
+                    "title": r[1],
+                    "deadline": r[2] or "Unknown",
+                    "source": r[3],
+                    "link": r[4],
+                    "url": r[4],
+                    "description": r[5] or "",
+                    "tags": tags,
+                    "prize": r[7] or "Unknown",
+                    "location": loc,
+                    "benefits": b_list,
+                    "created_at": r[9] or "",
+                    "updated_at": r[10] or "",
+                    "reg_starts_at": r[11] or "",
+                    "reg_ends_at": r[12] or "",
+                    "starts_at": r[13] or "",
+                    "ends_at": r[14] or "",
+                    "source_status": r[15] or "",
+                    "is_section_link": bool(r[16]),
+                    "status": st,
+                }
+            )
+        return result
+    elif has_v3:
         target_cursor.execute(
             f"""
             SELECT fingerprint, name, deadline, source, link,
@@ -550,6 +691,18 @@ def get_all_public_hackathons(
                 source_status=r[15],
             )
 
+            b_list = extract_special_benefits(
+                {
+                    "fingerprint": r[0],
+                    "name": r[1],
+                    "description": r[5] or "",
+                    "tags": tags,
+                    "prize": r[7] or "Unknown",
+                    "link": r[4],
+                }
+            )
+            loc = normalize_participation_format(r[8])
+
             result.append(
                 {
                     "fingerprint": r[0],
@@ -563,7 +716,8 @@ def get_all_public_hackathons(
                     "description": r[5] or "",
                     "tags": tags,
                     "prize": r[7] or "Unknown",
-                    "location": r[8] or "Online",
+                    "location": loc,
+                    "benefits": b_list,
                     "created_at": r[9] or "",
                     "updated_at": r[10] or "",
                     "reg_starts_at": r[11] or "",

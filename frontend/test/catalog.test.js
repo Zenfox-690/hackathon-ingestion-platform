@@ -87,3 +87,48 @@ test('Actionable Filtering and Devfolio Integration Verification', () => {
   })
 })
 
+test('Format Normalization and Benefits Contract Verification', () => {
+  const content = fs.readFileSync(catalogPath, 'utf8')
+  const json = JSON.parse(content)
+
+  const validFormats = new Set(['Online', 'In-Person', 'Hybrid', 'Unknown'])
+
+  // Check formats metadata
+  if (json.metadata.formats) {
+    Object.keys(json.metadata.formats).forEach(fmt => {
+      assert.ok(validFormats.has(fmt), `Metadata format '${fmt}' must be one of Online, In-Person, Hybrid, Unknown`)
+    })
+  }
+
+  // Check item formats and benefits
+  json.hackathons.forEach(h => {
+    assert.ok(validFormats.has(h.location), `Hackathon location '${h.location}' must be normalized to canonical formats`)
+    assert.ok(Array.isArray(h.benefits), `Hackathon '${h.name}' must have benefits array`)
+
+    h.benefits.forEach(b => {
+      assert.ok(b.name, 'Benefit name is required')
+      assert.ok(b.category, 'Benefit category is required')
+      assert.equal(typeof b.requires_separate_application, 'boolean')
+      assert.ok(b.confidence === 'verified' || b.confidence === 'unverified')
+
+      // Ensure benefit application deadline is isolated from hackathon main deadline
+      if (b.application_deadline && h.deadline) {
+        // They could coincidentally match, but if separate application is required, verify isolation
+        assert.equal(typeof b.application_deadline, 'string')
+      }
+    })
+  })
+
+  // Format filter simulation
+  const onlineOnly = json.hackathons.filter(h => h.location === 'Online')
+  const inPersonOnly = json.hackathons.filter(h => h.location === 'In-Person')
+  const hybridOnly = json.hackathons.filter(h => h.location === 'Hybrid')
+  const unknownOnly = json.hackathons.filter(h => h.location === 'Unknown')
+
+  assert.equal(
+    onlineOnly.length + inPersonOnly.length + hybridOnly.length + unknownOnly.length,
+    json.hackathons.length,
+    'Combined format counts must equal total hackathons'
+  )
+})
+

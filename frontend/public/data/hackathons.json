@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "1.0.0",
-    "generated_at": "2026-10-17T06:51:54.244902+00:00",
+    "generated_at": "2026-10-17T14:56:46.449130+00:00",
     "total_count": 51,
     "active_count": 19,
     "open_count": 19,
@@ -14,6 +14,13 @@
       "Unstop": 22,
       "MockSuccessSource": 1
     },
+    "formats": {
+      "Online": 43,
+      "In-Person": 8,
+      "Hybrid": 0,
+      "Unknown": 0
+    },
+    "benefits_count": 4,
     "supplementary_links": [
       {
         "name": "All open hackathons",
@@ -58,6 +65,7 @@
       "prize": "Unknown",
       "location": "In-Person",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:40:39.328858+00:00",
       "updated_at": "2026-10-17T06:42:24.392699+00:00"
     },
@@ -81,6 +89,7 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:40:39.329343+00:00",
       "updated_at": "2026-10-17T06:42:24.397303+00:00"
     },
@@ -104,6 +113,7 @@
       "prize": "Unknown",
       "location": "In-Person",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:42:05.528453+00:00",
       "updated_at": "2026-10-17T06:42:24.401528+00:00"
     },
@@ -127,6 +137,7 @@
       "prize": "Unknown",
       "location": "In-Person",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:42:22.156334+00:00",
       "updated_at": "2026-10-17T06:42:22.156334+00:00"
     },
@@ -150,6 +161,7 @@
       "prize": "Unknown",
       "location": "In-Person",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:42:22.157310+00:00",
       "updated_at": "2026-10-17T06:42:22.157310+00:00"
     },
@@ -174,6 +186,7 @@
       "prize": "Unknown",
       "location": "In-Person",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:42:22.156825+00:00",
       "updated_at": "2026-10-17T06:42:22.156825+00:00"
     },
@@ -199,6 +212,7 @@
       "prize": "Unknown",
       "location": "In-Person",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:42:22.157738+00:00",
       "updated_at": "2026-10-17T06:42:22.157738+00:00"
     },
@@ -222,6 +236,7 @@
       "prize": "Unknown",
       "location": "In-Person",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:42:22.158603+00:00",
       "updated_at": "2026-10-17T06:42:22.158603+00:00"
     },
@@ -245,6 +260,7 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:42:22.158163+00:00",
       "updated_at": "2026-10-17T06:42:22.158163+00:00"
     },
@@ -270,6 +286,7 @@
       "prize": "$<span data-currency-value>138,000</span>",
       "location": "Online",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:40:38.681773+00:00",
       "updated_at": "2026-10-17T06:42:24.355492+00:00"
     },
@@ -293,6 +310,7 @@
       "prize": "Unknown",
       "location": "In-Person",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:42:22.159035+00:00",
       "updated_at": "2026-10-17T06:42:22.159035+00:00"
     },
@@ -318,6 +336,7 @@
       "prize": "$<span data-currency-value>2,500</span>",
       "location": "Online",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:40:38.682738+00:00",
       "updated_at": "2026-10-17T06:42:24.367781+00:00"
     },
@@ -343,6 +362,7 @@
       "prize": "$<span data-currency-value>45,000</span>",
       "location": "Online",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:40:38.683693+00:00",
       "updated_at": "2026-10-17T06:42:24.380515+00:00"
     },
@@ -368,6 +388,20 @@
       "prize": "$<span data-currency-value>20,250</span>",
       "location": "Online",
       "status": "open",
+      "benefits": [
+        {
+          "id": "d42e9e7a-aws",
+          "name": "AWS Cloud Credits",
+          "category": "Cloud Credits",
+          "description": "Cloud compute and AI services credits provided by Amazon Web Services for hackathon projects.",
+          "requires_separate_application": false,
+          "application_deadline": null,
+          "application_url": null,
+          "source_url": "https://opencv26.devpost.com",
+          "eligibility": "Registered participants building on AWS cloud infrastructure.",
+          "confidence": "unverified"
+        }
+      ],
       "created_at": "2026-10-17T06:40:38.683061+00:00",
       "updated_at": "2026-10-17T06:42:24.372534+00:00"
     },
@@ -393,6 +427,20 @@
       "prize": "$<span data-currency-value>40,000</span>",
       "location": "Online",
       "status": "open",
+      "benefits": [
+        {
+          "id": "217df90a-aws",
+          "name": "AWS Cloud Credits",
+          "category": "Cloud Credits",
+          "description": "Cloud compute and AI services credits provided by Amazon Web Services for hackathon projects.",
+          "requires_separate_application": false,
+          "application_deadline": null,
+          "application_url": null,
+          "source_url": "https://aws-cds-partner.devpost.com",
+          "eligibility": "Registered participants building on AWS cloud infrastructure.",
+          "confidence": "verified"
+        }
+      ],
       "created_at": "2026-10-17T06:40:38.684520+00:00",
       "updated_at": "2026-10-17T06:42:24.388206+00:00"
     },
@@ -416,6 +464,7 @@
       "prize": "$<span data-currency-value>25,000</span>",
       "location": "Online",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:40:38.684002+00:00",
       "updated_at": "2026-10-17T06:42:24.384093+00:00"
     },
@@ -441,6 +490,7 @@
       "prize": "$<span data-currency-value>50,000</span>",
       "location": "Online",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:40:38.682065+00:00",
       "updated_at": "2026-10-17T06:42:24.359689+00:00"
     },
@@ -466,6 +516,7 @@
       "prize": "$<span data-currency-value>67,500</span>",
       "location": "Online",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:40:38.682393+00:00",
       "updated_at": "2026-10-17T06:42:24.363975+00:00"
     },
@@ -491,6 +542,7 @@
       "prize": "$<span data-currency-value>1,000,000</span>",
       "location": "Online",
       "status": "open",
+      "benefits": [],
       "created_at": "2026-10-17T06:40:38.683379+00:00",
       "updated_at": "2026-10-17T06:42:24.376570+00:00"
     },
@@ -512,8 +564,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239919+00:00"
+      "updated_at": "2026-10-17T14:56:46.438989+00:00"
     },
     {
       "id": "863b2660d63ccf9e3916e6d425e4df375eb9c1a6d6947be0954244231cc83025",
@@ -533,8 +586,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239923+00:00"
+      "updated_at": "2026-10-17T14:56:46.438997+00:00"
     },
     {
       "id": "2e6c0f133c15d8279975d9e9996d93de7d9ffb7a114d7217dcfeb255793c0095",
@@ -554,8 +608,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239929+00:00"
+      "updated_at": "2026-10-17T14:56:46.439007+00:00"
     },
     {
       "id": "1e350ef7a91e79ce0dc70afca06caa15cc0198734b6eff8897b4a60efbdea3db",
@@ -575,8 +630,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239933+00:00"
+      "updated_at": "2026-10-17T14:56:46.439014+00:00"
     },
     {
       "id": "b84d948b3b8fb7ee5630f76e869fcec89e0ce6fb336a65d8f138140f8e30b9fa",
@@ -596,8 +652,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239937+00:00"
+      "updated_at": "2026-10-17T14:56:46.439021+00:00"
     },
     {
       "id": "3cc14a7e91c696dcc9d57864cdc693b0bb44ea210c7c97ddb122a75e83d0c935",
@@ -617,8 +674,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239941+00:00"
+      "updated_at": "2026-10-17T14:56:46.439028+00:00"
     },
     {
       "id": "4b72b57fa91f43a964e10037bdc4d7e5fa17c77a00a09d5d08609a37a4d9c9d1",
@@ -638,8 +696,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239945+00:00"
+      "updated_at": "2026-10-17T14:56:46.439036+00:00"
     },
     {
       "id": "7008c9c2e9f29c14cd1236257c3053c0115b512810e598a4d620e2f8a5f049a6",
@@ -659,8 +718,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239949+00:00"
+      "updated_at": "2026-10-17T14:56:46.439044+00:00"
     },
     {
       "id": "eadb892c70365ed745f7b60d95e59e089cc4a3c54ac768762ec4221481a85ea4",
@@ -680,8 +740,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239953+00:00"
+      "updated_at": "2026-10-17T14:56:46.439052+00:00"
     },
     {
       "id": "eb893bce2e08779dc093baad622fd5399fd20c955ccaf2c421d8b00a36c79d62",
@@ -701,8 +762,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239957+00:00"
+      "updated_at": "2026-10-17T14:56:46.439059+00:00"
     },
     {
       "id": "90bb965fea7d9dbedd3c1f939f84db29464b130bd8bba6341f57b0afdcf97b56",
@@ -722,8 +784,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239960+00:00"
+      "updated_at": "2026-10-17T14:56:46.439066+00:00"
     },
     {
       "id": "7375dcb5073e4e8b89590d3e82c879ec15139593e704bea7d1b6902faa72d2e3",
@@ -743,8 +806,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239964+00:00"
+      "updated_at": "2026-10-17T14:56:46.439074+00:00"
     },
     {
       "id": "b73d999846a98026a18f10677f749d7e944499da41a3305d4e73054487836489",
@@ -764,8 +828,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239968+00:00"
+      "updated_at": "2026-10-17T14:56:46.439081+00:00"
     },
     {
       "id": "9f337096839682debd5c24444e7c6feade90d304440c9f1f71c9bcb8dbdb995e",
@@ -785,8 +850,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239972+00:00"
+      "updated_at": "2026-10-17T14:56:46.439088+00:00"
     },
     {
       "id": "b5d2da4ae18af0a825483620b63beb24529c35148f9963c4b91ccc7b63acf11a",
@@ -806,8 +872,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239976+00:00"
+      "updated_at": "2026-10-17T14:56:46.439095+00:00"
     },
     {
       "id": "eb29ad4f548b7c5047067041105ef336ee279a57b993db0ffc5c8fae6cb87fed",
@@ -827,8 +894,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239979+00:00"
+      "updated_at": "2026-10-17T14:56:46.439106+00:00"
     },
     {
       "id": "e1d3248577c0ede09e18de1ec8826c1378052347788985e0bd6d29929736cda0",
@@ -848,8 +916,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239983+00:00"
+      "updated_at": "2026-10-17T14:56:46.439113+00:00"
     },
     {
       "id": "36c1fdfc244d341c69d3fc5f5bdf8d4ee3b0f6543de03250689cf35c04f3373a",
@@ -869,8 +938,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239987+00:00"
+      "updated_at": "2026-10-17T14:56:46.439121+00:00"
     },
     {
       "id": "28ef1bbca2a9a2c0811a6d4561c5cbfd6798a3a69d3c30a6a443478a7808e286",
@@ -890,8 +960,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239991+00:00"
+      "updated_at": "2026-10-17T14:56:46.439129+00:00"
     },
     {
       "id": "625bd3a2f66d727499736eaf73aa1649589d48e7167e3d243b3d4a57f494c779",
@@ -911,8 +982,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239996+00:00"
+      "updated_at": "2026-10-17T14:56:46.439136+00:00"
     },
     {
       "id": "7768463a2a430c0d93064381b9a48cfc7bf3f359cf88016ad5bc18d2ea4a0351",
@@ -932,8 +1004,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.240001+00:00"
+      "updated_at": "2026-10-17T14:56:46.439147+00:00"
     },
     {
       "id": "3582da0f0cd459300c3d444939dc4075a1af77d9ac5d865ae8ee043a2847c8dc",
@@ -953,8 +1026,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "unknown",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.240006+00:00"
+      "updated_at": "2026-10-17T14:56:46.439156+00:00"
     },
     {
       "id": "4abc3b427f7d2fae44938cc40562c2881802a0347d6de8402a542a2c79f8181c",
@@ -974,8 +1048,22 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "ended",
+      "benefits": [
+        {
+          "id": "4abc3b42-google cloud",
+          "name": "Google Cloud Credits",
+          "category": "Cloud Credits",
+          "description": "Google Cloud Platform compute and Vertex AI / Gemini API credits for participating teams.",
+          "requires_separate_application": false,
+          "application_deadline": null,
+          "application_url": null,
+          "source_url": "https://rapid-agent.devpost.com/",
+          "eligibility": "Registered teams deploying solutions on Google Cloud Platform.",
+          "confidence": "unverified"
+        }
+      ],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239886+00:00"
+      "updated_at": "2026-10-17T14:56:46.438927+00:00"
     },
     {
       "id": "fd6b58dd36d4228ef849a7bb36a11134b25160c3c7283f080aff9bb3a7813d2f",
@@ -995,8 +1083,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "ended",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239877+00:00"
+      "updated_at": "2026-10-17T14:56:46.438910+00:00"
     },
     {
       "id": "31848945503da1cb86fab826af483b9433504fd46d2e1e0d18701a56165a910f",
@@ -1016,8 +1105,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "ended",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239894+00:00"
+      "updated_at": "2026-10-17T14:56:46.438942+00:00"
     },
     {
       "id": "e8a16742404bc67c148b45b2fc9e484dfbd5a368ec0b182348b9d84c12a03351",
@@ -1037,8 +1127,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "ended",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239907+00:00"
+      "updated_at": "2026-10-17T14:56:46.438967+00:00"
     },
     {
       "id": "2d3c76beeee02ed0cbf6c33402b8f83dcab7254097399b738b6e0d9406b60b27",
@@ -1058,8 +1149,22 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "ended",
+      "benefits": [
+        {
+          "id": "2d3c76be-aws",
+          "name": "AWS Cloud Credits",
+          "category": "Cloud Credits",
+          "description": "Cloud compute and AI services credits provided by Amazon Web Services for hackathon projects.",
+          "requires_separate_application": false,
+          "application_deadline": null,
+          "application_url": null,
+          "source_url": "https://h01.devpost.com/",
+          "eligibility": "Registered participants building on AWS cloud infrastructure.",
+          "confidence": "unverified"
+        }
+      ],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239915+00:00"
+      "updated_at": "2026-10-17T14:56:46.438982+00:00"
     },
     {
       "id": "065d4daec9d044cf74a0a285c5a6680d7c584594af762842d7282bc1e24bbd34",
@@ -1079,8 +1184,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "ended",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239890+00:00"
+      "updated_at": "2026-10-17T14:56:46.438935+00:00"
     },
     {
       "id": "23f030779e4dfa9051951e0dfeb1aed60444f0a7aae9bd6b56cd41ba5527ce16",
@@ -1100,8 +1206,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "ended",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239911+00:00"
+      "updated_at": "2026-10-17T14:56:46.438975+00:00"
     },
     {
       "id": "44bbddce05894fce633024177e2d70372bb309238880f82dc8793cc878e82cde",
@@ -1121,8 +1228,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "ended",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239902+00:00"
+      "updated_at": "2026-10-17T14:56:46.438958+00:00"
     },
     {
       "id": "7c846eb5baf288c60f1f901616f75022b2eb1d000ffd08791f38d682c4900160",
@@ -1142,8 +1250,9 @@
       "prize": "Unknown",
       "location": "Online",
       "status": "ended",
+      "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T06:51:54.239898+00:00"
+      "updated_at": "2026-10-17T14:56:46.438950+00:00"
     },
     {
       "id": "ff50900daf9e3fa924b674d2248c0c26e939ebb212c5b94b207122087fa585ba",
@@ -1163,8 +1272,9 @@
       "prize": "$15,000",
       "location": "Online",
       "status": "ended",
+      "benefits": [],
       "created_at": "2026-10-16T18:14:10.783994+00:00",
-      "updated_at": "2026-10-17T06:50:17.936124+00:00"
+      "updated_at": "2026-10-17T14:42:19.023705+00:00"
     }
   ]
 }

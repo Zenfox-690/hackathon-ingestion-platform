@@ -7,6 +7,7 @@ from typing import Any, Dict, List, Optional
 
 import db.store as store
 from utils.dates import evaluate_hackathon_status, normalize_date
+from utils.format import normalize_participation_format
 
 DEFAULT_EXPORT_PATH = Path("data/hackathons.json")
 FRONTEND_EXPORT_PATH = Path("frontend/public/data/hackathons.json")
@@ -102,6 +103,16 @@ def merge_hackathon_records(
             merged_tags = sorted(list(set(curr.get("tags", []) + inc.get("tags", []))))
             merged["tags"] = merged_tags
 
+            # Benefits: prefer incoming benefits if non-empty, otherwise preserve current
+            inc_b = inc.get("benefits")
+            curr_b = curr.get("benefits")
+            if inc_b:
+                merged["benefits"] = inc_b
+            elif curr_b:
+                merged["benefits"] = curr_b
+            else:
+                merged["benefits"] = []
+
             # Update updated_at timestamp
             merged["updated_at"] = inc.get("updated_at") or datetime.datetime.now(datetime.timezone.utc).isoformat()
             by_identity[key] = merged
@@ -116,6 +127,8 @@ def merge_hackathon_records(
         clean_item["id"] = fp
         clean_item["title"] = clean_item.get("name") or clean_item.get("title") or ""
         clean_item["url"] = clean_item.get("link") or clean_item.get("url") or ""
+        clean_item["location"] = normalize_participation_format(clean_item.get("location"))
+        clean_item["benefits"] = clean_item.get("benefits") or []
 
         # Dynamic, timezone-aware status calculation
         status = evaluate_hackathon_status(
@@ -149,10 +162,12 @@ def build_catalog_payload(
 ) -> Dict[str, Any]:
     """Build the public JSON structure with sanitized metadata."""
     sources_count: Dict[str, int] = {}
+    formats_count: Dict[str, int] = {"Online": 0, "In-Person": 0, "Hybrid": 0, "Unknown": 0}
     open_count = 0
     upcoming_count = 0
     ended_count = 0
     unknown_count = 0
+    total_benefits = 0
 
     sanitized_records = []
     for r in records:
@@ -161,6 +176,9 @@ def build_catalog_payload(
 
         src = r.get("source", "Unknown")
         sources_count[src] = sources_count.get(src, 0) + 1
+
+        loc = normalize_participation_format(r.get("location"))
+        formats_count[loc] = formats_count.get(loc, 0) + 1
 
         st = r.get("status", "unknown")
         if st == "open":
@@ -171,6 +189,9 @@ def build_catalog_payload(
             ended_count += 1
         else:
             unknown_count += 1
+
+        b_list = r.get("benefits") or []
+        total_benefits += len(b_list)
 
         sanitized = {
             "id": r.get("id") or r.get("fingerprint"),
@@ -188,8 +209,9 @@ def build_catalog_payload(
             "description": r.get("description") or "",
             "tags": r.get("tags") or [],
             "prize": r.get("prize") or "Unknown",
-            "location": r.get("location") or "Online",
+            "location": loc,
             "status": st,
+            "benefits": b_list,
             "created_at": r.get("created_at") or "",
             "updated_at": r.get("updated_at") or "",
         }
@@ -207,6 +229,8 @@ def build_catalog_payload(
             "ended_count": ended_count,
             "unknown_count": unknown_count,
             "sources": sources_count,
+            "formats": formats_count,
+            "benefits_count": total_benefits,
             "supplementary_links": supplementary_links or [],
         },
         "hackathons": sanitized_records,

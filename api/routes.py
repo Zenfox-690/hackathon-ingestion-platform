@@ -38,6 +38,11 @@ def list_hackathons(
     status: Optional[str] = Query(
         None, pattern="^(actionable|open|upcoming|ended|past|unknown)$", description="Filter by event status"
     ),
+    format: Optional[str] = Query(
+        None,
+        pattern="^(Online|In-Person|Hybrid|Unknown|online|in-person|hybrid|unknown)$",
+        description="Filter by participation format",
+    ),
     sort_by: str = Query("deadline", pattern="^(deadline|name|created_at|source)$", description="Field to sort by"),
     order: str = Query("asc", pattern="^(asc|desc)$", description="Sort order"),
     page: int = Query(1, ge=1, description="Page number (1-indexed)"),
@@ -48,7 +53,15 @@ def list_hackathons(
     Excludes all private bot state, user chat IDs, and credentials.
     """
     total, total_pages, items = HackathonDataAdapter.query(
-        q=q, source=source, tag=tag, status=status, sort_by=sort_by, sort_order=order, page=page, limit=limit
+        q=q,
+        source=source,
+        tag=tag,
+        status=status,
+        format=format,
+        sort_by=sort_by,
+        sort_order=order,
+        page=page,
+        limit=limit,
     )
 
     return HackathonListResponse(

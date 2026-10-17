@@ -38,6 +38,11 @@ MIGRATIONS = [
         "description": "Add date granularity (reg_starts_at, reg_ends_at, starts_at, ends_at, source_status, is_section_link)",
         "sql": None,
     },
+    {
+        "version": 4,
+        "description": "Add benefits column for credit and perk discovery (SpecialBenefit JSON array)",
+        "sql": None,
+    },
 ]
 
 
@@ -138,6 +143,18 @@ def apply_migrations(conn: Optional[sqlite3.Connection] = None):
         cursor.execute(
             "INSERT INTO schema_migrations VALUES (?, ?, ?)",
             (3, datetime.datetime.now(datetime.timezone.utc).isoformat(), MIGRATIONS[2]["description"]),
+        )
+        conn.commit()
+
+    # Migration 4: Special benefits column
+    if 4 not in applied_versions:
+        cols = get_existing_columns(cursor, "hackathons")
+        if "benefits" not in cols:
+            cursor.execute("ALTER TABLE hackathons ADD COLUMN benefits TEXT DEFAULT '[]'")
+
+        cursor.execute(
+            "INSERT INTO schema_migrations VALUES (?, ?, ?)",
+            (4, datetime.datetime.now(datetime.timezone.utc).isoformat(), MIGRATIONS[3]["description"]),
         )
         conn.commit()
 

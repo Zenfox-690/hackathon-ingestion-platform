@@ -1,3 +1,15 @@
+export interface SpecialBenefit {
+  name: string
+  category: string
+  description?: string
+  requires_separate_application: boolean
+  application_deadline?: string | null
+  application_url?: string | null
+  source_url?: string | null
+  eligibility?: string | null
+  confidence: 'verified' | 'unverified'
+}
+
 export interface Hackathon {
   id: string
   fingerprint: string
@@ -14,8 +26,9 @@ export interface Hackathon {
   description?: string
   tags: string[]
   prize?: string
-  location?: string
+  location?: 'Online' | 'In-Person' | 'Hybrid' | 'Unknown' | string
   status: 'open' | 'upcoming' | 'ended' | 'unknown'
+  benefits?: SpecialBenefit[]
   is_section_link?: boolean
   created_at?: string
   updated_at?: string
@@ -37,6 +50,8 @@ export interface CatalogMetadata {
   ended_count?: number
   unknown_count?: number
   sources: Record<string, number>
+  formats?: Record<string, number>
+  benefits_count?: number
   supplementary_links?: SupplementaryLink[]
 }
 

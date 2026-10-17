@@ -7,7 +7,9 @@ from playwright.sync_api import sync_playwright
 from config import FETCH_LIMIT, HEADLESS
 from fetcher.base import BaseFetcher
 from fetcher.utils import validate_hackathon
+from filters.benefits import extract_special_benefits
 from utils.dates import normalize_date
+from utils.format import normalize_participation_format
 from utils.urls import canonicalize_url
 
 
@@ -66,10 +68,8 @@ def parse_unstop_cards_from_html(html_content, limit=FETCH_LIMIT):
         posted_match = re.search(r"\bPosted\s+([A-Za-z]+\s+\d+,\s+\d{4})", content, re.IGNORECASE)
         created_at_hint = normalize_date(posted_match.group(1)) if posted_match else ""
 
-        # Extract format (Online vs In-Person)
-        location = "Online"
-        if re.search(r"\bOffline|In-Person|On-Campus\b", content, re.IGNORECASE):
-            location = "In-Person"
+        # Extract format (Online, In-Person, Hybrid, Unknown)
+        location = normalize_participation_format(None, text_hints=content)
 
         # Extract organizer/university if available
         desc = ""
@@ -92,6 +92,7 @@ def parse_unstop_cards_from_html(html_content, limit=FETCH_LIMIT):
             "source": "Unstop",
             "created_at": created_at_hint or "",
         }
+        hackathon["benefits"] = extract_special_benefits(hackathon)
 
         if validate_hackathon(hackathon):
             hackathons.append(hackathon)
