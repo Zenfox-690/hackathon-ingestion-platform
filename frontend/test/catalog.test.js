@@ -159,3 +159,77 @@ test('Dynamic Status Freshness Evaluation and Controllable Clock', async () => {
   }
   assert.equal(computeLiveStatus(upcomingItem, clockBefore), 'upcoming')
 })
+
+test('Bookmark Persistence, Identity Stability, and Safe Storage', async () => {
+  const {
+    getHackathonIdentityKey,
+    loadSavedBookmarks,
+    persistSavedBookmarks,
+  } = await import('../src/bookmarks.ts')
+
+  // 1. Mock in-memory localStorage
+  const memoryStore = new Map()
+  const mockStorage = {
+    getItem: (key) => memoryStore.get(key) || null,
+    setItem: (key, val) => memoryStore.set(key, String(val)),
+    removeItem: (key) => memoryStore.delete(key),
+    clear: () => memoryStore.clear()
+  }
+
+  // 2. Initial load from empty storage
+  const initial = loadSavedBookmarks(mockStorage)
+  assert.equal(initial.size, 0, 'Initial saved bookmarks should be empty')
+
+  // 3. Save bookmarks using stable canonical identity
+  const item1 = { id: 'devpost-123', link: 'https://devpost.com/hackathons/ai-summit-2026', name: 'AI Summit' }
+  const item2 = { id: 'devfolio-456', url: 'https://devfolio.co/hackathons/eth-denver-2026', name: 'ETH Denver' }
+  const key1 = getHackathonIdentityKey(item1)
+  const key2 = getHackathonIdentityKey(item2)
+
+  assert.equal(key1, 'https://devpost.com/hackathons/ai-summit-2026', 'Canonical link must be the primary key')
+  assert.equal(key2, 'https://devfolio.co/hackathons/eth-denver-2026', 'Canonical url must be used when link is omitted')
+
+  const toSave = new Set([key1, key2])
+  const persisted = persistSavedBookmarks(toSave, mockStorage)
+  assert.equal(persisted, true)
+
+  // 4. Reload from storage (simulate page refresh)
+  const reloaded = loadSavedBookmarks(mockStorage)
+  assert.equal(reloaded.size, 2)
+  assert.ok(reloaded.has(key1))
+  assert.ok(reloaded.has(key2))
+
+  // 5. Unsave / toggle item
+  toSave.delete(key1)
+  persistSavedBookmarks(toSave, mockStorage)
+  const afterUnsave = loadSavedBookmarks(mockStorage)
+  assert.equal(afterUnsave.size, 1)
+  assert.ok(!afterUnsave.has(key1))
+  assert.ok(afterUnsave.has(key2))
+
+  // 6. Stability across catalog updates:
+  // If the listing's ID changes (e.g. re-indexing) or date updates, canonical URL still matches
+  const updatedItem2 = { id: 'devfolio-999-new-id', link: 'https://devfolio.co/hackathons/eth-denver-2026', deadline: '2026-12-31' }
+  const updatedKey2 = getHackathonIdentityKey(updatedItem2)
+  assert.ok(afterUnsave.has(updatedKey2), 'Bookmark must persist across catalog record updates with changed id')
+
+  // 7. Graceful error handling for missing/malformed storage
+  const nullLoaded = loadSavedBookmarks(null)
+  assert.equal(nullLoaded.size, 0, 'Must handle null storage gracefully')
+
+  const corruptedStorage = {
+    getItem: () => '{ invalid json garbage %%%',
+    setItem: () => {}
+  }
+  const corruptedLoaded = loadSavedBookmarks(corruptedStorage)
+  assert.equal(corruptedLoaded.size, 0, 'Must handle corrupted JSON gracefully without throwing')
+
+  const throwingStorage = {
+    getItem: () => { throw new Error('SecurityError: localStorage denied') },
+    setItem: () => { throw new Error('QuotaExceededError') }
+  }
+  assert.doesNotThrow(() => {
+    loadSavedBookmarks(throwingStorage)
+    persistSavedBookmarks(new Set(['test']), throwingStorage)
+  }, 'Must handle throwing storage gracefully')
+})

@@ -449,6 +449,62 @@ body {
   border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
+/* Bookmark Button */
+.bookmark-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-muted);
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.bookmark-btn:hover {
+  background: rgba(244, 63, 94, 0.15);
+  border-color: rgba(244, 63, 94, 0.35);
+  color: #fb7185;
+  transform: translateY(-1px);
+}
+
+.bookmark-btn.bookmarked {
+  background: rgba(244, 63, 94, 0.2);
+  border-color: rgba(244, 63, 94, 0.5);
+  color: #f43f5e;
+}
+
+.bookmark-btn.bookmarked:hover {
+  background: rgba(244, 63, 94, 0.3);
+  border-color: rgba(244, 63, 94, 0.7);
+  color: #fda4af;
+}
+
+.bookmark-btn:focus-visible {
+  outline: 2px solid var(--accent-rose);
+  outline-offset: 2px;
+}
+
+.stat-card.interactive {
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card.interactive:hover {
+  transform: translateY(-2px);
+  border-color: rgba(244, 63, 94, 0.4);
+}
+
+.stat-card.interactive.active-stat {
+  border-color: rgba(244, 63, 94, 0.6);
+  background: rgba(244, 63, 94, 0.1);
+  box-shadow: 0 0 16px rgba(244, 63, 94, 0.2);
+}
+
 .card-title {
   font-size: 1.25rem;
   font-weight: 700;

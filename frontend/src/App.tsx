@@ -17,10 +17,17 @@ import {
   ChevronUp,
   AlertTriangle,
   ShieldCheck,
-  Sparkles
+  Sparkles,
+  Bookmark
 } from 'lucide-react'
 import type { CatalogResponse, SpecialBenefit } from './types'
 import { computeLiveStatus } from './status'
+import {
+  loadSavedBookmarks,
+  persistSavedBookmarks,
+  getHackathonIdentityKey
+} from './bookmarks'
+import type { BookmarkableItem } from './bookmarks'
 
 
 export const App: React.FC<{ initialNow?: Date }> = ({ initialNow }) => {
@@ -36,6 +43,24 @@ export const App: React.FC<{ initialNow?: Date }> = ({ initialNow }) => {
   const [selectedFormat, setSelectedFormat] = useState<string>('all')
   const [selectedTag, setSelectedTag] = useState<string>('all')
   const [sortBy, setSortBy] = useState<string>('deadline-asc')
+
+  // Saved / Bookmarked hackathons state persisted in localStorage
+  const [savedKeys, setSavedKeys] = useState<Set<string>>(() => loadSavedBookmarks())
+
+  const toggleBookmark = (item: BookmarkableItem) => {
+    const key = getHackathonIdentityKey(item)
+    if (!key) return
+    setSavedKeys(prev => {
+      const next = new Set(prev)
+      if (next.has(key)) {
+        next.delete(key)
+      } else {
+        next.add(key)
+      }
+      persistSavedBookmarks(next)
+      return next
+    })
+  }
 
   // Expanded benefits state per hackathon card
   const [expandedBenefits, setExpandedBenefits] = useState<Record<string, boolean>>({})
@@ -139,8 +164,11 @@ export const App: React.FC<{ initialNow?: Date }> = ({ initialNow }) => {
           }
         }
 
-        // Status filter: Dynamic live status segregation
-        if (selectedStatus === 'actionable') {
+        // Status filter: Dynamic live status segregation & Saved bookmarks view
+        if (selectedStatus === 'saved') {
+          const itemKey = getHackathonIdentityKey(item)
+          if (!savedKeys.has(itemKey)) return false
+        } else if (selectedStatus === 'actionable') {
           if (liveStatus !== 'open' && liveStatus !== 'upcoming') return false
         } else if (selectedStatus === 'open') {
           if (liveStatus !== 'open') return false
@@ -173,7 +201,13 @@ export const App: React.FC<{ initialNow?: Date }> = ({ initialNow }) => {
         }
         return 0
       })
-  }, [data, searchQuery, selectedSource, selectedFormat, selectedStatus, selectedTag, sortBy, clockTime])
+  }, [data, searchQuery, selectedSource, selectedFormat, selectedStatus, selectedTag, sortBy, clockTime, savedKeys])
+
+  // Count of saved hackathons present in loaded catalog
+  const savedCatalogCount = useMemo(() => {
+    if (!data) return savedKeys.size
+    return data.hackathons.filter(h => savedKeys.has(getHackathonIdentityKey(h))).length
+  }, [data, savedKeys])
 
   const resetFilters = () => {
     setSearchQuery('')
@@ -335,6 +369,23 @@ export const App: React.FC<{ initialNow?: Date }> = ({ initialNow }) => {
                 {data.hackathons.reduce((acc, h) => acc + (h.benefits?.filter(b => b.confidence === 'verified').length || 0), 0)} Verified
               </span>
             </div>
+            <div
+              className={`stat-card interactive ${selectedStatus === 'saved' ? 'active-stat' : ''}`}
+              onClick={() => setSelectedStatus(selectedStatus === 'saved' ? 'actionable' : 'saved')}
+              role="button"
+              tabIndex={0}
+              title="Click to view saved hackathons"
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  setSelectedStatus(selectedStatus === 'saved' ? 'actionable' : 'saved')
+                }
+              }}
+            >
+              <span className="stat-label">Saved Bookmarks</span>
+              <span className="stat-value" style={{ color: '#f43f5e' }}>
+                {savedCatalogCount} Saved
+              </span>
+            </div>
           </div>
         )}
       </header>
@@ -425,6 +476,19 @@ export const App: React.FC<{ initialNow?: Date }> = ({ initialNow }) => {
               title="Show hackathons with active or upcoming registrations"
             >
               ⭐ Active Opportunities
+            </button>
+            <button
+              className={`filter-pill ${selectedStatus === 'saved' ? 'active' : ''}`}
+              onClick={() => setSelectedStatus('saved')}
+              aria-label={`View ${savedCatalogCount} saved hackathons`}
+              title="View bookmarked hackathons"
+              style={selectedStatus === 'saved' ? { borderColor: 'rgba(244, 63, 94, 0.5)', background: 'rgba(244, 63, 94, 0.15)' } : undefined}
+            >
+              <Bookmark size={13} fill={selectedStatus === 'saved' ? 'currentColor' : 'none'} color={selectedStatus === 'saved' ? '#f43f5e' : undefined} />
+              Saved
+              <span className="count-chip" style={selectedStatus === 'saved' ? { background: 'rgba(244, 63, 94, 0.3)' } : undefined}>
+                {savedCatalogCount}
+              </span>
             </button>
             <button
               className={`filter-pill ${selectedStatus === 'open' ? 'active' : ''}`}
@@ -534,16 +598,39 @@ export const App: React.FC<{ initialNow?: Date }> = ({ initialNow }) => {
 
         {!loading && !error && filteredHackathons.length === 0 && (
           <div className="empty-state">
-            <Filter size={48} color="#6366f1" />
-            <h3>No hackathons matched your criteria</h3>
-            <p>
-              {selectedStatus === 'actionable'
-                ? 'No open or upcoming hackathons found for this filter. Check "Past / Closed" or "All" to view historical records.'
-                : 'Try adjusting your search query, platform, format, or status filter.'}
-            </p>
-            <button className="reset-btn" onClick={resetFilters}>
-              Reset Filters
-            </button>
+            {selectedStatus === 'saved' ? (
+              <>
+                <Bookmark size={48} color="#f43f5e" />
+                <h3>No Saved Hackathons</h3>
+                <p>
+                  {searchQuery || selectedSource !== 'all' || selectedFormat !== 'all' || selectedTag !== 'all'
+                    ? 'No saved hackathons matched your active filters. Try clearing search filters or browse active opportunities.'
+                    : 'You have not saved any hackathons yet. Click the bookmark icon on any hackathon card to save it here for quick access. Saved items persist across page refreshes in your browser.'}
+                </p>
+                <button
+                  className="reset-btn"
+                  onClick={() => {
+                    resetFilters()
+                    setSelectedStatus('actionable')
+                  }}
+                >
+                  Browse Active Opportunities
+                </button>
+              </>
+            ) : (
+              <>
+                <Filter size={48} color="#6366f1" />
+                <h3>No hackathons matched your criteria</h3>
+                <p>
+                  {selectedStatus === 'actionable'
+                    ? 'No open or upcoming hackathons found for this filter. Check "Past / Closed" or "All" to view historical records.'
+                    : 'Try adjusting your search query, platform, format, or status filter.'}
+                </p>
+                <button className="reset-btn" onClick={resetFilters}>
+                  Reset Filters
+                </button>
+              </>
+            )}
           </div>
         )}
 
@@ -552,6 +639,7 @@ export const App: React.FC<{ initialNow?: Date }> = ({ initialNow }) => {
             <div style={{ marginBottom: '1.25rem', fontSize: '0.9rem', color: '#94a3b8' }}>
               Showing {filteredHackathons.length} hackathons{' '}
               {selectedStatus === 'actionable' && '(Active & Open Opportunities)'}
+              {selectedStatus === 'saved' && '(Saved Bookmarks)'}
             </div>
             <div className="cards-grid">
               {filteredHackathons.map(item => {
@@ -560,11 +648,13 @@ export const App: React.FC<{ initialNow?: Date }> = ({ initialNow }) => {
                 const verifiedBenefits = (item.benefits || []).filter(b => b.confidence === 'verified')
                 const hasBenefits = verifiedBenefits.length > 0
                 const isExpanded = Boolean(expandedBenefits[item.id])
+                const itemIdentityKey = getHackathonIdentityKey(item)
+                const isBookmarked = savedKeys.has(itemIdentityKey)
 
                 return (
                   <article key={item.id} className="hackathon-card">
                     <div>
-                      {/* Header Row: Source Badge, Format Badge & Status */}
+                      {/* Header Row: Source Badge, Format Badge, Status & Bookmark Toggle */}
                       <div className="card-header-row">
                         <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
                           <span className={`source-badge ${item.source || 'Other'}`}>{item.source}</span>
@@ -572,28 +662,44 @@ export const App: React.FC<{ initialNow?: Date }> = ({ initialNow }) => {
                             {formatLabel}
                           </span>
                         </div>
-                        <span className={`status-pill ${liveStatus}`}>
-                          {liveStatus === 'open' && (
-                            <>
-                              <CheckCircle2 size={12} /> Open for Registration
-                            </>
-                          )}
-                          {liveStatus === 'upcoming' && (
-                            <>
-                              <Clock size={12} /> Opens Soon
-                            </>
-                          )}
-                          {liveStatus === 'ended' && (
-                            <>
-                              <span>●</span> Registration Closed
-                            </>
-                          )}
-                          {liveStatus === 'unknown' && (
-                            <>
-                              <HelpCircle size={12} /> Unverified Deadline
-                            </>
-                          )}
-                        </span>
+                        <div style={{ display: 'flex', gap: '0.45rem', alignItems: 'center' }}>
+                          <span className={`status-pill ${liveStatus}`}>
+                            {liveStatus === 'open' && (
+                              <>
+                                <CheckCircle2 size={12} /> Open for Registration
+                              </>
+                            )}
+                            {liveStatus === 'upcoming' && (
+                              <>
+                                <Clock size={12} /> Opens Soon
+                              </>
+                            )}
+                            {liveStatus === 'ended' && (
+                              <>
+                                <span>●</span> Registration Closed
+                              </>
+                            )}
+                            {liveStatus === 'unknown' && (
+                              <>
+                                <HelpCircle size={12} /> Unverified Deadline
+                              </>
+                            )}
+                          </span>
+                          <button
+                            type="button"
+                            className={`bookmark-btn ${isBookmarked ? 'bookmarked' : ''}`}
+                            onClick={e => {
+                              e.preventDefault()
+                              e.stopPropagation()
+                              toggleBookmark(item)
+                            }}
+                            aria-label={isBookmarked ? `Remove ${item.name} from saved bookmarks` : `Save ${item.name} to bookmarks`}
+                            aria-pressed={isBookmarked}
+                            title={isBookmarked ? 'Remove from saved' : 'Save hackathon'}
+                          >
+                            <Bookmark size={14} fill={isBookmarked ? 'currentColor' : 'none'} />
+                          </button>
+                        </div>
                       </div>
 
                       {/* Title */}
