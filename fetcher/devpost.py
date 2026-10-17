@@ -79,8 +79,7 @@ def fetch_hackathons(timeout: int = 15) -> List[Dict[str, Any]]:
         data = response.json()
         return parse_devpost_items(data.get("hackathons", []))
     except requests.RequestException as e:
-        print(f"[ERROR] Devpost fetch failed: {e}")
-        return []
+        raise RuntimeError(f"Devpost API request failed: {e}") from e
 
 
 class DevpostFetcher(BaseFetcher):

@@ -13,7 +13,11 @@ if hasattr(sys.stderr, "reconfigure"):
 
 def run_pipeline(notify_telegram: bool = True, auto_export: bool = True):
     pipeline = IngestionPipeline(notify_telegram=notify_telegram, auto_export=auto_export)
-    return pipeline.run()
+    summary = pipeline.run()
+    if not summary.is_success:
+        print("[MAIN] Ingestion pipeline failed minimum success criteria. Halting with exit code 1.")
+        sys.exit(1)
+    return summary
 
 
 def main():

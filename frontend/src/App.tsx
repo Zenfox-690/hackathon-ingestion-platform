@@ -20,11 +20,14 @@ import {
   Sparkles
 } from 'lucide-react'
 import type { CatalogResponse, SpecialBenefit } from './types'
+import { computeLiveStatus } from './status'
 
-export const App: React.FC = () => {
+
+export const App: React.FC<{ initialNow?: Date }> = ({ initialNow }) => {
   const [data, setData] = useState<CatalogResponse | null>(null)
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
+  const [clockTime] = useState<Date>(() => initialNow || new Date())
 
   // Filters & Search
   const [searchQuery, setSearchQuery] = useState<string>('')
@@ -99,7 +102,7 @@ export const App: React.FC = () => {
     return Array.from(tagSet).sort()
   }, [data])
 
-  // Filtered & sorted hackathons
+  // Filtered & sorted hackathons with dynamic live status evaluation
   const filteredHackathons = useMemo(() => {
     if (!data) return []
 
@@ -107,6 +110,8 @@ export const App: React.FC = () => {
       .filter(item => {
         // Exclude section links from hackathon card grid
         if (item.is_section_link) return false
+
+        const liveStatus = computeLiveStatus(item, clockTime)
 
         // Text search
         if (searchQuery.trim()) {
@@ -134,17 +139,17 @@ export const App: React.FC = () => {
           }
         }
 
-        // Status filter: Strict segregation of active opportunities vs expired/unknown
+        // Status filter: Dynamic live status segregation
         if (selectedStatus === 'actionable') {
-          if (item.status !== 'open' && item.status !== 'upcoming') return false
+          if (liveStatus !== 'open' && liveStatus !== 'upcoming') return false
         } else if (selectedStatus === 'open') {
-          if (item.status !== 'open') return false
+          if (liveStatus !== 'open') return false
         } else if (selectedStatus === 'upcoming') {
-          if (item.status !== 'upcoming') return false
+          if (liveStatus !== 'upcoming') return false
         } else if (selectedStatus === 'ended') {
-          if (item.status !== 'ended') return false
+          if (liveStatus !== 'ended') return false
         } else if (selectedStatus === 'unknown') {
-          if (item.status !== 'unknown') return false
+          if (liveStatus !== 'unknown') return false
         }
 
         // Tag filter
@@ -168,7 +173,7 @@ export const App: React.FC = () => {
         }
         return 0
       })
-  }, [data, searchQuery, selectedSource, selectedFormat, selectedStatus, selectedTag, sortBy])
+  }, [data, searchQuery, selectedSource, selectedFormat, selectedStatus, selectedTag, sortBy, clockTime])
 
   const resetFilters = () => {
     setSearchQuery('')
@@ -193,10 +198,35 @@ export const App: React.FC = () => {
     return dl
   }
 
-  // Derive reference time deterministically from catalog metadata timestamp
-  const referenceTime = data?.metadata?.generated_at
-    ? new Date(data.metadata.generated_at).getTime()
-    : 0
+  // Derive reference time for benefit deadlines
+  const referenceTime = clockTime.getTime()
+
+  // Communicate catalog age accurately
+  const catalogAge = useMemo(() => {
+    if (!data?.metadata?.generated_at) return null
+    const genTime = new Date(data.metadata.generated_at).getTime()
+    if (isNaN(genTime)) return null
+    const diffMs = clockTime.getTime() - genTime
+    const diffHours = Math.floor(diffMs / (1000 * 60 * 60))
+    const diffDays = Math.floor(diffHours / 24)
+    const formatted = new Date(data.metadata.generated_at).toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    })
+    if (diffHours >= 24) {
+      return {
+        isStale: true,
+        label: `Catalogue snapshot from ${formatted} (${diffDays}d ago • Stale)`
+      }
+    }
+    return {
+      isStale: false,
+      label: `Updated ${formatted}`
+    }
+  }, [data, clockTime])
+
 
   // Separate evaluation for benefit application deadlines
   const evaluateBenefitDeadline = (deadlineStr?: string | null) => {
@@ -252,17 +282,18 @@ export const App: React.FC = () => {
             <span>Live Hackathon Ingestion Hub</span>
           </div>
 
-          {data && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: '#94a3b8' }}>
-              <Clock size={14} />
-              <span>
-                Updated {new Date(data.metadata.generated_at).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit'
-                })}
-              </span>
+          {catalogAge && (
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                fontSize: '0.85rem',
+                color: catalogAge.isStale ? '#fbbf24' : '#94a3b8',
+              }}
+            >
+              {catalogAge.isStale ? <AlertTriangle size={14} /> : <Clock size={14} />}
+              <span>{catalogAge.label}</span>
             </div>
           )}
         </div>
@@ -278,13 +309,16 @@ export const App: React.FC = () => {
             <div className="stat-card">
               <span className="stat-label">Active Opportunities</span>
               <span className="stat-value" style={{ color: '#34d399' }}>
-                {data.metadata.active_count ?? data.hackathons.filter(h => h.status === 'open' || h.status === 'upcoming').length}
+                {data.hackathons.filter(h => {
+                  const s = computeLiveStatus(h, clockTime)
+                  return s === 'open' || s === 'upcoming'
+                }).length}
               </span>
             </div>
             <div className="stat-card">
               <span className="stat-label">Open for Registration</span>
               <span className="stat-value" style={{ color: '#60a5fa' }}>
-                {data.metadata.open_count ?? data.hackathons.filter(h => h.status === 'open').length}
+                {data.hackathons.filter(h => computeLiveStatus(h, clockTime) === 'open').length}
               </span>
             </div>
             <div className="stat-card">
@@ -298,12 +332,13 @@ export const App: React.FC = () => {
             <div className="stat-card">
               <span className="stat-label">Special Benefits</span>
               <span className="stat-value" style={{ color: '#a78bfa' }}>
-                {data.metadata.benefits_count ?? data.hackathons.reduce((acc, h) => acc + (h.benefits?.length || 0), 0)} Verified
+                {data.hackathons.reduce((acc, h) => acc + (h.benefits?.filter(b => b.confidence === 'verified').length || 0), 0)} Verified
               </span>
             </div>
           </div>
         )}
       </header>
+
 
       {/* Supplementary Navigation Portals */}
       {data?.metadata?.supplementary_links && data.metadata.supplementary_links.length > 0 && (
@@ -520,8 +555,10 @@ export const App: React.FC = () => {
             </div>
             <div className="cards-grid">
               {filteredHackathons.map(item => {
+                const liveStatus = computeLiveStatus(item, clockTime)
                 const formatLabel = item.location || 'Unknown'
-                const hasBenefits = Boolean(item.benefits && item.benefits.length > 0)
+                const verifiedBenefits = (item.benefits || []).filter(b => b.confidence === 'verified')
+                const hasBenefits = verifiedBenefits.length > 0
                 const isExpanded = Boolean(expandedBenefits[item.id])
 
                 return (
@@ -535,23 +572,23 @@ export const App: React.FC = () => {
                             {formatLabel}
                           </span>
                         </div>
-                        <span className={`status-pill ${item.status}`}>
-                          {item.status === 'open' && (
+                        <span className={`status-pill ${liveStatus}`}>
+                          {liveStatus === 'open' && (
                             <>
                               <CheckCircle2 size={12} /> Open for Registration
                             </>
                           )}
-                          {item.status === 'upcoming' && (
+                          {liveStatus === 'upcoming' && (
                             <>
                               <Clock size={12} /> Opens Soon
                             </>
                           )}
-                          {item.status === 'ended' && (
+                          {liveStatus === 'ended' && (
                             <>
                               <span>●</span> Registration Closed
                             </>
                           )}
-                          {item.status === 'unknown' && (
+                          {liveStatus === 'unknown' && (
                             <>
                               <HelpCircle size={12} /> Unverified Deadline
                             </>
@@ -613,7 +650,7 @@ export const App: React.FC = () => {
                           <Gift size={14} />
                           <span style={{ fontWeight: 600 }}>
                             {hasBenefits
-                              ? `Special Benefits & Credits (${item.benefits!.length})`
+                              ? `Special Benefits & Credits (${verifiedBenefits.length})`
                               : 'Special Benefits & Credits'}
                           </span>
                           {hasBenefits && (
@@ -628,7 +665,7 @@ export const App: React.FC = () => {
                       {isExpanded && (
                         <div className="benefits-drawer">
                           {hasBenefits ? (
-                            item.benefits!.map((b: SpecialBenefit, idx: number) => {
+                            verifiedBenefits.map((b: SpecialBenefit, idx: number) => {
                               const dlInfo = evaluateBenefitDeadline(b.application_deadline)
 
                               return (
@@ -645,6 +682,7 @@ export const App: React.FC = () => {
                                   </div>
 
                                   {b.description && <p className="benefit-desc">{b.description}</p>}
+
 
                                   {/* Benefit Application Deadline Warning/Status */}
                                   <div className={`benefit-deadline-pill ${dlInfo.status}`}>
@@ -726,11 +764,12 @@ export const App: React.FC = () => {
                       aria-label={`View ${item.name} on ${item.source}`}
                     >
                       <span>
-                        {item.status === 'open'
+                        {liveStatus === 'open'
                           ? `Register on ${item.source}`
-                          : item.status === 'upcoming'
+                          : liveStatus === 'upcoming'
                           ? `View on ${item.source}`
                           : `View Archive on ${item.source}`}
+
                       </span>
                       <ExternalLink size={15} />
                     </a>

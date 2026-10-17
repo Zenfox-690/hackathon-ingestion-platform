@@ -132,3 +132,30 @@ test('Format Normalization and Benefits Contract Verification', () => {
   )
 })
 
+test('Dynamic Status Freshness Evaluation and Controllable Clock', async () => {
+  const { computeLiveStatus } = await import('../src/status.ts')
+
+  // Item exported as 'open' with deadline 2026-10-15
+  const item = {
+    name: 'Dynamic Hack',
+    deadline: '2026-10-15',
+    status: 'open'
+  }
+
+  // 1. Clock before deadline on the same day (10:00 AM UTC): should be OPEN because date-only is EOD (23:59:59)
+  const clockBefore = new Date('2026-10-15T10:00:00Z')
+  assert.equal(computeLiveStatus(item, clockBefore), 'open', 'Must be open during the day for date-only deadline')
+
+  // 2. Clock after deadline (2026-10-16T00:00:01Z): should dynamically transition to ENDED
+  const clockAfter = new Date('2026-10-16T00:00:01Z')
+  assert.equal(computeLiveStatus(item, clockAfter), 'ended', 'Must dynamically compute ended once deadline passes')
+
+  // 3. Item with future registration start: should be UPCOMING
+  const upcomingItem = {
+    name: 'Future Registration Hack',
+    reg_starts_at: '2026-11-01T00:00:00Z',
+    deadline: '2026-12-01T00:00:00Z',
+    status: 'open'
+  }
+  assert.equal(computeLiveStatus(upcomingItem, clockBefore), 'upcoming')
+})

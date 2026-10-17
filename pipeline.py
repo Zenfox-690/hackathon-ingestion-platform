@@ -36,12 +36,14 @@ class PipelineRunSummary:
     sources: Dict[str, SourceRunMetric] = field(default_factory=dict)
     duration_seconds: float = 0.0
     export_successful: bool = False
+    is_success: bool = False
 
     def print_summary(self):
         print("\n" + "=" * 50)
         print("         INGESTION PIPELINE RUN SUMMARY")
         print("=" * 50)
         print(f"Total Duration:     {self.duration_seconds:.2f}s")
+        print(f"Operational Health: {'PASS' if self.is_success else 'FAILED CRITERIA'}")
         print(f"Total Fetched:      {self.total_fetched}")
         print(f"Total Accepted:     {self.total_accepted}")
         print(f"Total Rejected:     {self.total_rejected}")
@@ -67,15 +69,23 @@ class PipelineRunSummary:
 
 class IngestionPipeline:
     def __init__(
-        self, fetchers: Optional[List[BaseFetcher]] = None, notify_telegram: bool = True, auto_export: bool = True
+        self,
+        fetchers: Optional[List[BaseFetcher]] = None,
+        notify_telegram: bool = True,
+        auto_export: bool = True,
+        conn: Optional[Any] = None,
+        min_operational_sources: int = 1,
     ):
         self.fetchers = fetchers or [DevpostFetcher(), DevfolioFetcher(), UnstopFetcher()]
         self.notify_telegram = notify_telegram
         self.auto_export = auto_export
+        self.conn = conn
+        self.min_operational_sources = min_operational_sources
 
-    def run(self) -> PipelineRunSummary:
+    def run(self, conn_override: Optional[Any] = None) -> PipelineRunSummary:
         start_time = time.time()
         summary = PipelineRunSummary()
+        target_conn = conn_override or self.conn or store.get_connection()
 
         all_valid_hackathons: List[Dict[str, Any]] = []
 
@@ -115,7 +125,7 @@ class IngestionPipeline:
 
         # Ingest validated items into SQLite store with deduplication
         log(f"\n[PERSISTENCE] Ingesting {len(all_valid_hackathons)} validated records...")
-        new_items = store.get_new_hackathons(all_valid_hackathons)
+        new_items = store.get_new_hackathons(all_valid_hackathons, conn_override=target_conn)
         summary.total_new = len(new_items)
         summary.total_duplicates = len(all_valid_hackathons) - len(new_items)
 
@@ -128,15 +138,27 @@ class IngestionPipeline:
                 except Exception as e:
                     log(f"[TELEGRAM] Notification error: {e}")
 
+        # Evaluate minimum operational health criteria
+        # A source is operational if it fetched without unhandled error and produced valid accepted records
+        operational_sources = [name for name, m in summary.sources.items() if not m.error and m.accepted > 0]
+        summary.is_success = len(operational_sources) >= self.min_operational_sources and summary.total_accepted > 0
+
         # Export public catalog with failure-protection
         if self.auto_export:
-            try:
-                # If all sources failed and no hackathons accepted, exporter will preserve previous catalog
-                export_public_catalog()
-                summary.export_successful = True
-            except Exception as exp_err:
-                log(f"[EXPORTER] Catalog export failed: {exp_err}")
+            if not summary.is_success:
+                log(
+                    "[PIPELINE] Minimum success criteria not met (operational sources: "
+                    f"{len(operational_sources)}/{len(self.fetchers)}, accepted: {summary.total_accepted}). "
+                    "HALTING EXPORT: Preserving last known-good catalog without advancing timestamp."
+                )
                 summary.export_successful = False
+            else:
+                try:
+                    export_public_catalog(conn_override=target_conn)
+                    summary.export_successful = True
+                except Exception as exp_err:
+                    log(f"[EXPORTER] Catalog export failed: {exp_err}")
+                    summary.export_successful = False
 
         summary.duration_seconds = round(time.time() - start_time, 2)
         summary.print_summary()

@@ -1,4 +1,5 @@
 import html
+import json
 import os
 import re
 
@@ -12,59 +13,139 @@ from utils.dates import normalize_date
 from utils.format import normalize_participation_format
 from utils.urls import canonicalize_url
 
+UNSTOP_NAV_SLUGS = {
+    "online",
+    "all",
+    "upcoming",
+    "past",
+    "applied",
+    "open",
+    "closed",
+    "college-students",
+    "school-students",
+    "engineering-students",
+    "business-students",
+    "internships",
+    "jobs",
+    "competitions",
+    "explore",
+    "categories",
+    "trending",
+    "featured",
+    "home",
+}
+
+BADGE_WORDS = {"featured", "hot", "trending", "applied", "free", "live", "registered", "online", "offline"}
+
 
 def parse_unstop_cards_from_html(html_content, limit=FETCH_LIMIT):
     """
-    Parse Unstop hackathons with clean titles, accurate deadline separation
-    (avoiding treating 'Posted date' as deadline), and organization metadata.
+    Parse Unstop hackathons with clean titles, credible event ID validation,
+    explicit registration deadlines, and organization metadata.
+    Rejects category and navigation links.
     """
-    link_pattern = re.compile(r'<a[^>]+href=["\'](/hackathons/[^"\']+)["\'][^>]*>(.*?)</a>', re.DOTALL)
-    matches = link_pattern.findall(html_content)
     hackathons = []
     seen_links = set()
 
+    # Strategy 1: Check for structured JSON-LD or hydration data if present
+    json_ld_matches = re.findall(
+        r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', html_content, re.DOTALL
+    )
+    for jld in json_ld_matches:
+        try:
+            data = json.loads(jld)
+            items = data if isinstance(data, list) else [data]
+            for it in items:
+                if it.get("@type") in ("Event", "Hackathon", "EducationEvent"):
+                    url = it.get("url") or ""
+                    canon = canonicalize_url(url)
+                    if canon and re.search(r"-\d+$", canon) and canon not in seen_links:
+                        seen_links.add(canon)
+                        name = (it.get("name") or "").strip().splitlines()[0].strip()
+                        raw_dl = it.get("endDate") or it.get("registrationEndDate")
+                        norm_dl = normalize_date(raw_dl) if raw_dl else "Unknown"
+                        loc = normalize_participation_format(it.get("eventAttendanceMode"))
+                        h_dict = {
+                            "name": name,
+                            "description": it.get("description") or "",
+                            "tags": [],
+                            "deadline": norm_dl,
+                            "prize": "Unknown",
+                            "location": loc,
+                            "link": canon,
+                            "source": "Unstop",
+                            "created_at": it.get("startDate") or "",
+                        }
+                        h_dict["benefits"] = extract_special_benefits(h_dict)
+                        if validate_hackathon(h_dict):
+                            hackathons.append(h_dict)
+                            if len(hackathons) >= limit:
+                                return hackathons
+        except Exception:
+            pass
+
+    # Strategy 2: Card parsing with strict title and slug filtering
+    link_pattern = re.compile(r'<a[^>]+href=["\'](/hackathons/[^"\']+)["\'][^>]*>(.*?)</a>', re.DOTALL)
+    matches = link_pattern.findall(html_content)
+
     for href, content in matches:
-        # Check for heading tags inside card
+        slug = href.strip("/").split("/")[-1].lower()
+
+        # Reject navigation and category links
+        if slug in UNSTOP_NAV_SLUGS or len(slug.split("-")) < 2:
+            continue
+
+        raw_link = f"https://unstop.com{href}" if href.startswith("/") else href
+
+        canon_link = canonicalize_url(raw_link)
+        if not canon_link or canon_link in seen_links:
+            continue
+
+        # Extract heading tags or text inside card
         heading_match = re.search(r"<h[1-6][^>]*>(.*?)</h[1-6]>", content, re.DOTALL)
         if heading_match:
-            raw_title = heading_match.group(1)
+            raw_title_block = heading_match.group(1)
         else:
             text_only = re.sub(r"<[^>]+>", "\n", content)
-            lines = [line.strip() for line in text_only.splitlines() if line.strip()]
-            raw_title = lines[0] if lines else "Unknown"
+            raw_title_block = text_only
 
-        clean_title = html.unescape(re.sub(r"<[^>]+>", "", raw_title)).strip()
+        # Clean title: strip HTML, take first meaningful non-badge line
+        clean_text = html.unescape(re.sub(r"<[^>]+>", "\n", raw_title_block)).strip()
+        lines = [line.strip() for line in clean_text.splitlines() if line.strip()]
 
-        # Strip dynamic countdown timers (e.g. '26 days left', '13 hours left', '1 day left')
-        clean_title = re.sub(
-            r"\s*\b\d+\s*(?:days?|hours?|mins?|minutes?|secs?|seconds?)\s*left\b.*",
-            "",
-            clean_title,
-            flags=re.IGNORECASE,
-        ).strip()
-
-        # Strip 'Posted <Date>' or extraneous trailing metadata
-        clean_title = re.sub(r"\s*\bPosted\s+[A-Za-z]+\s+\d+.*", "", clean_title, flags=re.IGNORECASE).strip()
+        clean_title = ""
+        for line in lines:
+            line_lower = line.lower()
+            if line_lower in BADGE_WORDS:
+                continue
+            # Strip dynamic countdown timers
+            line_clean = re.sub(
+                r"\s*\b\d+\s*(?:days?|hours?|mins?|minutes?|secs?|seconds?)\s*left\b.*",
+                "",
+                line,
+                flags=re.IGNORECASE,
+            ).strip()
+            # Strip 'Posted <Date>'
+            line_clean = re.sub(r"\s*\bPosted\s+[A-Za-z]+\s+\d+.*", "", line_clean, flags=re.IGNORECASE).strip()
+            if line_clean and line_clean.lower() not in ("unknown", ""):
+                clean_title = line_clean
+                break
 
         if not clean_title or clean_title.lower() == "unknown":
             continue
 
-        raw_link = f"https://unstop.com{href}" if href.startswith("/") else href
-        canon_link = canonicalize_url(raw_link)
-        if not canon_link or canon_link in seen_links:
-            continue
         seen_links.add(canon_link)
 
-        # Extract verified deadline ONLY from Deadline / Ends on / Registration Closes
-        # Crucial fix: Do NOT treat 'Posted Jun 4' as the deadline!
+        # Extract verified registration deadline ONLY from explicit registration cues
+        # Do not confuse event end date or posted date with registration deadline
         deadline_match = re.search(
-            r"\b(?:Deadline|Ends\s+on|Registration\s+closes|Closes\s+on)\s*:?\s*([A-Za-z]+\s+\d+,\s+\d{4})",
+            r"\b(?:Registration\s+Deadline|Deadline|Registration\s+closes|Closes\s+on)\s*:?\s*([A-Za-z]+\s+\d+,\s+\d{4})",
             content,
             re.IGNORECASE,
         )
         deadline = normalize_date(deadline_match.group(1)) if deadline_match else "Unknown"
 
-        # Check for posted date separately as discovery hint
+        # Check for posted date separately
         posted_match = re.search(r"\bPosted\s+([A-Za-z]+\s+\d+,\s+\d{4})", content, re.IGNORECASE)
         created_at_hint = normalize_date(posted_match.group(1)) if posted_match else ""
 

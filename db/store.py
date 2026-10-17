@@ -1,6 +1,7 @@
 import datetime
 import hashlib
 import json
+import os
 import sqlite3
 import sys
 from typing import Any, Dict, List, Optional, Tuple
@@ -11,12 +12,85 @@ from utils.dates import evaluate_hackathon_status
 from utils.format import normalize_participation_format
 from utils.urls import canonicalize_url
 
-# Default module-level connection and cursor for backward-compatibility
-conn = sqlite3.connect("hackathons.db", check_same_thread=False)
-cursor = conn.cursor()
+_active_conn: Optional[sqlite3.Connection] = None
+_active_db_path: Optional[str] = None
+_active_cursor: Optional[sqlite3.Cursor] = None
 
-# Run migrations non-destructively on startup
-apply_migrations(conn)
+
+def get_db_path() -> str:
+    return os.environ.get("HACKATHON_DB_PATH", "hackathons.db")
+
+
+def get_connection(db_path: Optional[str] = None) -> sqlite3.Connection:
+    global _active_conn, _active_db_path, _active_cursor
+    target_path = db_path or get_db_path()
+    if _active_conn is not None and _active_db_path == target_path:
+        return _active_conn
+
+    if _active_conn is not None:
+        try:
+            _active_conn.close()
+        except Exception:
+            pass
+
+    _active_conn = sqlite3.connect(target_path, check_same_thread=False)
+    _active_db_path = target_path
+    _active_cursor = None
+    apply_migrations(_active_conn)
+    return _active_conn
+
+
+def get_cursor() -> sqlite3.Cursor:
+    global _active_cursor
+    c = get_connection()
+    if _active_cursor is None:
+        _active_cursor = c.cursor()
+    return _active_cursor
+
+
+def set_connection(connection: Optional[sqlite3.Connection], db_path: Optional[str] = None) -> None:
+    global _active_conn, _active_db_path, _active_cursor
+    if _active_conn is not None and _active_conn is not connection:
+        try:
+            _active_conn.close()
+        except Exception:
+            pass
+    _active_conn = connection
+    _active_db_path = db_path or (get_db_path() if connection is not None else None)
+    _active_cursor = connection.cursor() if connection is not None else None
+
+
+def reset_connection() -> None:
+    global _active_conn, _active_db_path, _active_cursor
+    if _active_conn is not None:
+        try:
+            _active_conn.close()
+        except Exception:
+            pass
+    _active_conn = None
+    _active_db_path = None
+    _active_cursor = None
+
+
+class _ConnectionProxy:
+    def __getattr__(self, name: str) -> Any:
+        return getattr(get_connection(), name)
+
+    def __enter__(self) -> sqlite3.Connection:
+        return get_connection().__enter__()
+
+    def __exit__(self, exc_type, exc_val, exc_tb) -> Any:
+        return get_connection().__exit__(exc_type, exc_val, exc_tb)
+
+
+class _CursorProxy:
+    def __getattr__(self, name: str) -> Any:
+        return getattr(get_cursor(), name)
+
+
+# Default module-level connection and cursor proxies for backward-compatibility
+conn = _ConnectionProxy()
+cursor = _CursorProxy()
 
 
 def generate_fingerprint(hackathon: Dict[str, Any]) -> str:
@@ -439,14 +513,80 @@ def search_hackathons(query: str) -> List[Tuple]:
     return cursor.fetchall()
 
 
-def get_hackathon_by_id(fingerprint: str) -> Optional[Dict[str, Any]]:
+def get_hackathon_by_id(
+    fingerprint: str, conn_override: Optional[sqlite3.Connection] = None
+) -> Optional[Dict[str, Any]]:
     """Fetch a single hackathon record by fingerprint."""
-    columns = _get_table_columns()
+    target_conn = conn_override or get_connection()
+    target_cursor = target_conn.cursor()
+    columns = _get_table_columns(target_cursor)
     has_meta = "description" in columns
     has_v3 = "reg_ends_at" in columns
+    has_v4 = "benefits" in columns
 
-    if has_v3:
-        cursor.execute(
+    if has_v4:
+        target_cursor.execute(
+            """
+            SELECT fingerprint, name, deadline, source, link,
+                   description, tags, prize, location, created_at, updated_at,
+                   reg_starts_at, reg_ends_at, starts_at, ends_at, source_status, is_section_link,
+                   benefits
+            FROM hackathons
+            WHERE fingerprint = ?
+            """,
+            (fingerprint,),
+        )
+        row = target_cursor.fetchone()
+        if not row:
+            return None
+        tags = []
+        try:
+            tags = json.loads(row[6]) if row[6] else []
+        except Exception:
+            pass
+
+        st = evaluate_hackathon_status(
+            deadline=row[2],
+            reg_starts_at=row[11],
+            reg_ends_at=row[12],
+            starts_at=row[13],
+            ends_at=row[14],
+            source_status=row[15],
+        )
+
+        b_list = []
+        try:
+            if len(row) > 17 and row[17]:
+                b_list = json.loads(row[17])
+        except Exception:
+            b_list = []
+
+        return {
+            "fingerprint": row[0],
+            "id": row[0],
+            "name": row[1],
+            "title": row[1],
+            "deadline": row[2] or "Unknown",
+            "source": row[3],
+            "link": row[4],
+            "url": row[4],
+            "description": row[5] or "",
+            "tags": tags,
+            "prize": row[7] or "Unknown",
+            "location": row[8] or "Online",
+            "benefits": b_list,
+            "created_at": row[9] or "",
+            "updated_at": row[10] or "",
+            "reg_starts_at": row[11] or "",
+            "reg_ends_at": row[12] or "",
+            "starts_at": row[13] or "",
+            "ends_at": row[14] or "",
+            "source_status": row[15] or "",
+            "is_section_link": bool(row[16]),
+            "status": st,
+        }
+    elif has_v3:
+        target_cursor.execute(
             """
             SELECT fingerprint, name, deadline, source, link,
                    description, tags, prize, location, created_at, updated_at,
@@ -456,7 +596,7 @@ def get_hackathon_by_id(fingerprint: str) -> Optional[Dict[str, Any]]:
             """,
             (fingerprint,),
         )
-        row = cursor.fetchone()
+        row = target_cursor.fetchone()
         if not row:
             return None
         tags = []
@@ -498,7 +638,7 @@ def get_hackathon_by_id(fingerprint: str) -> Optional[Dict[str, Any]]:
             "status": st,
         }
     elif has_meta:
-        cursor.execute(
+        target_cursor.execute(
             """
             SELECT fingerprint, name, deadline, source, link,
                    description, tags, prize, location, created_at, updated_at
@@ -507,7 +647,7 @@ def get_hackathon_by_id(fingerprint: str) -> Optional[Dict[str, Any]]:
             """,
             (fingerprint,),
         )
-        row = cursor.fetchone()
+        row = target_cursor.fetchone()
         if not row:
             return None
         tags = []
@@ -537,10 +677,10 @@ def get_hackathon_by_id(fingerprint: str) -> Optional[Dict[str, Any]]:
             "status": st,
         }
     else:
-        cursor.execute(
+        target_cursor.execute(
             "SELECT fingerprint, name, deadline, source, link FROM hackathons WHERE fingerprint = ?", (fingerprint,)
         )
-        row = cursor.fetchone()
+        row = target_cursor.fetchone()
         if not row:
             return None
         st = evaluate_hackathon_status(deadline=row[2])
