@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "1.0.0",
-    "generated_at": "2026-10-17T18:43:15.864920+00:00",
+    "generated_at": "2026-10-17T18:47:22.827787+00:00",
     "total_count": 40,
     "active_count": 19,
     "open_count": 19,
@@ -20,7 +20,28 @@
       "Unknown": 0
     },
     "benefits_count": 0,
-    "supplementary_links": []
+    "supplementary_links": [
+      {
+        "name": "All open hackathons",
+        "url": "https://devfolio.co/hackathons/open",
+        "source": "Devfolio"
+      },
+      {
+        "name": "All past hackathons",
+        "url": "https://devfolio.co/hackathons/past",
+        "source": "Devfolio"
+      },
+      {
+        "name": "All upcoming hackathons",
+        "url": "https://devfolio.co/hackathons/upcoming",
+        "source": "Devfolio"
+      },
+      {
+        "name": "Your hackathons",
+        "url": "https://devfolio.co/hackathons/applied",
+        "source": "Devfolio"
+      }
+    ]
   },
   "hackathons": [
     {
@@ -36,7 +57,7 @@
       "reg_ends_at": "2026-10-18T10:30:00+00:00",
       "starts_at": "2026-10-24T04:30:00+00:00",
       "ends_at": "2026-10-25T04:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 119 participants",
+      "description": "Devfolio Hackathon (In-Person) • 69 participants",
       "tags": [
         "no restrictions"
       ],
@@ -45,7 +66,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:39.328858+00:00",
-      "updated_at": "2026-10-17T18:43:12.174872+00:00"
+      "updated_at": "2026-10-17T06:42:24.392699+00:00"
     },
     {
       "id": "c9a970c865e91beb91641c6b4ecc2f04f5a99a5312dbef78e5f370b34f3a5c6e",
@@ -60,7 +81,7 @@
       "reg_ends_at": "2026-10-18T22:59:00+00:00",
       "starts_at": "2026-10-09T11:00:00+00:00",
       "ends_at": "2026-10-18T22:59:00+00:00",
-      "description": "Devfolio Hackathon (Online) • 297 participants",
+      "description": "Devfolio Hackathon (Online) • 265 participants",
       "tags": [
         "blockchain"
       ],
@@ -69,7 +90,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:39.329343+00:00",
-      "updated_at": "2026-10-17T18:43:12.175402+00:00"
+      "updated_at": "2026-10-17T06:42:24.397303+00:00"
     },
     {
       "id": "df5c2ed84bdac8c3987bb3687d00db4a1f18684cc7d46da7fd655d3bb35268dc",
@@ -84,7 +105,7 @@
       "reg_ends_at": "2026-10-19T18:29:00+00:00",
       "starts_at": "2026-10-30T06:30:00+00:00",
       "ends_at": "2026-11-01T06:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 473 participants",
+      "description": "Devfolio Hackathon (In-Person) • 451 participants",
       "tags": [
         "no restrictions"
       ],
@@ -93,7 +114,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:05.528453+00:00",
-      "updated_at": "2026-10-17T18:43:12.175852+00:00"
+      "updated_at": "2026-10-17T06:42:24.401528+00:00"
     },
     {
       "id": "0c27fa11a469921bf3fd768a45992218da965ef7337a642064bea81c370b3810",
@@ -108,7 +129,7 @@
       "reg_ends_at": "2026-10-20T17:30:00+00:00",
       "starts_at": "2026-10-23T02:30:00+00:00",
       "ends_at": "2026-10-24T04:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 705 participants",
+      "description": "Devfolio Hackathon (In-Person) • 671 participants",
       "tags": [
         "no restrictions"
       ],
@@ -117,7 +138,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.156334+00:00",
-      "updated_at": "2026-10-17T18:43:12.176307+00:00"
+      "updated_at": "2026-10-17T06:42:22.156334+00:00"
     },
     {
       "id": "7eb6226498e382f9f4f3d3fe6dab915904bf090aaf99117c31ef7ebda80cd29d",
@@ -132,7 +153,7 @@
       "reg_ends_at": "2026-10-20T18:29:00+00:00",
       "starts_at": "2026-10-26T04:30:00+00:00",
       "ends_at": "2026-10-27T04:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 697 participants",
+      "description": "Devfolio Hackathon (In-Person) • 591 participants",
       "tags": [
         "no restrictions"
       ],
@@ -141,7 +162,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.157310+00:00",
-      "updated_at": "2026-10-17T18:43:12.177159+00:00"
+      "updated_at": "2026-10-17T06:42:22.157310+00:00"
     },
     {
       "id": "fc0a85a4c32212b9c8c0eeae05a954ad70cbe2cb41961163b1f600303a54b36e",
@@ -156,7 +177,7 @@
       "reg_ends_at": "2026-10-20T18:29:00+00:00",
       "starts_at": "2026-10-28T04:30:00+00:00",
       "ends_at": "2026-10-31T08:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 55728 participants",
+      "description": "Devfolio Hackathon (In-Person) • 55654 participants",
       "tags": [
         "ai",
         "blockchain"
@@ -166,7 +187,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.156825+00:00",
-      "updated_at": "2026-10-17T18:43:12.176740+00:00"
+      "updated_at": "2026-10-17T06:42:22.156825+00:00"
     },
     {
       "id": "8056dfadda3d2a25723f0951f33290452d9a66567952bfe4ebd7c54b6d8f3e38",
@@ -181,7 +202,7 @@
       "reg_ends_at": "2026-10-22T18:29:00+00:00",
       "starts_at": "2026-10-24T02:30:00+00:00",
       "ends_at": "2026-10-25T07:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 21 participants",
+      "description": "Devfolio Hackathon (In-Person) • 14 participants",
       "tags": [
         "ai",
         "blockchain",
@@ -192,7 +213,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.157738+00:00",
-      "updated_at": "2026-10-17T18:43:12.177607+00:00"
+      "updated_at": "2026-10-17T06:42:22.157738+00:00"
     },
     {
       "id": "46ff8644ea994687e2899dd95e35b90c1d19c3b317c579acb92d2dadd91622b6",
@@ -207,7 +228,7 @@
       "reg_ends_at": "2026-10-22T18:30:00+00:00",
       "starts_at": "2026-10-24T03:30:00+00:00",
       "ends_at": "2026-10-24T11:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 292 participants",
+      "description": "Devfolio Hackathon (In-Person) • 284 participants",
       "tags": [
         "no restrictions"
       ],
@@ -216,7 +237,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.158603+00:00",
-      "updated_at": "2026-10-17T18:43:12.178504+00:00"
+      "updated_at": "2026-10-17T06:42:22.158603+00:00"
     },
     {
       "id": "5c8e8ab1eb64bf5857237516e05eb4d8487c4ccd1dcb64557a80b6abb706babc",
@@ -231,7 +252,7 @@
       "reg_ends_at": "2026-10-22T18:30:00+00:00",
       "starts_at": "2026-10-23T15:30:00+00:00",
       "ends_at": "2026-10-25T03:30:00+00:00",
-      "description": "Devfolio Hackathon (Online) • 325 participants",
+      "description": "Devfolio Hackathon (Online) • 235 participants",
       "tags": [
         "no restrictions"
       ],
@@ -240,7 +261,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.158163+00:00",
-      "updated_at": "2026-10-17T18:43:12.178021+00:00"
+      "updated_at": "2026-10-17T06:42:22.158163+00:00"
     },
     {
       "id": "0e18b6cf877bc442f9b92302350398fce6b84b05d01ac2f92ff5367616b259a8",
@@ -266,7 +287,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.681773+00:00",
-      "updated_at": "2026-10-17T18:43:10.944927+00:00"
+      "updated_at": "2026-10-17T06:42:24.355492+00:00"
     },
     {
       "id": "0eb7c2439cf598ef226ea070a283b510e1c204beb1e6960ade0831258487e593",
@@ -281,7 +302,7 @@
       "reg_ends_at": "2026-10-23T18:29:00+00:00",
       "starts_at": "2026-10-30T14:30:00+00:00",
       "ends_at": "2026-11-01T02:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 74 participants",
+      "description": "Devfolio Hackathon (In-Person) • 40 participants",
       "tags": [
         "no restrictions"
       ],
@@ -290,7 +311,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.159035+00:00",
-      "updated_at": "2026-10-17T18:43:12.178924+00:00"
+      "updated_at": "2026-10-17T06:42:22.159035+00:00"
     },
     {
       "id": "3761ca667cd0e31ab7fef56188477e274bc928a246e0e449c979dafd01b606cd",
@@ -316,7 +337,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682738+00:00",
-      "updated_at": "2026-10-17T18:43:10.946213+00:00"
+      "updated_at": "2026-10-17T06:42:24.367781+00:00"
     },
     {
       "id": "cc2ee936e7b684d7a2be4c7970a4e9803fd4de884497fa1180c1bcfb254f8ba4",
@@ -342,7 +363,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683693+00:00",
-      "updated_at": "2026-10-17T18:43:10.947246+00:00"
+      "updated_at": "2026-10-17T06:42:24.380515+00:00"
     },
     {
       "id": "d42e9e7a3a26094f889a24da2d42db7091922f0fe8cded3e6675fa7dde87c1eb",
@@ -368,7 +389,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683061+00:00",
-      "updated_at": "2026-10-17T18:43:10.946561+00:00"
+      "updated_at": "2026-10-17T06:42:24.372534+00:00"
     },
     {
       "id": "217df90ac79aac131c2781832923cdbd0008da857d0d570ce7c2aa3473acd327",
@@ -394,7 +415,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.684520+00:00",
-      "updated_at": "2026-10-17T18:43:10.947899+00:00"
+      "updated_at": "2026-10-17T06:42:24.388206+00:00"
     },
     {
       "id": "489bccb776ef6fd0d33420755a4a5e5f9462b2c7f23eecca67f980026671d63a",
@@ -418,7 +439,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.684002+00:00",
-      "updated_at": "2026-10-17T18:43:10.947575+00:00"
+      "updated_at": "2026-10-17T06:42:24.384093+00:00"
     },
     {
       "id": "f7ef434afdaf86a0ce6f761098a0baaa3830decace5bb41cf6fc2bf47c6e6dde",
@@ -444,7 +465,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682065+00:00",
-      "updated_at": "2026-10-17T18:43:10.945493+00:00"
+      "updated_at": "2026-10-17T06:42:24.359689+00:00"
     },
     {
       "id": "75fbaa9ae6bdf7931b0b96953052a0d4f41a713d678e05c207ed921d7e5d9b4a",
@@ -470,7 +491,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682393+00:00",
-      "updated_at": "2026-10-17T18:43:10.945855+00:00"
+      "updated_at": "2026-10-17T06:42:24.363975+00:00"
     },
     {
       "id": "b5946c918f7d9c8b115319c3714c2347b822d72a6631288d201a8904a2477378",
@@ -496,7 +517,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683379+00:00",
-      "updated_at": "2026-10-17T18:43:10.946891+00:00"
+      "updated_at": "2026-10-17T06:42:24.376570+00:00"
     },
     {
       "id": "36c1fdfc244d341c69d3fc5f5bdf8d4ee3b0f6543de03250689cf35c04f3373a",
@@ -518,7 +539,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316860+00:00"
+      "updated_at": "2026-10-17T18:47:22.815444+00:00"
     },
     {
       "id": "7375dcb5073e4e8b89590d3e82c879ec15139593e704bea7d1b6902faa72d2e3",
@@ -540,7 +561,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316871+00:00"
+      "updated_at": "2026-10-17T18:47:22.815455+00:00"
     },
     {
       "id": "b73d999846a98026a18f10677f749d7e944499da41a3305d4e73054487836489",
@@ -562,7 +583,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316884+00:00"
+      "updated_at": "2026-10-17T18:47:22.815466+00:00"
     },
     {
       "id": "9f337096839682debd5c24444e7c6feade90d304440c9f1f71c9bcb8dbdb995e",
@@ -584,7 +605,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316894+00:00"
+      "updated_at": "2026-10-17T18:47:22.815475+00:00"
     },
     {
       "id": "3582da0f0cd459300c3d444939dc4075a1af77d9ac5d865ae8ee043a2847c8dc",
@@ -606,7 +627,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316907+00:00"
+      "updated_at": "2026-10-17T18:47:22.815485+00:00"
     },
     {
       "id": "eb29ad4f548b7c5047067041105ef336ee279a57b993db0ffc5c8fae6cb87fed",
@@ -628,7 +649,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316916+00:00"
+      "updated_at": "2026-10-17T18:47:22.815493+00:00"
     },
     {
       "id": "625bd3a2f66d727499736eaf73aa1649589d48e7167e3d243b3d4a57f494c779",
@@ -650,7 +671,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316925+00:00"
+      "updated_at": "2026-10-17T18:47:22.815502+00:00"
     },
     {
       "id": "7008c9c2e9f29c14cd1236257c3053c0115b512810e598a4d620e2f8a5f049a6",
@@ -672,7 +693,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316934+00:00"
+      "updated_at": "2026-10-17T18:47:22.815511+00:00"
     },
     {
       "id": "eadb892c70365ed745f7b60d95e59e089cc4a3c54ac768762ec4221481a85ea4",
@@ -694,7 +715,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316943+00:00"
+      "updated_at": "2026-10-17T18:47:22.815520+00:00"
     },
     {
       "id": "eb893bce2e08779dc093baad622fd5399fd20c955ccaf2c421d8b00a36c79d62",
@@ -716,7 +737,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316952+00:00"
+      "updated_at": "2026-10-17T18:47:22.815529+00:00"
     },
     {
       "id": "e1d3248577c0ede09e18de1ec8826c1378052347788985e0bd6d29929736cda0",
@@ -738,7 +759,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316962+00:00"
+      "updated_at": "2026-10-17T18:47:22.815540+00:00"
     },
     {
       "id": "7768463a2a430c0d93064381b9a48cfc7bf3f359cf88016ad5bc18d2ea4a0351",
@@ -760,7 +781,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316973+00:00"
+      "updated_at": "2026-10-17T18:47:22.815553+00:00"
     },
     {
       "id": "4abc3b427f7d2fae44938cc40562c2881802a0347d6de8402a542a2c79f8181c",
@@ -782,7 +803,7 @@
       "status": "ended",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316692+00:00"
+      "updated_at": "2026-10-17T18:47:22.815338+00:00"
     },
     {
       "id": "fd6b58dd36d4228ef849a7bb36a11134b25160c3c7283f080aff9bb3a7813d2f",
@@ -804,7 +825,7 @@
       "status": "ended",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316672+00:00"
+      "updated_at": "2026-10-17T18:47:22.815318+00:00"
     },
     {
       "id": "31848945503da1cb86fab826af483b9433504fd46d2e1e0d18701a56165a910f",
@@ -826,7 +847,7 @@
       "status": "ended",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316754+00:00"
+      "updated_at": "2026-10-17T18:47:22.815368+00:00"
     },
     {
       "id": "e8a16742404bc67c148b45b2fc9e484dfbd5a368ec0b182348b9d84c12a03351",
@@ -848,7 +869,7 @@
       "status": "ended",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316816+00:00"
+      "updated_at": "2026-10-17T18:47:22.815407+00:00"
     },
     {
       "id": "2d3c76beeee02ed0cbf6c33402b8f83dcab7254097399b738b6e0d9406b60b27",
@@ -870,7 +891,7 @@
       "status": "ended",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316847+00:00"
+      "updated_at": "2026-10-17T18:47:22.815433+00:00"
     },
     {
       "id": "065d4daec9d044cf74a0a285c5a6680d7c584594af762842d7282bc1e24bbd34",
@@ -892,7 +913,7 @@
       "status": "ended",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316737+00:00"
+      "updated_at": "2026-10-17T18:47:22.815352+00:00"
     },
     {
       "id": "23f030779e4dfa9051951e0dfeb1aed60444f0a7aae9bd6b56cd41ba5527ce16",
@@ -914,7 +935,7 @@
       "status": "ended",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316832+00:00"
+      "updated_at": "2026-10-17T18:47:22.815420+00:00"
     },
     {
       "id": "44bbddce05894fce633024177e2d70372bb309238880f82dc8793cc878e82cde",
@@ -936,7 +957,7 @@
       "status": "ended",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316801+00:00"
+      "updated_at": "2026-10-17T18:47:22.815394+00:00"
     },
     {
       "id": "7c846eb5baf288c60f1f901616f75022b2eb1d000ffd08791f38d682c4900160",
@@ -958,7 +979,7 @@
       "status": "ended",
       "benefits": [],
       "created_at": "",
-      "updated_at": "2026-10-17T17:55:28.316786+00:00"
+      "updated_at": "2026-10-17T18:47:22.815381+00:00"
     }
   ]
 }

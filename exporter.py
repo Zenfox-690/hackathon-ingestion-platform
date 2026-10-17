@@ -415,6 +415,15 @@ def export_public_catalog(
         incoming_records = store.get_all_public_hackathons(include_sections=False, conn_override=conn_override)
 
     supplementary_links = store.get_supplementary_links(conn_override=conn_override)
+    if not supplementary_links and existing_catalog:
+        supplementary_links = existing_catalog.get("metadata", {}).get("supplementary_links") or []
+    if not supplementary_links:
+        supplementary_links = [
+            {"name": "All open hackathons", "url": "https://devfolio.co/hackathons/open", "source": "Devfolio"},
+            {"name": "All past hackathons", "url": "https://devfolio.co/hackathons/past", "source": "Devfolio"},
+            {"name": "All upcoming hackathons", "url": "https://devfolio.co/hackathons/upcoming", "source": "Devfolio"},
+            {"name": "Your hackathons", "url": "https://devfolio.co/hackathons/applied", "source": "Devfolio"},
+        ]
 
     # Protection: If incoming is empty and baseline exists, preserve baseline
     if not incoming_records and baseline_records:
