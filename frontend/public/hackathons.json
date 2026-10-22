@@ -1,22 +1,22 @@
 {
   "metadata": {
     "version": "1.0.0",
-    "generated_at": "2026-10-21T11:02:14.670224+00:00",
-    "total_count": 77,
+    "generated_at": "2026-10-22T11:00:27.414627+00:00",
+    "total_count": 88,
     "active_count": 19,
     "open_count": 19,
     "upcoming_count": 0,
-    "ended_count": 13,
-    "unknown_count": 45,
+    "ended_count": 14,
+    "unknown_count": 55,
     "sources": {
-      "Devfolio": 14,
+      "Devfolio": 15,
       "Devpost": 18,
-      "Unstop": 45
+      "Unstop": 55
     },
     "formats": {
-      "Online": 32,
-      "In-Person": 35,
-      "Hybrid": 10,
+      "Online": 33,
+      "In-Person": 41,
+      "Hybrid": 14,
       "Unknown": 0
     },
     "benefits_count": 0,
@@ -52,12 +52,12 @@
       "link": "https://biosv2.devfolio.co",
       "url": "https://biosv2.devfolio.co",
       "source": "Devfolio",
-      "deadline": "2026-10-21T18:29:00+00:00",
+      "deadline": "2026-10-22T18:29:00+00:00",
       "reg_starts_at": "2026-10-01T06:30:00+00:00",
-      "reg_ends_at": "2026-10-21T18:29:00+00:00",
+      "reg_ends_at": "2026-10-22T18:29:00+00:00",
       "starts_at": "2026-10-30T06:30:00+00:00",
       "ends_at": "2026-11-01T06:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 720 participants",
+      "description": "Devfolio Hackathon (In-Person) • 743 participants",
       "tags": [
         "no restrictions"
       ],
@@ -66,31 +66,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:05.528453+00:00",
-      "updated_at": "2026-10-21T11:02:10.917741+00:00"
-    },
-    {
-      "id": "0c27fa11a469921bf3fd768a45992218da965ef7337a642064bea81c370b3810",
-      "fingerprint": "0c27fa11a469921bf3fd768a45992218da965ef7337a642064bea81c370b3810",
-      "name": "Srijan Setu",
-      "title": "Srijan Setu",
-      "link": "https://srijan-setu.devfolio.co",
-      "url": "https://srijan-setu.devfolio.co",
-      "source": "Devfolio",
-      "deadline": "2026-10-21T18:29:00+00:00",
-      "reg_starts_at": "2026-09-18T18:45:00+00:00",
-      "reg_ends_at": "2026-10-21T18:29:00+00:00",
-      "starts_at": "2026-10-23T02:30:00+00:00",
-      "ends_at": "2026-10-24T04:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 896 participants",
-      "tags": [
-        "no restrictions"
-      ],
-      "prize": "Unknown",
-      "location": "In-Person",
-      "status": "open",
-      "benefits": [],
-      "created_at": "2026-10-17T06:42:22.156334+00:00",
-      "updated_at": "2026-10-21T11:02:10.918275+00:00"
+      "updated_at": "2026-10-22T11:00:23.556846+00:00"
     },
     {
       "id": "46ff8644ea994687e2899dd95e35b90c1d19c3b317c579acb92d2dadd91622b6",
@@ -105,7 +81,7 @@
       "reg_ends_at": "2026-10-22T18:30:00+00:00",
       "starts_at": "2026-10-24T03:30:00+00:00",
       "ends_at": "2026-10-24T11:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 431 participants",
+      "description": "Devfolio Hackathon (In-Person) • 496 participants",
       "tags": [
         "no restrictions"
       ],
@@ -114,31 +90,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.158603+00:00",
-      "updated_at": "2026-10-21T11:02:10.919194+00:00"
-    },
-    {
-      "id": "5c8e8ab1eb64bf5857237516e05eb4d8487c4ccd1dcb64557a80b6abb706babc",
-      "fingerprint": "5c8e8ab1eb64bf5857237516e05eb4d8487c4ccd1dcb64557a80b6abb706babc",
-      "name": "Syntax Error 2026",
-      "title": "Syntax Error 2026",
-      "link": "https://syntax-error-6.devfolio.co",
-      "url": "https://syntax-error-6.devfolio.co",
-      "source": "Devfolio",
-      "deadline": "2026-10-22T18:30:00+00:00",
-      "reg_starts_at": "2026-10-15T04:00:00+00:00",
-      "reg_ends_at": "2026-10-22T18:30:00+00:00",
-      "starts_at": "2026-10-23T15:30:00+00:00",
-      "ends_at": "2026-10-25T03:30:00+00:00",
-      "description": "Devfolio Hackathon (Online) • 699 participants",
-      "tags": [
-        "no restrictions"
-      ],
-      "prize": "Unknown",
-      "location": "Online",
-      "status": "open",
-      "benefits": [],
-      "created_at": "2026-10-17T06:42:22.158163+00:00",
-      "updated_at": "2026-10-21T11:02:10.918722+00:00"
+      "updated_at": "2026-10-22T11:00:23.557212+00:00"
     },
     {
       "id": "0e18b6cf877bc442f9b92302350398fce6b84b05d01ac2f92ff5367616b259a8",
@@ -164,31 +116,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.681773+00:00",
-      "updated_at": "2026-10-21T11:02:09.826084+00:00"
-    },
-    {
-      "id": "0eb7c2439cf598ef226ea070a283b510e1c204beb1e6960ade0831258487e593",
-      "fingerprint": "0eb7c2439cf598ef226ea070a283b510e1c204beb1e6960ade0831258487e593",
-      "name": "Version Beta 9.0",
-      "title": "Version Beta 9.0",
-      "link": "https://version-beta-9.devfolio.co",
-      "url": "https://version-beta-9.devfolio.co",
-      "source": "Devfolio",
-      "deadline": "2026-10-23T18:29:00+00:00",
-      "reg_starts_at": "2026-10-12T18:30:00+00:00",
-      "reg_ends_at": "2026-10-23T18:29:00+00:00",
-      "starts_at": "2026-10-30T14:30:00+00:00",
-      "ends_at": "2026-11-01T02:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 215 participants",
-      "tags": [
-        "no restrictions"
-      ],
-      "prize": "Unknown",
-      "location": "In-Person",
-      "status": "open",
-      "benefits": [],
-      "created_at": "2026-10-17T06:42:22.159035+00:00",
-      "updated_at": "2026-10-21T11:02:10.919695+00:00"
+      "updated_at": "2026-10-22T11:00:22.127416+00:00"
     },
     {
       "id": "8056dfadda3d2a25723f0951f33290452d9a66567952bfe4ebd7c54b6d8f3e38",
@@ -203,7 +131,7 @@
       "reg_ends_at": "2026-10-24T06:30:00+00:00",
       "starts_at": "2026-10-24T02:30:00+00:00",
       "ends_at": "2026-10-25T07:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 65 participants",
+      "description": "Devfolio Hackathon (In-Person) • 80 participants",
       "tags": [
         "ai",
         "blockchain",
@@ -214,7 +142,55 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.157738+00:00",
-      "updated_at": "2026-10-21T11:02:10.920161+00:00"
+      "updated_at": "2026-10-22T11:00:23.557492+00:00"
+    },
+    {
+      "id": "0eb7c2439cf598ef226ea070a283b510e1c204beb1e6960ade0831258487e593",
+      "fingerprint": "0eb7c2439cf598ef226ea070a283b510e1c204beb1e6960ade0831258487e593",
+      "name": "Version Beta 9.0",
+      "title": "Version Beta 9.0",
+      "link": "https://version-beta-9.devfolio.co",
+      "url": "https://version-beta-9.devfolio.co",
+      "source": "Devfolio",
+      "deadline": "2026-10-24T18:29:00+00:00",
+      "reg_starts_at": "2026-10-12T18:30:00+00:00",
+      "reg_ends_at": "2026-10-24T18:29:00+00:00",
+      "starts_at": "2026-10-30T14:30:00+00:00",
+      "ends_at": "2026-11-01T02:30:00+00:00",
+      "description": "Devfolio Hackathon (In-Person) • 350 participants",
+      "tags": [
+        "no restrictions"
+      ],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "open",
+      "benefits": [],
+      "created_at": "2026-10-17T06:42:22.159035+00:00",
+      "updated_at": "2026-10-22T11:00:23.557746+00:00"
+    },
+    {
+      "id": "5c8e8ab1eb64bf5857237516e05eb4d8487c4ccd1dcb64557a80b6abb706babc",
+      "fingerprint": "5c8e8ab1eb64bf5857237516e05eb4d8487c4ccd1dcb64557a80b6abb706babc",
+      "name": "Syntax Error 2026",
+      "title": "Syntax Error 2026",
+      "link": "https://syntax-error-6.devfolio.co",
+      "url": "https://syntax-error-6.devfolio.co",
+      "source": "Devfolio",
+      "deadline": "2026-10-25T03:30:00+00:00",
+      "reg_starts_at": "2026-10-15T04:00:00+00:00",
+      "reg_ends_at": "2026-10-25T03:30:00+00:00",
+      "starts_at": "2026-10-23T15:30:00+00:00",
+      "ends_at": "2026-10-25T03:30:00+00:00",
+      "description": "Devfolio Hackathon (Online) • 869 participants",
+      "tags": [
+        "no restrictions"
+      ],
+      "prize": "Unknown",
+      "location": "Online",
+      "status": "open",
+      "benefits": [],
+      "created_at": "2026-10-17T06:42:22.158163+00:00",
+      "updated_at": "2026-10-22T11:00:23.558031+00:00"
     },
     {
       "id": "3761ca667cd0e31ab7fef56188477e274bc928a246e0e449c979dafd01b606cd",
@@ -240,7 +216,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682738+00:00",
-      "updated_at": "2026-10-21T11:02:09.827792+00:00"
+      "updated_at": "2026-10-22T11:00:22.128481+00:00"
     },
     {
       "id": "cc2ee936e7b684d7a2be4c7970a4e9803fd4de884497fa1180c1bcfb254f8ba4",
@@ -266,7 +242,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683693+00:00",
-      "updated_at": "2026-10-21T11:02:09.828602+00:00"
+      "updated_at": "2026-10-22T11:00:22.128871+00:00"
     },
     {
       "id": "d42e9e7a3a26094f889a24da2d42db7091922f0fe8cded3e6675fa7dde87c1eb",
@@ -292,7 +268,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683061+00:00",
-      "updated_at": "2026-10-21T11:02:09.827442+00:00"
+      "updated_at": "2026-10-22T11:00:22.128279+00:00"
     },
     {
       "id": "217df90ac79aac131c2781832923cdbd0008da857d0d570ce7c2aa3473acd327",
@@ -318,7 +294,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.684520+00:00",
-      "updated_at": "2026-10-21T11:02:09.829347+00:00"
+      "updated_at": "2026-10-22T11:00:22.129270+00:00"
     },
     {
       "id": "93a627005d34ab26a5e754939d225150faeeed165d65c829a39345235319c350",
@@ -333,7 +309,7 @@
       "reg_ends_at": "2026-10-29T00:00:00+00:00",
       "starts_at": "2026-11-07T09:00:00+00:00",
       "ends_at": "2026-11-08T13:00:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 47 participants",
+      "description": "Devfolio Hackathon (In-Person) • 51 participants",
       "tags": [
         "no restrictions"
       ],
@@ -342,7 +318,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-19T11:52:32.958339+00:00",
-      "updated_at": "2026-10-21T11:02:10.920590+00:00"
+      "updated_at": "2026-10-22T11:00:23.558287+00:00"
     },
     {
       "id": "88c3a3d4daed210979749a4290991b1346d6314b6f4a96c0b16979d7fb622d70",
@@ -357,7 +333,7 @@
       "reg_ends_at": "2026-10-29T12:00:00+00:00",
       "starts_at": "2026-10-30T09:00:00+00:00",
       "ends_at": "2026-10-31T14:00:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 592 participants",
+      "description": "Devfolio Hackathon (In-Person) • 603 participants",
       "tags": [
         "ai",
         "blockchain"
@@ -367,7 +343,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-19T11:52:32.958673+00:00",
-      "updated_at": "2026-10-21T11:02:10.921066+00:00"
+      "updated_at": "2026-10-22T11:00:23.558537+00:00"
     },
     {
       "id": "489bccb776ef6fd0d33420755a4a5e5f9462b2c7f23eecca67f980026671d63a",
@@ -391,7 +367,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.684002+00:00",
-      "updated_at": "2026-10-21T11:02:09.828945+00:00"
+      "updated_at": "2026-10-22T11:00:22.129078+00:00"
     },
     {
       "id": "f7ef434afdaf86a0ce6f761098a0baaa3830decace5bb41cf6fc2bf47c6e6dde",
@@ -417,7 +393,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682065+00:00",
-      "updated_at": "2026-10-21T11:02:09.826660+00:00"
+      "updated_at": "2026-10-22T11:00:22.127812+00:00"
     },
     {
       "id": "d2be75eb12edf49b76d034afb63920980a5814fb283e2610930152a1e9c8edb6",
@@ -432,7 +408,7 @@
       "reg_ends_at": "2026-10-30T17:00:00+00:00",
       "starts_at": "2026-10-30T18:30:00+00:00",
       "ends_at": "2026-11-02T17:00:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 30 participants",
+      "description": "Devfolio Hackathon (In-Person) • 50 participants",
       "tags": [
         "no restrictions"
       ],
@@ -441,7 +417,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-21T11:02:10.921500+00:00",
-      "updated_at": "2026-10-21T11:02:10.921500+00:00"
+      "updated_at": "2026-10-22T11:00:23.558780+00:00"
     },
     {
       "id": "c2ad9a1453e347d1d53a5d602419488b4ba3c538c4ae3ee84099e5828015b33d",
@@ -456,7 +432,7 @@
       "reg_ends_at": "2026-10-30T18:00:00+00:00",
       "starts_at": "2026-11-14T07:30:00+00:00",
       "ends_at": "2026-11-15T07:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 821 participants",
+      "description": "Devfolio Hackathon (In-Person) • 845 participants",
       "tags": [
         "no restrictions"
       ],
@@ -465,7 +441,31 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-21T11:02:10.921930+00:00",
-      "updated_at": "2026-10-21T11:02:10.921930+00:00"
+      "updated_at": "2026-10-22T11:00:23.559048+00:00"
+    },
+    {
+      "id": "c99a4cd6ce44d1a74487113540794792238acdb173c7e7e2e0018c0f7e882cd4",
+      "fingerprint": "c99a4cd6ce44d1a74487113540794792238acdb173c7e7e2e0018c0f7e882cd4",
+      "name": "hackodisha-6.0",
+      "title": "hackodisha-6.0",
+      "link": "https://hackodisha-6a.devfolio.co",
+      "url": "https://hackodisha-6a.devfolio.co",
+      "source": "Devfolio",
+      "deadline": "2026-10-30T18:29:00+00:00",
+      "reg_starts_at": "2026-09-08T18:30:00+00:00",
+      "reg_ends_at": "2026-10-30T18:29:00+00:00",
+      "starts_at": "2026-10-30T18:30:00+00:00",
+      "ends_at": "2026-11-01T06:30:00+00:00",
+      "description": "Devfolio Hackathon (Online) • 1057 participants",
+      "tags": [
+        "no restrictions"
+      ],
+      "prize": "Unknown",
+      "location": "Online",
+      "status": "open",
+      "benefits": [],
+      "created_at": "2026-10-22T11:00:23.559297+00:00",
+      "updated_at": "2026-10-22T11:00:23.559297+00:00"
     },
     {
       "id": "75fbaa9ae6bdf7931b0b96953052a0d4f41a713d678e05c207ed921d7e5d9b4a",
@@ -491,7 +491,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682393+00:00",
-      "updated_at": "2026-10-21T11:02:09.827072+00:00"
+      "updated_at": "2026-10-22T11:00:22.128062+00:00"
     },
     {
       "id": "b5946c918f7d9c8b115319c3714c2347b822d72a6631288d201a8904a2477378",
@@ -517,7 +517,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683379+00:00",
-      "updated_at": "2026-10-21T11:02:09.828235+00:00"
+      "updated_at": "2026-10-22T11:00:22.128679+00:00"
     },
     {
       "id": "36c1fdfc244d341c69d3fc5f5bdf8d4ee3b0f6543de03250689cf35c04f3373a",
@@ -1510,6 +1510,226 @@
       "updated_at": "2026-10-21T11:02:14.621495+00:00"
     },
     {
+      "id": "e086a650b3b03e062b7bcdebe685859191597995b1b2290c2decf2f9b3f99a0e",
+      "fingerprint": "e086a650b3b03e062b7bcdebe685859191597995b1b2290c2decf2f9b3f99a0e",
+      "name": "RootAccess",
+      "title": "RootAccess",
+      "link": "https://unstop.com/hackathons/rootaccess-thapar-institute-of-engineering-and-technology-tiet-patiala-1773307",
+      "url": "https://unstop.com/hackathons/rootaccess-thapar-institute-of-engineering-and-technology-tiet-patiala-1773307",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-22T00:00:00",
+      "updated_at": "2026-10-22T11:00:27.348856+00:00"
+    },
+    {
+      "id": "c6ab45d0c52c810304191f96a20ff884d9740574271324e2112cd8b8d63dfef2",
+      "fingerprint": "c6ab45d0c52c810304191f96a20ff884d9740574271324e2112cd8b8d63dfef2",
+      "name": "Datanova 2026 Global Data-Thon",
+      "title": "Datanova 2026 Global Data-Thon",
+      "link": "https://unstop.com/hackathons/datanova-2026-global-data-thon-swiss-school-of-management-rome-italy-1769646",
+      "url": "https://unstop.com/hackathons/datanova-2026-global-data-thon-swiss-school-of-management-rome-italy-1769646",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-22T00:00:00",
+      "updated_at": "2026-10-22T11:00:27.348926+00:00"
+    },
+    {
+      "id": "30e2f14cee512452c33cee60da7dd6e0568f9124d82425f396a16c2c1a948faa",
+      "fingerprint": "30e2f14cee512452c33cee60da7dd6e0568f9124d82425f396a16c2c1a948faa",
+      "name": "AI Tech Ideathon",
+      "title": "AI Tech Ideathon",
+      "link": "https://unstop.com/hackathons/ai-tech-ideathon-kr-mangalam-university-1773114",
+      "url": "https://unstop.com/hackathons/ai-tech-ideathon-kr-mangalam-university-1773114",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-22T00:00:00",
+      "updated_at": "2026-10-22T11:00:27.348979+00:00"
+    },
+    {
+      "id": "2c68091012e81882e6745ec65184ba2509484fea606bb028017c70e9f6532d65",
+      "fingerprint": "2c68091012e81882e6745ec65184ba2509484fea606bb028017c70e9f6532d65",
+      "name": "Confluence Buildathon 2.0",
+      "title": "Confluence Buildathon 2.0",
+      "link": "https://unstop.com/hackathons/confluence-buildathon-2026-ieee-computer-society-pes-university-1773296",
+      "url": "https://unstop.com/hackathons/confluence-buildathon-2026-ieee-computer-society-pes-university-1773296",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-22T00:00:00",
+      "updated_at": "2026-10-22T11:00:27.349015+00:00"
+    },
+    {
+      "id": "5b8e4899fa7fda22ddb6a515d3dd1f8153260804db96afa90d2415601c1e7a0e",
+      "fingerprint": "5b8e4899fa7fda22ddb6a515d3dd1f8153260804db96afa90d2415601c1e7a0e",
+      "name": "PromptWars Hyderabad 2026 - AI & Prompt Engineering Competition",
+      "title": "PromptWars Hyderabad 2026 - AI & Prompt Engineering Competition",
+      "link": "https://unstop.com/hackathons/promptwars-hyderabad-2026-ai-prompt-engineering-competition-st-peters-engineering-college-spec-hyderabad-tela-1765597",
+      "url": "https://unstop.com/hackathons/promptwars-hyderabad-2026-ai-prompt-engineering-competition-st-peters-engineering-college-spec-hyderabad-tela-1765597",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-22T00:00:00",
+      "updated_at": "2026-10-22T11:00:27.349042+00:00"
+    },
+    {
+      "id": "145b090308fe4d8a94d6df93482ab402c4d69bea06153993f9f849b4908991da",
+      "fingerprint": "145b090308fe4d8a94d6df93482ab402c4d69bea06153993f9f849b4908991da",
+      "name": "Craft N Code Odisha",
+      "title": "Craft N Code Odisha",
+      "link": "https://unstop.com/hackathons/craft-n-code-odisha-d3-2026-tech-fest-iiit-bhubaneswar-international-institute-of-information-technology-iiit-1773246",
+      "url": "https://unstop.com/hackathons/craft-n-code-odisha-d3-2026-tech-fest-iiit-bhubaneswar-international-institute-of-information-technology-iiit-1773246",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-21T00:00:00",
+      "updated_at": "2026-10-22T11:00:27.349065+00:00"
+    },
+    {
+      "id": "655f17f32ae5ac9e9cfd8d42abe338b4c1d6b88b60d9d587d5764ae4867882dd",
+      "fingerprint": "655f17f32ae5ac9e9cfd8d42abe338b4c1d6b88b60d9d587d5764ae4867882dd",
+      "name": "Build with Agora - BLR",
+      "title": "Build with Agora - BLR",
+      "link": "https://unstop.com/hackathons/build-with-agora-blr-knotic-1773211",
+      "url": "https://unstop.com/hackathons/build-with-agora-blr-knotic-1773211",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-21T00:00:00",
+      "updated_at": "2026-10-22T11:00:27.349086+00:00"
+    },
+    {
+      "id": "bbdbcc9933bd2689e378e317f8f35fd116bc8b868cbc3ffe69ad8a53f916fa7b",
+      "fingerprint": "bbdbcc9933bd2689e378e317f8f35fd116bc8b868cbc3ffe69ad8a53f916fa7b",
+      "name": "Bid and Code: Design & Frontend Competition by ACM",
+      "title": "Bid and Code: Design & Frontend Competition by ACM",
+      "link": "https://unstop.com/hackathons/bid-and-code-design-frontend-competition-by-acm-university-school-of-information-communication-and-technology-1773221",
+      "url": "https://unstop.com/hackathons/bid-and-code-design-frontend-competition-by-acm-university-school-of-information-communication-and-technology-1773221",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-21T00:00:00",
+      "updated_at": "2026-10-22T11:00:27.349107+00:00"
+    },
+    {
+      "id": "4d0df791e3394aee7266ca3b6a67f9783785f6b69567777cf6dc29f46ccdebac",
+      "fingerprint": "4d0df791e3394aee7266ca3b6a67f9783785f6b69567777cf6dc29f46ccdebac",
+      "name": "FirstCommit '26 — National Online Hackathon by CampusCode",
+      "title": "FirstCommit '26 — National Online Hackathon by CampusCode",
+      "link": "https://unstop.com/hackathons/firstcommit-26-national-online-hackathon-by-campuscode-campus-code-1772846",
+      "url": "https://unstop.com/hackathons/firstcommit-26-national-online-hackathon-by-campuscode-campus-code-1772846",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-21T00:00:00",
+      "updated_at": "2026-10-22T11:00:27.349129+00:00"
+    },
+    {
+      "id": "27e44a03997b2528967728166b661efbdfdf637c696eaaf3ccb6f00460590d68",
+      "fingerprint": "27e44a03997b2528967728166b661efbdfdf637c696eaaf3ccb6f00460590d68",
+      "name": "Prasunex Innovathon 2026",
+      "title": "Prasunex Innovathon 2026",
+      "link": "https://unstop.com/hackathons/prasunex-innovathon-2026-prasunex-1772904",
+      "url": "https://unstop.com/hackathons/prasunex-innovathon-2026-prasunex-1772904",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-21T00:00:00",
+      "updated_at": "2026-10-22T11:00:27.349148+00:00"
+    },
+    {
       "id": "4abc3b427f7d2fae44938cc40562c2881802a0347d6de8402a542a2c79f8181c",
       "fingerprint": "4abc3b427f7d2fae44938cc40562c2881802a0347d6de8402a542a2c79f8181c",
       "name": "Google Cloud Rapid Agent Hackathon",
@@ -1803,6 +2023,30 @@
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.156825+00:00",
       "updated_at": "2026-10-20T10:49:48.090931+00:00"
+    },
+    {
+      "id": "0c27fa11a469921bf3fd768a45992218da965ef7337a642064bea81c370b3810",
+      "fingerprint": "0c27fa11a469921bf3fd768a45992218da965ef7337a642064bea81c370b3810",
+      "name": "Srijan Setu",
+      "title": "Srijan Setu",
+      "link": "https://srijan-setu.devfolio.co",
+      "url": "https://srijan-setu.devfolio.co",
+      "source": "Devfolio",
+      "deadline": "2026-10-21T18:29:00+00:00",
+      "reg_starts_at": "2026-09-18T18:45:00+00:00",
+      "reg_ends_at": "2026-10-21T18:29:00+00:00",
+      "starts_at": "2026-10-23T02:30:00+00:00",
+      "ends_at": "2026-10-24T04:30:00+00:00",
+      "description": "Devfolio Hackathon (In-Person) • 896 participants",
+      "tags": [
+        "no restrictions"
+      ],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "ended",
+      "benefits": [],
+      "created_at": "2026-10-17T06:42:22.156334+00:00",
+      "updated_at": "2026-10-21T11:02:10.918275+00:00"
     }
   ]
 }
