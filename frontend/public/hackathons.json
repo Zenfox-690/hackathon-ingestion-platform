@@ -1,22 +1,22 @@
 {
   "metadata": {
     "version": "1.0.0",
-    "generated_at": "2026-10-25T10:33:41.822552+00:00",
-    "total_count": 118,
-    "active_count": 19,
-    "open_count": 19,
+    "generated_at": "2026-10-26T12:09:31.901683+00:00",
+    "total_count": 128,
+    "active_count": 18,
+    "open_count": 18,
     "upcoming_count": 0,
-    "ended_count": 21,
-    "unknown_count": 78,
+    "ended_count": 22,
+    "unknown_count": 88,
     "sources": {
       "Devpost": 20,
       "Devfolio": 20,
-      "Unstop": 78
+      "Unstop": 88
     },
     "formats": {
       "Online": 33,
-      "In-Person": 58,
-      "Hybrid": 27,
+      "In-Person": 62,
+      "Hybrid": 33,
       "Unknown": 0
     },
     "benefits_count": 0,
@@ -45,32 +45,6 @@
   },
   "hackathons": [
     {
-      "id": "3761ca667cd0e31ab7fef56188477e274bc928a246e0e449c979dafd01b606cd",
-      "fingerprint": "3761ca667cd0e31ab7fef56188477e274bc928a246e0e449c979dafd01b606cd",
-      "name": "Build With AI: Basics",
-      "title": "Build With AI: Basics",
-      "link": "https://learn-ai-basics.devpost.com",
-      "url": "https://learn-ai-basics.devpost.com",
-      "source": "Devpost",
-      "deadline": "2026-10-26T00:00:00",
-      "reg_starts_at": "2026-09-22T00:00:00",
-      "reg_ends_at": "2026-10-26T00:00:00",
-      "starts_at": "",
-      "ends_at": "",
-      "description": "Devpost",
-      "tags": [
-        "beginner friendly",
-        "education",
-        "machine learning/ai"
-      ],
-      "prize": "$<span data-currency-value>2,500</span>",
-      "location": "Online",
-      "status": "open",
-      "benefits": [],
-      "created_at": "2026-10-17T06:40:38.682738+00:00",
-      "updated_at": "2026-10-25T10:33:36.850979+00:00"
-    },
-    {
       "id": "cc2ee936e7b684d7a2be4c7970a4e9803fd4de884497fa1180c1bcfb254f8ba4",
       "fingerprint": "cc2ee936e7b684d7a2be4c7970a4e9803fd4de884497fa1180c1bcfb254f8ba4",
       "name": "Life After Code",
@@ -94,7 +68,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683693+00:00",
-      "updated_at": "2026-10-25T10:33:36.851306+00:00"
+      "updated_at": "2026-10-26T12:09:25.447929+00:00"
     },
     {
       "id": "d42e9e7a3a26094f889a24da2d42db7091922f0fe8cded3e6675fa7dde87c1eb",
@@ -120,7 +94,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683061+00:00",
-      "updated_at": "2026-10-25T10:33:36.850818+00:00"
+      "updated_at": "2026-10-26T12:09:25.446948+00:00"
     },
     {
       "id": "217df90ac79aac131c2781832923cdbd0008da857d0d570ce7c2aa3473acd327",
@@ -146,7 +120,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.684520+00:00",
-      "updated_at": "2026-10-25T10:33:36.851604+00:00"
+      "updated_at": "2026-10-26T12:09:25.448673+00:00"
     },
     {
       "id": "f6adc385ab7a014a6aa14729c459d1ca4a7e699e41f422f77900f41da7588c9d",
@@ -161,7 +135,7 @@
       "reg_ends_at": "2026-10-28T18:30:00+00:00",
       "starts_at": "2026-11-01T00:30:00+00:00",
       "ends_at": "2026-11-01T18:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 6 participants",
+      "description": "Devfolio Hackathon (In-Person) • 7 participants",
       "tags": [
         "ai"
       ],
@@ -170,7 +144,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-25T10:33:38.340159+00:00",
-      "updated_at": "2026-10-25T10:33:38.340159+00:00"
+      "updated_at": "2026-10-26T12:09:26.709169+00:00"
     },
     {
       "id": "93a627005d34ab26a5e754939d225150faeeed165d65c829a39345235319c350",
@@ -194,7 +168,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-19T11:52:32.958339+00:00",
-      "updated_at": "2026-10-25T10:33:38.340382+00:00"
+      "updated_at": "2026-10-26T12:09:26.709643+00:00"
     },
     {
       "id": "88c3a3d4daed210979749a4290991b1346d6314b6f4a96c0b16979d7fb622d70",
@@ -219,7 +193,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-19T11:52:32.958673+00:00",
-      "updated_at": "2026-10-25T10:33:38.340582+00:00"
+      "updated_at": "2026-10-26T12:09:26.710087+00:00"
     },
     {
       "id": "489bccb776ef6fd0d33420755a4a5e5f9462b2c7f23eecca67f980026671d63a",
@@ -243,7 +217,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.684002+00:00",
-      "updated_at": "2026-10-25T10:33:36.851457+00:00"
+      "updated_at": "2026-10-26T12:09:25.448314+00:00"
     },
     {
       "id": "f7ef434afdaf86a0ce6f761098a0baaa3830decace5bb41cf6fc2bf47c6e6dde",
@@ -269,7 +243,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682065+00:00",
-      "updated_at": "2026-10-25T10:33:36.850316+00:00"
+      "updated_at": "2026-10-26T12:09:25.445988+00:00"
     },
     {
       "id": "d2be75eb12edf49b76d034afb63920980a5814fb283e2610930152a1e9c8edb6",
@@ -293,7 +267,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-21T11:02:10.921500+00:00",
-      "updated_at": "2026-10-25T10:33:38.340775+00:00"
+      "updated_at": "2026-10-26T12:09:26.710556+00:00"
     },
     {
       "id": "c2ad9a1453e347d1d53a5d602419488b4ba3c538c4ae3ee84099e5828015b33d",
@@ -317,7 +291,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-21T11:02:10.921930+00:00",
-      "updated_at": "2026-10-25T10:33:38.340964+00:00"
+      "updated_at": "2026-10-26T12:09:26.710982+00:00"
     },
     {
       "id": "c99a4cd6ce44d1a74487113540794792238acdb173c7e7e2e0018c0f7e882cd4",
@@ -341,7 +315,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-22T11:00:23.559297+00:00",
-      "updated_at": "2026-10-25T10:33:38.341157+00:00"
+      "updated_at": "2026-10-26T12:09:26.711442+00:00"
     },
     {
       "id": "c1593abd2f2dc12c286ad2c1f34549055cec61f68713047a8cc212e5a292497e",
@@ -367,7 +341,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-24T10:08:21.769665+00:00",
-      "updated_at": "2026-10-24T10:08:21.769665+00:00"
+      "updated_at": "2026-10-26T12:09:25.449035+00:00"
     },
     {
       "id": "20636688bb9cd00d888ab7a9c9371ce7ddba0d62a1cdf45e9a146601385698dc",
@@ -415,7 +389,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-23T11:06:02.986141+00:00",
-      "updated_at": "2026-10-25T10:33:38.341358+00:00"
+      "updated_at": "2026-10-26T12:09:26.711871+00:00"
     },
     {
       "id": "26f8bf202b2b0b3b6b38ff45e809a110883b74309d24971ec5d0e256b1fefe68",
@@ -440,7 +414,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-24T10:08:23.273771+00:00",
-      "updated_at": "2026-10-25T10:33:38.341741+00:00"
+      "updated_at": "2026-10-26T12:09:26.712760+00:00"
     },
     {
       "id": "69cad48b5fe87bd96372967720dd4798562ed15bad6573de059d4e3dd3cdab64",
@@ -465,7 +439,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-25T10:33:38.341549+00:00",
-      "updated_at": "2026-10-25T10:33:38.341549+00:00"
+      "updated_at": "2026-10-26T12:09:26.712324+00:00"
     },
     {
       "id": "75fbaa9ae6bdf7931b0b96953052a0d4f41a713d678e05c207ed921d7e5d9b4a",
@@ -491,7 +465,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682393+00:00",
-      "updated_at": "2026-10-25T10:33:36.850644+00:00"
+      "updated_at": "2026-10-26T12:09:25.446572+00:00"
     },
     {
       "id": "b5946c918f7d9c8b115319c3714c2347b822d72a6631288d201a8904a2477378",
@@ -517,7 +491,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683379+00:00",
-      "updated_at": "2026-10-25T10:33:36.851138+00:00"
+      "updated_at": "2026-10-26T12:09:25.447579+00:00"
     },
     {
       "id": "36c1fdfc244d341c69d3fc5f5bdf8d4ee3b0f6543de03250689cf35c04f3373a",
@@ -2236,6 +2210,226 @@
       "updated_at": "2026-10-25T10:33:41.784769+00:00"
     },
     {
+      "id": "e003338ff57cf3c9baa618d9511d287eb202198cb55d78f959b03927dfe34cec",
+      "fingerprint": "e003338ff57cf3c9baa618d9511d287eb202198cb55d78f959b03927dfe34cec",
+      "name": "Cyberhunt 2077",
+      "title": "Cyberhunt 2077",
+      "link": "https://unstop.com/hackathons/cyberhunt-2077-open-source-developers-communityosdc-1778049",
+      "url": "https://unstop.com/hackathons/cyberhunt-2077-open-source-developers-communityosdc-1778049",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-26T00:00:00",
+      "updated_at": "2026-10-26T12:09:31.842148+00:00"
+    },
+    {
+      "id": "2dda37ad60a4df3c67161e9fd0c543bb1e687eeace5605259d758d2238540122",
+      "fingerprint": "2dda37ad60a4df3c67161e9fd0c543bb1e687eeace5605259d758d2238540122",
+      "name": "Aegython 2026",
+      "title": "Aegython 2026",
+      "link": "https://unstop.com/hackathons/aegython-2026-aeglysai-1777958",
+      "url": "https://unstop.com/hackathons/aegython-2026-aeglysai-1777958",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-26T00:00:00",
+      "updated_at": "2026-10-26T12:09:31.842243+00:00"
+    },
+    {
+      "id": "48f83c4d28047cb75ebb360ec3f3696e97ebb45dbffd579693d08d44977d85a4",
+      "fingerprint": "48f83c4d28047cb75ebb360ec3f3696e97ebb45dbffd579693d08d44977d85a4",
+      "name": "Fetch-A-Thon 3.0",
+      "title": "Fetch-A-Thon 3.0",
+      "link": "https://unstop.com/hackathons/fetch-a-thon-30-masters-union-school-of-business-1778044",
+      "url": "https://unstop.com/hackathons/fetch-a-thon-30-masters-union-school-of-business-1778044",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-26T00:00:00",
+      "updated_at": "2026-10-26T12:09:31.842341+00:00"
+    },
+    {
+      "id": "e433e1a1a52be49133064f413696cb55420ea1581ff43fef9339c3e5f97f7b2e",
+      "fingerprint": "e433e1a1a52be49133064f413696cb55420ea1581ff43fef9339c3e5f97f7b2e",
+      "name": "Chaitanya CTF 2026",
+      "title": "Chaitanya CTF 2026",
+      "link": "https://unstop.com/hackathons/chaitanya-ctf-2026-chaitanya-ctf-2026-himachal-pradesh-technical-university-hptu-1775832",
+      "url": "https://unstop.com/hackathons/chaitanya-ctf-2026-chaitanya-ctf-2026-himachal-pradesh-technical-university-hptu-1775832",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-26T00:00:00",
+      "updated_at": "2026-10-26T12:09:31.842391+00:00"
+    },
+    {
+      "id": "c2ed44d95b7802ccee414bb8741712bf89b3467948789db28c89738db65590ed",
+      "fingerprint": "c2ed44d95b7802ccee414bb8741712bf89b3467948789db28c89738db65590ed",
+      "name": "Zeckathon",
+      "title": "Zeckathon",
+      "link": "https://unstop.com/hackathons/zeckathon-indian-institute-of-technology-iit-patna-1776287",
+      "url": "https://unstop.com/hackathons/zeckathon-indian-institute-of-technology-iit-patna-1776287",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-26T00:00:00",
+      "updated_at": "2026-10-26T12:09:31.842431+00:00"
+    },
+    {
+      "id": "d4997fdf352bd5ba6fd52d584b8d2984140d10ed29481afa8e59561f3c98f4f2",
+      "fingerprint": "d4997fdf352bd5ba6fd52d584b8d2984140d10ed29481afa8e59561f3c98f4f2",
+      "name": "Build 2 Rise 2026",
+      "title": "Build 2 Rise 2026",
+      "link": "https://unstop.com/hackathons/build-2-rise-2026-krixov-1775217",
+      "url": "https://unstop.com/hackathons/build-2-rise-2026-krixov-1775217",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-26T00:00:00",
+      "updated_at": "2026-10-26T12:09:31.842469+00:00"
+    },
+    {
+      "id": "93173650ac3d113af811a38f2f4d8c8db28ea83a55221b531e5b8bcce2c9add3",
+      "fingerprint": "93173650ac3d113af811a38f2f4d8c8db28ea83a55221b531e5b8bcce2c9add3",
+      "name": "Hack-It-Out",
+      "title": "Hack-It-Out",
+      "link": "https://unstop.com/hackathons/hack-it-out-indian-institute-of-technology-iit-patna-1777334",
+      "url": "https://unstop.com/hackathons/hack-it-out-indian-institute-of-technology-iit-patna-1777334",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-26T00:00:00",
+      "updated_at": "2026-10-26T12:09:31.842507+00:00"
+    },
+    {
+      "id": "d228a091abb437d4a173aff4f9dc4566f3ed8ed029a523b6ee1b1becf36fa054",
+      "fingerprint": "d228a091abb437d4a173aff4f9dc4566f3ed8ed029a523b6ee1b1becf36fa054",
+      "name": "Agents that act. Systems that answer. | Free Virtual Agentic-AI Hackathon",
+      "title": "Agents that act. Systems that answer. | Free Virtual Agentic-AI Hackathon",
+      "link": "https://unstop.com/hackathons/agents-that-act-systems-that-answer-studentchakra-1777504",
+      "url": "https://unstop.com/hackathons/agents-that-act-systems-that-answer-studentchakra-1777504",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-26T00:00:00",
+      "updated_at": "2026-10-26T12:09:31.842544+00:00"
+    },
+    {
+      "id": "85cd9d08f739b05bdaf2d77f99287f06035a65cadc2b5ac916a54d3c4e093f6b",
+      "fingerprint": "85cd9d08f739b05bdaf2d77f99287f06035a65cadc2b5ac916a54d3c4e093f6b",
+      "name": "Operation Ward Zero",
+      "title": "Operation Ward Zero",
+      "link": "https://unstop.com/hackathons/operation-ward-zero-wooble-software-private-limited-1776892",
+      "url": "https://unstop.com/hackathons/operation-ward-zero-wooble-software-private-limited-1776892",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-25T00:00:00",
+      "updated_at": "2026-10-26T12:09:31.842581+00:00"
+    },
+    {
+      "id": "25c7016684cad70f39052e43a2f490ada2a54cb2ae367e7065722ca7c01d5361",
+      "fingerprint": "25c7016684cad70f39052e43a2f490ada2a54cb2ae367e7065722ca7c01d5361",
+      "name": "HackCelestia — International Hackathon",
+      "title": "HackCelestia — International Hackathon",
+      "link": "https://unstop.com/hackathons/hackcelestia-international-hackathon-banasthali-vidyapith-bu-jaipur-1775961",
+      "url": "https://unstop.com/hackathons/hackcelestia-international-hackathon-banasthali-vidyapith-bu-jaipur-1775961",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-25T00:00:00",
+      "updated_at": "2026-10-26T12:09:31.842622+00:00"
+    },
+    {
       "id": "4abc3b427f7d2fae44938cc40562c2881802a0347d6de8402a542a2c79f8181c",
       "fingerprint": "4abc3b427f7d2fae44938cc40562c2881802a0347d6de8402a542a2c79f8181c",
       "name": "Google Cloud Rapid Agent Hackathon",
@@ -2726,7 +2920,33 @@
       "status": "ended",
       "benefits": [],
       "created_at": "2026-10-17T06:42:22.158163+00:00",
-      "updated_at": "2026-10-25T10:33:38.339968+00:00"
+      "updated_at": "2026-10-26T12:09:26.708824+00:00"
+    },
+    {
+      "id": "3761ca667cd0e31ab7fef56188477e274bc928a246e0e449c979dafd01b606cd",
+      "fingerprint": "3761ca667cd0e31ab7fef56188477e274bc928a246e0e449c979dafd01b606cd",
+      "name": "Build With AI: Basics",
+      "title": "Build With AI: Basics",
+      "link": "https://learn-ai-basics.devpost.com",
+      "url": "https://learn-ai-basics.devpost.com",
+      "source": "Devpost",
+      "deadline": "2026-10-26T00:00:00",
+      "reg_starts_at": "2026-09-22T00:00:00",
+      "reg_ends_at": "2026-10-26T00:00:00",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "Devpost",
+      "tags": [
+        "beginner friendly",
+        "education",
+        "machine learning/ai"
+      ],
+      "prize": "$<span data-currency-value>2,500</span>",
+      "location": "Online",
+      "status": "ended",
+      "benefits": [],
+      "created_at": "2026-10-17T06:40:38.682738+00:00",
+      "updated_at": "2026-10-26T12:09:25.447334+00:00"
     }
   ]
 }
