@@ -1,22 +1,22 @@
 {
   "metadata": {
     "version": "1.0.0",
-    "generated_at": "2026-10-29T12:08:55.685183+00:00",
-    "total_count": 157,
-    "active_count": 19,
-    "open_count": 19,
+    "generated_at": "2026-10-30T11:59:54.886707+00:00",
+    "total_count": 163,
+    "active_count": 18,
+    "open_count": 18,
     "upcoming_count": 0,
-    "ended_count": 28,
-    "unknown_count": 110,
+    "ended_count": 30,
+    "unknown_count": 115,
     "sources": {
-      "Devpost": 24,
       "Devfolio": 23,
-      "Unstop": 110
+      "Devpost": 25,
+      "Unstop": 115
     },
     "formats": {
-      "Online": 38,
-      "In-Person": 74,
-      "Hybrid": 45,
+      "Online": 39,
+      "In-Person": 78,
+      "Hybrid": 46,
       "Unknown": 0
     },
     "benefits_count": 0,
@@ -45,56 +45,6 @@
   },
   "hackathons": [
     {
-      "id": "489bccb776ef6fd0d33420755a4a5e5f9462b2c7f23eecca67f980026671d63a",
-      "fingerprint": "489bccb776ef6fd0d33420755a4a5e5f9462b2c7f23eecca67f980026671d63a",
-      "name": "Qloo Agentic Hackathon",
-      "title": "Qloo Agentic Hackathon",
-      "link": "https://qloo.devpost.com",
-      "url": "https://qloo.devpost.com",
-      "source": "Devpost",
-      "deadline": "2026-10-30T00:00:00",
-      "reg_starts_at": "2026-09-30T00:00:00",
-      "reg_ends_at": "2026-10-30T00:00:00",
-      "starts_at": "",
-      "ends_at": "",
-      "description": "Qloo",
-      "tags": [
-        "machine learning/ai"
-      ],
-      "prize": "$<span data-currency-value>25,000</span>",
-      "location": "Online",
-      "status": "open",
-      "benefits": [],
-      "created_at": "2026-10-17T06:40:38.684002+00:00",
-      "updated_at": "2026-10-29T12:08:50.699315+00:00"
-    },
-    {
-      "id": "f7ef434afdaf86a0ce6f761098a0baaa3830decace5bb41cf6fc2bf47c6e6dde",
-      "fingerprint": "f7ef434afdaf86a0ce6f761098a0baaa3830decace5bb41cf6fc2bf47c6e6dde",
-      "name": "Nebius x NVIDIA Global AI Hackathon",
-      "title": "Nebius x NVIDIA Global AI Hackathon",
-      "link": "https://nebiusglobalaihackathon.devpost.com",
-      "url": "https://nebiusglobalaihackathon.devpost.com",
-      "source": "Devpost",
-      "deadline": "2026-10-30T00:00:00",
-      "reg_starts_at": "2026-08-26T00:00:00",
-      "reg_ends_at": "2026-10-30T00:00:00",
-      "starts_at": "",
-      "ends_at": "",
-      "description": "nebius",
-      "tags": [
-        "beginner friendly",
-        "machine learning/ai",
-        "robotic process automation"
-      ],
-      "prize": "$<span data-currency-value>50,000</span>",
-      "location": "Online",
-      "status": "open",
-      "benefits": [],
-      "created_at": "2026-10-17T06:40:38.682065+00:00",
-      "updated_at": "2026-10-29T12:08:50.697984+00:00"
-    },
-    {
       "id": "c2ad9a1453e347d1d53a5d602419488b4ba3c538c4ae3ee84099e5828015b33d",
       "fingerprint": "c2ad9a1453e347d1d53a5d602419488b4ba3c538c4ae3ee84099e5828015b33d",
       "name": "Hacknauts 2.0",
@@ -116,7 +66,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-21T11:02:10.921930+00:00",
-      "updated_at": "2026-10-29T12:08:51.913745+00:00"
+      "updated_at": "2026-10-30T11:59:50.744304+00:00"
     },
     {
       "id": "ac12c1fc7dbe06914ad234acb1cbc26c7c0e63b424a0295979a170cf4aad7d4b",
@@ -140,7 +90,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-28T11:59:15.974617+00:00",
-      "updated_at": "2026-10-29T12:08:51.914189+00:00"
+      "updated_at": "2026-10-30T11:59:50.744778+00:00"
     },
     {
       "id": "c1593abd2f2dc12c286ad2c1f34549055cec61f68713047a8cc212e5a292497e",
@@ -166,7 +116,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-24T10:08:21.769665+00:00",
-      "updated_at": "2026-10-29T12:08:50.700027+00:00"
+      "updated_at": "2026-10-30T11:59:49.631313+00:00"
     },
     {
       "id": "19387dc8fbc61ea57d8afba017267ccc98ed08dade2164c494cf1713fdcf628b",
@@ -192,7 +142,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-27T11:32:47.361643+00:00",
-      "updated_at": "2026-10-29T12:08:50.699684+00:00"
+      "updated_at": "2026-10-30T11:59:49.630980+00:00"
     },
     {
       "id": "20636688bb9cd00d888ab7a9c9371ce7ddba0d62a1cdf45e9a146601385698dc",
@@ -242,7 +192,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-27T11:32:47.362724+00:00",
-      "updated_at": "2026-10-29T12:08:50.700373+00:00"
+      "updated_at": "2026-10-30T11:59:49.631674+00:00"
     },
     {
       "id": "2be5d7b360775925427cc9af4118afcf866b748bb625816ef767d2f499ee9378",
@@ -266,7 +216,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-23T11:06:02.986141+00:00",
-      "updated_at": "2026-10-29T12:08:51.914639+00:00"
+      "updated_at": "2026-10-30T11:59:50.745198+00:00"
     },
     {
       "id": "26f8bf202b2b0b3b6b38ff45e809a110883b74309d24971ec5d0e256b1fefe68",
@@ -291,7 +241,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-24T10:08:23.273771+00:00",
-      "updated_at": "2026-10-29T12:08:51.915487+00:00"
+      "updated_at": "2026-10-30T11:59:50.746109+00:00"
     },
     {
       "id": "69cad48b5fe87bd96372967720dd4798562ed15bad6573de059d4e3dd3cdab64",
@@ -317,7 +267,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-25T10:33:38.341549+00:00",
-      "updated_at": "2026-10-29T12:08:51.915064+00:00"
+      "updated_at": "2026-10-30T11:59:50.745684+00:00"
     },
     {
       "id": "75fbaa9ae6bdf7931b0b96953052a0d4f41a713d678e05c207ed921d7e5d9b4a",
@@ -343,7 +293,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682393+00:00",
-      "updated_at": "2026-10-29T12:08:50.698552+00:00"
+      "updated_at": "2026-10-30T11:59:49.629935+00:00"
     },
     {
       "id": "0e218e61f94b04083f5083169243f06fef61b49ab872dc70d178ec811b7c0c06",
@@ -395,7 +345,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-28T11:59:14.523273+00:00",
-      "updated_at": "2026-10-29T12:08:50.700739+00:00"
+      "updated_at": "2026-10-30T11:59:49.632005+00:00"
     },
     {
       "id": "b5946c918f7d9c8b115319c3714c2347b822d72a6631288d201a8904a2477378",
@@ -421,7 +371,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683379+00:00",
-      "updated_at": "2026-10-29T12:08:50.698963+00:00"
+      "updated_at": "2026-10-30T11:59:49.630314+00:00"
     },
     {
       "id": "d2be75eb12edf49b76d034afb63920980a5814fb283e2610930152a1e9c8edb6",
@@ -445,7 +395,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-21T11:02:10.921500+00:00",
-      "updated_at": "2026-10-29T12:08:51.915940+00:00"
+      "updated_at": "2026-10-30T11:59:50.746520+00:00"
     },
     {
       "id": "c99a4cd6ce44d1a74487113540794792238acdb173c7e7e2e0018c0f7e882cd4",
@@ -469,7 +419,33 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-22T11:00:23.559297+00:00",
-      "updated_at": "2026-10-29T12:08:51.916362+00:00"
+      "updated_at": "2026-10-30T11:59:50.746961+00:00"
+    },
+    {
+      "id": "cb77c2c325c20344b67fb15fff49972a0f2b1de2941956a37ad473de0b66a95f",
+      "fingerprint": "cb77c2c325c20344b67fb15fff49972a0f2b1de2941956a37ad473de0b66a95f",
+      "name": "Codegeist 2026: Build with context. Ship with confidence.",
+      "title": "Codegeist 2026: Build with context. Ship with confidence.",
+      "link": "https://codegeist2026.devpost.com",
+      "url": "https://codegeist2026.devpost.com",
+      "source": "Devpost",
+      "deadline": "2026-12-22T00:00:00",
+      "reg_starts_at": "2026-10-27T00:00:00",
+      "reg_ends_at": "2026-12-22T00:00:00",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "Atlassian",
+      "tags": [
+        "enterprise",
+        "machine learning/ai",
+        "productivity"
+      ],
+      "prize": "$<span data-currency-value>120,000</span>",
+      "location": "Online",
+      "status": "open",
+      "benefits": [],
+      "created_at": "2026-10-30T11:59:49.632327+00:00",
+      "updated_at": "2026-10-30T11:59:49.632327+00:00"
     },
     {
       "id": "bbae09226b2144b4099ad75ed6d26690b874c6428490de2093dd9551089a4bf4",
@@ -493,7 +469,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-29T12:08:51.916834+00:00",
-      "updated_at": "2026-10-29T12:08:51.916834+00:00"
+      "updated_at": "2026-10-30T11:59:50.747368+00:00"
     },
     {
       "id": "b33498f3a293db4aee53935ca3d723b18daa407d7408d836024ac213e6393367",
@@ -517,7 +493,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-29T12:08:51.917264+00:00",
-      "updated_at": "2026-10-29T12:08:51.917264+00:00"
+      "updated_at": "2026-10-30T11:59:50.747821+00:00"
     },
     {
       "id": "36c1fdfc244d341c69d3fc5f5bdf8d4ee3b0f6543de03250689cf35c04f3373a",
@@ -2607,7 +2583,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-10-28T00:00:00",
-      "updated_at": "2026-10-28T11:59:20.434560+00:00"
+      "updated_at": "2026-10-30T11:59:54.827499+00:00"
     },
     {
       "id": "a3ad70b2bcc2bae9a54bdb570a029237112c238049e8e9c8fa275bd6986b8ec4",
@@ -2739,7 +2715,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-10-29T00:00:00",
-      "updated_at": "2026-10-29T12:08:55.621258+00:00"
+      "updated_at": "2026-10-30T11:59:54.827530+00:00"
     },
     {
       "id": "7285c8096cfd374ab546e899f2842626936ecfa2aee30564fd15987caa0359fb",
@@ -2783,7 +2759,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-10-29T00:00:00",
-      "updated_at": "2026-10-29T12:08:55.621384+00:00"
+      "updated_at": "2026-10-30T11:59:54.827428+00:00"
     },
     {
       "id": "3f18ea19afbdcc328e8125f546a1bc0ea866023cfa15ecf65994baa1d2c949b6",
@@ -2827,7 +2803,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-10-29T00:00:00",
-      "updated_at": "2026-10-29T12:08:55.621529+00:00"
+      "updated_at": "2026-10-30T11:59:54.827394+00:00"
     },
     {
       "id": "b3f847df420aef87a7754f73b3fc98f00c3553e2f4f897e073c1594f3ed914b3",
@@ -2871,7 +2847,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-10-28T00:00:00",
-      "updated_at": "2026-10-29T12:08:55.621494+00:00"
+      "updated_at": "2026-10-30T11:59:54.827463+00:00"
     },
     {
       "id": "65eb0ceb5d4846a72b4fae7870a0d366972a5c2ef0a691ae351d5af6375fd467",
@@ -2938,6 +2914,116 @@
       "benefits": [],
       "created_at": "2026-10-28T00:00:00",
       "updated_at": "2026-10-29T12:08:55.621675+00:00"
+    },
+    {
+      "id": "9c4357badfbf5afffd7477481b3e24997d73354bc588537ba6921450ee048b54",
+      "fingerprint": "9c4357badfbf5afffd7477481b3e24997d73354bc588537ba6921450ee048b54",
+      "name": "COBOT-EX 2026 | Inter-College Hackathon",
+      "title": "COBOT-EX 2026 | Inter-College Hackathon",
+      "link": "https://unstop.com/hackathons/cobot-ex-2026-inter-college-hackathon-b-s-abdur-rahman-crescent-institute-of-science-and-technology-chennai-t-1783202",
+      "url": "https://unstop.com/hackathons/cobot-ex-2026-inter-college-hackathon-b-s-abdur-rahman-crescent-institute-of-science-and-technology-chennai-t-1783202",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-29T00:00:00",
+      "updated_at": "2026-10-30T11:59:54.827161+00:00"
+    },
+    {
+      "id": "b271b779f56c7503b081055392515bfc61b931992e75ae050a5ec1e1d82503c6",
+      "fingerprint": "b271b779f56c7503b081055392515bfc61b931992e75ae050a5ec1e1d82503c6",
+      "name": "Health Hackathon 3.0",
+      "title": "Health Hackathon 3.0",
+      "link": "https://unstop.com/hackathons/health-hackathon-30-vit-bhopal-university-1784631",
+      "url": "https://unstop.com/hackathons/health-hackathon-30-vit-bhopal-university-1784631",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-29T00:00:00",
+      "updated_at": "2026-10-30T11:59:54.827243+00:00"
+    },
+    {
+      "id": "827d5d3266f778bce6baf4951c5165831c905dcc0d5f470496f5d07cf1099a71",
+      "fingerprint": "827d5d3266f778bce6baf4951c5165831c905dcc0d5f470496f5d07cf1099a71",
+      "name": "CMR HACKFEST 4.0",
+      "title": "CMR HACKFEST 4.0",
+      "link": "https://unstop.com/hackathons/cmr-hackfest-40-cmr-college-of-engineering-and-technology-cmrcet-hyderabad-1782514",
+      "url": "https://unstop.com/hackathons/cmr-hackfest-40-cmr-college-of-engineering-and-technology-cmrcet-hyderabad-1782514",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-29T00:00:00",
+      "updated_at": "2026-10-30T11:59:54.827287+00:00"
+    },
+    {
+      "id": "078152feb9cacc15a15b1e49fa117ce335e7290c2b9d594bdb9c4c282746bf63",
+      "fingerprint": "078152feb9cacc15a15b1e49fa117ce335e7290c2b9d594bdb9c4c282746bf63",
+      "name": "One Who Codes 2026 - A Portfolio Challenge",
+      "title": "One Who Codes 2026 - A Portfolio Challenge",
+      "link": "https://unstop.com/hackathons/one-who-codes-2026-a-portfolio-challenge-acadable-1784554",
+      "url": "https://unstop.com/hackathons/one-who-codes-2026-a-portfolio-challenge-acadable-1784554",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-29T00:00:00",
+      "updated_at": "2026-10-30T11:59:54.827323+00:00"
+    },
+    {
+      "id": "fa83dec7f13126d4659a1933c1e08fed33b36722e8c9f7fd341ec2a7e11d0704",
+      "fingerprint": "fa83dec7f13126d4659a1933c1e08fed33b36722e8c9f7fd341ec2a7e11d0704",
+      "name": "Algonex 1.0",
+      "title": "Algonex 1.0",
+      "link": "https://unstop.com/hackathons/algonex-10-maya-devi-university-1781078",
+      "url": "https://unstop.com/hackathons/algonex-10-maya-devi-university-1781078",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-10-29T00:00:00",
+      "updated_at": "2026-10-30T11:59:54.827359+00:00"
     },
     {
       "id": "4abc3b427f7d2fae44938cc40562c2881802a0347d6de8402a542a2c79f8181c",
@@ -3607,7 +3693,57 @@
       "status": "ended",
       "benefits": [],
       "created_at": "2026-10-19T11:52:32.958673+00:00",
-      "updated_at": "2026-10-29T12:08:51.913362+00:00"
+      "updated_at": "2026-10-30T11:59:50.743972+00:00"
+    },
+    {
+      "id": "489bccb776ef6fd0d33420755a4a5e5f9462b2c7f23eecca67f980026671d63a",
+      "fingerprint": "489bccb776ef6fd0d33420755a4a5e5f9462b2c7f23eecca67f980026671d63a",
+      "name": "Qloo Agentic Hackathon",
+      "title": "Qloo Agentic Hackathon",
+      "link": "https://qloo.devpost.com",
+      "url": "https://qloo.devpost.com",
+      "source": "Devpost",
+      "deadline": "2026-10-30T00:00:00",
+      "reg_starts_at": "2026-09-30T00:00:00",
+      "reg_ends_at": "2026-10-30T00:00:00",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "Qloo",
+      "tags": [
+        "machine learning/ai"
+      ],
+      "prize": "$<span data-currency-value>25,000</span>",
+      "location": "Online",
+      "status": "ended",
+      "benefits": [],
+      "created_at": "2026-10-17T06:40:38.684002+00:00",
+      "updated_at": "2026-10-30T11:59:49.630739+00:00"
+    },
+    {
+      "id": "f7ef434afdaf86a0ce6f761098a0baaa3830decace5bb41cf6fc2bf47c6e6dde",
+      "fingerprint": "f7ef434afdaf86a0ce6f761098a0baaa3830decace5bb41cf6fc2bf47c6e6dde",
+      "name": "Nebius x NVIDIA Global AI Hackathon",
+      "title": "Nebius x NVIDIA Global AI Hackathon",
+      "link": "https://nebiusglobalaihackathon.devpost.com",
+      "url": "https://nebiusglobalaihackathon.devpost.com",
+      "source": "Devpost",
+      "deadline": "2026-10-30T00:00:00",
+      "reg_starts_at": "2026-08-26T00:00:00",
+      "reg_ends_at": "2026-10-30T00:00:00",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "nebius",
+      "tags": [
+        "beginner friendly",
+        "machine learning/ai",
+        "robotic process automation"
+      ],
+      "prize": "$<span data-currency-value>50,000</span>",
+      "location": "Online",
+      "status": "ended",
+      "benefits": [],
+      "created_at": "2026-10-17T06:40:38.682065+00:00",
+      "updated_at": "2026-10-30T11:59:49.629463+00:00"
     }
   ]
 }
