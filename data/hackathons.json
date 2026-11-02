@@ -1,22 +1,22 @@
 {
   "metadata": {
     "version": "1.0.0",
-    "generated_at": "2026-11-01T12:31:30.375860+00:00",
-    "total_count": 178,
-    "active_count": 21,
-    "open_count": 20,
+    "generated_at": "2026-11-02T14:33:28.644136+00:00",
+    "total_count": 181,
+    "active_count": 19,
+    "open_count": 18,
     "upcoming_count": 1,
-    "ended_count": 30,
-    "unknown_count": 127,
+    "ended_count": 32,
+    "unknown_count": 130,
     "sources": {
       "Devfolio": 25,
       "Devpost": 26,
-      "Unstop": 127
+      "Unstop": 130
     },
     "formats": {
       "Online": 40,
-      "In-Person": 85,
-      "Hybrid": 53,
+      "In-Person": 86,
+      "Hybrid": 55,
       "Unknown": 0
     },
     "benefits_count": 0,
@@ -44,82 +44,6 @@
     ]
   },
   "hackathons": [
-    {
-      "id": "ac12c1fc7dbe06914ad234acb1cbc26c7c0e63b424a0295979a170cf4aad7d4b",
-      "fingerprint": "ac12c1fc7dbe06914ad234acb1cbc26c7c0e63b424a0295979a170cf4aad7d4b",
-      "name": "DevNexus 2.0",
-      "title": "DevNexus 2.0",
-      "link": "https://devnexus2.devfolio.co",
-      "url": "https://devnexus2.devfolio.co",
-      "source": "Devfolio",
-      "deadline": "2026-11-01T18:30:00+00:00",
-      "reg_starts_at": "2026-09-18T18:30:00+00:00",
-      "reg_ends_at": "2026-11-01T18:30:00+00:00",
-      "starts_at": "2026-11-27T18:30:00+00:00",
-      "ends_at": "2026-11-28T18:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 1238 participants",
-      "tags": [
-        "no restrictions"
-      ],
-      "prize": "Unknown",
-      "location": "In-Person",
-      "status": "open",
-      "benefits": [],
-      "created_at": "2026-10-28T11:59:15.974617+00:00",
-      "updated_at": "2026-11-01T12:31:26.449223+00:00"
-    },
-    {
-      "id": "c1593abd2f2dc12c286ad2c1f34549055cec61f68713047a8cc212e5a292497e",
-      "fingerprint": "c1593abd2f2dc12c286ad2c1f34549055cec61f68713047a8cc212e5a292497e",
-      "name": "YouCam API Skin AI & eCommerce VTO Hackathon",
-      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
-      "link": "https://youcam-api-skin-ai-ecommerce.devpost.com",
-      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com",
-      "source": "Devpost",
-      "deadline": "2026-11-02T00:00:00",
-      "reg_starts_at": "2026-09-29T00:00:00",
-      "reg_ends_at": "2026-11-02T00:00:00",
-      "starts_at": "",
-      "ends_at": "",
-      "description": "Perfect Corp",
-      "tags": [
-        "ar/vr",
-        "e-commerce/retail",
-        "machine learning/ai"
-      ],
-      "prize": "$<span data-currency-value>6,000</span>",
-      "location": "Online",
-      "status": "open",
-      "benefits": [],
-      "created_at": "2026-10-24T10:08:21.769665+00:00",
-      "updated_at": "2026-11-01T12:31:25.353269+00:00"
-    },
-    {
-      "id": "19387dc8fbc61ea57d8afba017267ccc98ed08dade2164c494cf1713fdcf628b",
-      "fingerprint": "19387dc8fbc61ea57d8afba017267ccc98ed08dade2164c494cf1713fdcf628b",
-      "name": "Codex x TwitchCon Hackathon",
-      "title": "Codex x TwitchCon Hackathon",
-      "link": "https://twitchcon-codex.devpost.com",
-      "url": "https://twitchcon-codex.devpost.com",
-      "source": "Devpost",
-      "deadline": "2026-11-02T00:00:00",
-      "reg_starts_at": "2026-10-23T00:00:00",
-      "reg_ends_at": "2026-11-02T00:00:00",
-      "starts_at": "",
-      "ends_at": "",
-      "description": "Twitch",
-      "tags": [
-        "communication",
-        "gaming",
-        "machine learning/ai"
-      ],
-      "prize": "$<span data-currency-value>25,000</span>",
-      "location": "Online",
-      "status": "open",
-      "benefits": [],
-      "created_at": "2026-10-27T11:32:47.361643+00:00",
-      "updated_at": "2026-11-01T12:31:25.353059+00:00"
-    },
     {
       "id": "c2ad9a1453e347d1d53a5d602419488b4ba3c538c4ae3ee84099e5828015b33d",
       "fingerprint": "c2ad9a1453e347d1d53a5d602419488b4ba3c538c4ae3ee84099e5828015b33d",
@@ -169,6 +93,30 @@
       "updated_at": "2026-10-24T10:08:23.272873+00:00"
     },
     {
+      "id": "ac12c1fc7dbe06914ad234acb1cbc26c7c0e63b424a0295979a170cf4aad7d4b",
+      "fingerprint": "ac12c1fc7dbe06914ad234acb1cbc26c7c0e63b424a0295979a170cf4aad7d4b",
+      "name": "DevNexus 2.0",
+      "title": "DevNexus 2.0",
+      "link": "https://devnexus2.devfolio.co",
+      "url": "https://devnexus2.devfolio.co",
+      "source": "Devfolio",
+      "deadline": "2026-11-04T18:30:00+00:00",
+      "reg_starts_at": "2026-09-18T18:30:00+00:00",
+      "reg_ends_at": "2026-11-04T18:30:00+00:00",
+      "starts_at": "2026-11-27T18:30:00+00:00",
+      "ends_at": "2026-11-28T18:30:00+00:00",
+      "description": "Devfolio Hackathon (In-Person) • 1362 participants",
+      "tags": [
+        "no restrictions"
+      ],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "open",
+      "benefits": [],
+      "created_at": "2026-10-28T11:59:15.974617+00:00",
+      "updated_at": "2026-11-02T14:33:23.315372+00:00"
+    },
+    {
       "id": "e7ddf8b4db2c03cf72bb65e254d42aeea228c1350a66f4f230fad1588d524441",
       "fingerprint": "e7ddf8b4db2c03cf72bb65e254d42aeea228c1350a66f4f230fad1588d524441",
       "name": "Learn AR with SPECS",
@@ -192,7 +140,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-27T11:32:47.362724+00:00",
-      "updated_at": "2026-11-01T12:31:25.353682+00:00"
+      "updated_at": "2026-11-02T14:33:22.035499+00:00"
     },
     {
       "id": "2be5d7b360775925427cc9af4118afcf866b748bb625816ef767d2f499ee9378",
@@ -207,7 +155,7 @@
       "reg_ends_at": "2026-11-10T11:00:00+00:00",
       "starts_at": "2026-11-20T03:30:00+00:00",
       "ends_at": "2026-11-20T19:15:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 187 participants",
+      "description": "Devfolio Hackathon (In-Person) • 237 participants",
       "tags": [
         "no restrictions"
       ],
@@ -216,7 +164,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-23T11:06:02.986141+00:00",
-      "updated_at": "2026-11-01T12:31:26.449800+00:00"
+      "updated_at": "2026-11-02T14:33:23.315800+00:00"
     },
     {
       "id": "26f8bf202b2b0b3b6b38ff45e809a110883b74309d24971ec5d0e256b1fefe68",
@@ -231,7 +179,7 @@
       "reg_ends_at": "2026-11-10T18:29:00+00:00",
       "starts_at": "2026-11-21T06:30:00+00:00",
       "ends_at": "2026-11-21T12:15:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 934 participants",
+      "description": "Devfolio Hackathon (In-Person) • 986 participants",
       "tags": [
         "ai",
         "design"
@@ -241,7 +189,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-24T10:08:23.273771+00:00",
-      "updated_at": "2026-11-01T12:31:26.450091+00:00"
+      "updated_at": "2026-11-02T14:33:23.316479+00:00"
     },
     {
       "id": "69cad48b5fe87bd96372967720dd4798562ed15bad6573de059d4e3dd3cdab64",
@@ -256,7 +204,7 @@
       "reg_ends_at": "2026-11-10T18:29:00+00:00",
       "starts_at": "2026-12-12T05:00:00+00:00",
       "ends_at": "2026-12-13T05:00:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 405 participants",
+      "description": "Devfolio Hackathon (In-Person) • 423 participants",
       "tags": [
         "ai",
         "fintech",
@@ -267,7 +215,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-25T10:33:38.341549+00:00",
-      "updated_at": "2026-11-01T12:31:26.450332+00:00"
+      "updated_at": "2026-11-02T14:33:23.316136+00:00"
     },
     {
       "id": "75fbaa9ae6bdf7931b0b96953052a0d4f41a713d678e05c207ed921d7e5d9b4a",
@@ -293,7 +241,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682393+00:00",
-      "updated_at": "2026-11-01T12:31:25.352188+00:00"
+      "updated_at": "2026-11-02T14:33:22.033454+00:00"
     },
     {
       "id": "0e218e61f94b04083f5083169243f06fef61b49ab872dc70d178ec811b7c0c06",
@@ -319,7 +267,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-29T12:08:50.701077+00:00",
-      "updated_at": "2026-11-01T12:31:25.354088+00:00"
+      "updated_at": "2026-11-02T14:33:22.035750+00:00"
     },
     {
       "id": "ece3eb39cc6438fed2935be6dff71e078357da52a53bc01e064b2bb741de4daa",
@@ -345,7 +293,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-28T11:59:14.523273+00:00",
-      "updated_at": "2026-11-01T12:31:25.353893+00:00"
+      "updated_at": "2026-11-02T14:33:22.035231+00:00"
     },
     {
       "id": "b5946c918f7d9c8b115319c3714c2347b822d72a6631288d201a8904a2477378",
@@ -371,7 +319,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.683379+00:00",
-      "updated_at": "2026-11-01T12:31:25.352811+00:00"
+      "updated_at": "2026-11-02T14:33:22.034310+00:00"
     },
     {
       "id": "d2be75eb12edf49b76d034afb63920980a5814fb283e2610930152a1e9c8edb6",
@@ -386,7 +334,7 @@
       "reg_ends_at": "2026-11-18T17:00:00+00:00",
       "starts_at": "2026-11-19T18:30:00+00:00",
       "ends_at": "2026-11-22T17:00:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 307 participants",
+      "description": "Devfolio Hackathon (In-Person) • 343 participants",
       "tags": [
         "no restrictions"
       ],
@@ -395,7 +343,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-21T11:02:10.921500+00:00",
-      "updated_at": "2026-11-01T12:31:26.450578+00:00"
+      "updated_at": "2026-11-02T14:33:23.316809+00:00"
     },
     {
       "id": "2f0544e1c14cb6dc0baf94042c1fcb466e26be854a1417a32491562e13161138",
@@ -421,7 +369,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-31T11:34:38.445501+00:00",
-      "updated_at": "2026-11-01T12:31:25.352586+00:00"
+      "updated_at": "2026-11-02T14:33:22.034012+00:00"
     },
     {
       "id": "c99a4cd6ce44d1a74487113540794792238acdb173c7e7e2e0018c0f7e882cd4",
@@ -436,7 +384,7 @@
       "reg_ends_at": "2026-12-10T18:29:00+00:00",
       "starts_at": "2026-12-10T18:30:00+00:00",
       "ends_at": "2026-12-13T06:30:00+00:00",
-      "description": "Devfolio Hackathon (Online) • 1647 participants",
+      "description": "Devfolio Hackathon (Online) • 1686 participants",
       "tags": [
         "no restrictions"
       ],
@@ -445,7 +393,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-22T11:00:23.559297+00:00",
-      "updated_at": "2026-11-01T12:31:26.450822+00:00"
+      "updated_at": "2026-11-02T14:33:23.317130+00:00"
     },
     {
       "id": "510f40fbb141a621d9c3c4558d5bf0ae395e3f5336703ef764b02e9b56428d9b",
@@ -460,7 +408,7 @@
       "reg_ends_at": "2026-12-15T18:29:00+00:00",
       "starts_at": "2027-01-30T04:30:00+00:00",
       "ends_at": "2027-01-31T11:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 16 participants",
+      "description": "Devfolio Hackathon (In-Person) • 24 participants",
       "tags": [
         "no restrictions"
       ],
@@ -469,7 +417,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-01T12:31:26.451085+00:00",
-      "updated_at": "2026-11-01T12:31:26.451085+00:00"
+      "updated_at": "2026-11-02T14:33:23.317481+00:00"
     },
     {
       "id": "cb77c2c325c20344b67fb15fff49972a0f2b1de2941956a37ad473de0b66a95f",
@@ -495,7 +443,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-30T11:59:49.632327+00:00",
-      "updated_at": "2026-11-01T12:31:25.353490+00:00"
+      "updated_at": "2026-11-02T14:33:22.034982+00:00"
     },
     {
       "id": "bbae09226b2144b4099ad75ed6d26690b874c6428490de2093dd9551089a4bf4",
@@ -510,7 +458,7 @@
       "reg_ends_at": "2026-12-31T18:29:00+00:00",
       "starts_at": "2027-01-22T12:30:00+00:00",
       "ends_at": "2027-01-24T00:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 923 participants",
+      "description": "Devfolio Hackathon (In-Person) • 930 participants",
       "tags": [
         "no restrictions"
       ],
@@ -519,7 +467,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-29T12:08:51.916834+00:00",
-      "updated_at": "2026-11-01T12:31:26.451326+00:00"
+      "updated_at": "2026-11-02T14:33:23.317837+00:00"
     },
     {
       "id": "b33498f3a293db4aee53935ca3d723b18daa407d7408d836024ac213e6393367",
@@ -534,7 +482,7 @@
       "reg_ends_at": "2027-01-03T18:29:00+00:00",
       "starts_at": "2027-01-22T04:30:00+00:00",
       "ends_at": "2027-01-24T06:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 100 participants",
+      "description": "Devfolio Hackathon (In-Person) • 112 participants",
       "tags": [
         "no restrictions"
       ],
@@ -543,7 +491,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-29T12:08:51.917264+00:00",
-      "updated_at": "2026-11-01T12:31:26.451569+00:00"
+      "updated_at": "2026-11-02T14:33:23.318156+00:00"
     },
     {
       "id": "a3b585f2c17176e89d5a33df0a7a7136477999b9c64e24313b9b12e2d303b31b",
@@ -554,7 +502,7 @@
       "url": "https://hacksprint-3.devfolio.co",
       "source": "Devfolio",
       "deadline": "2026-12-28T18:29:00+00:00",
-      "reg_starts_at": "2026-11-04T06:30:00+00:00",
+      "reg_starts_at": "2026-11-08T06:30:00+00:00",
       "reg_ends_at": "2026-12-28T18:29:00+00:00",
       "starts_at": "2027-01-29T02:30:00+00:00",
       "ends_at": "2027-01-30T14:30:00+00:00",
@@ -567,7 +515,7 @@
       "status": "upcoming",
       "benefits": [],
       "created_at": "2026-10-31T11:34:39.825815+00:00",
-      "updated_at": "2026-10-31T11:34:39.825815+00:00"
+      "updated_at": "2026-11-02T14:33:23.318500+00:00"
     },
     {
       "id": "36c1fdfc244d341c69d3fc5f5bdf8d4ee3b0f6543de03250689cf35c04f3373a",
@@ -3119,7 +3067,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-10-31T00:00:00",
-      "updated_at": "2026-11-01T12:31:30.240977+00:00"
+      "updated_at": "2026-11-02T14:33:28.582863+00:00"
     },
     {
       "id": "fec7523532875e0b68602d540cb7b26f64e788a6f35c88b9430abe144901db0f",
@@ -3185,7 +3133,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-10-30T00:00:00",
-      "updated_at": "2026-11-01T12:31:30.240919+00:00"
+      "updated_at": "2026-11-02T14:33:28.582733+00:00"
     },
     {
       "id": "abbcf3ade63a8375e1e730b835de0b38940076312796155f7db0286131ff89c0",
@@ -3207,7 +3155,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-10-30T00:00:00",
-      "updated_at": "2026-11-01T12:31:30.240937+00:00"
+      "updated_at": "2026-11-02T14:33:28.582755+00:00"
     },
     {
       "id": "57ac617c6f47193bafbc85caf9196fa0e51711ab89251a217a919f1b30062fc7",
@@ -3295,7 +3243,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-11-01T00:00:00",
-      "updated_at": "2026-11-01T12:31:30.240793+00:00"
+      "updated_at": "2026-11-02T14:33:28.582796+00:00"
     },
     {
       "id": "69477595d959afe610af2583d92dfad0490540580e764d14d154bc41a16ef15e",
@@ -3317,7 +3265,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-11-01T00:00:00",
-      "updated_at": "2026-11-01T12:31:30.240843+00:00"
+      "updated_at": "2026-11-02T14:33:28.582819+00:00"
     },
     {
       "id": "6e3e97af6f7a7e3860d722fe15c41568c6847a186aad85801059bb51a0c2cb83",
@@ -3339,7 +3287,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-10-31T00:00:00",
-      "updated_at": "2026-11-01T12:31:30.240720+00:00"
+      "updated_at": "2026-11-02T14:33:28.582708+00:00"
     },
     {
       "id": "6af2d1e35a4f1bb84d297da0d5bbf29a84f1e6ebe865e295ee4fef5874861df2",
@@ -3361,7 +3309,73 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-10-31T00:00:00",
-      "updated_at": "2026-11-01T12:31:30.240877+00:00"
+      "updated_at": "2026-11-02T14:33:28.582841+00:00"
+    },
+    {
+      "id": "4cca89c58661dd1aa1aa8bd184c81225cf6bd139b47028a31ebb371d25577096",
+      "fingerprint": "4cca89c58661dd1aa1aa8bd184c81225cf6bd139b47028a31ebb371d25577096",
+      "name": "Cognition- AI Hackathon",
+      "title": "Cognition- AI Hackathon",
+      "link": "https://unstop.com/hackathons/cognition-ai-hackathon-techtonics-sri-guru-gobind-singh-college-of-commerce-sggscc-new-delhi-1790269",
+      "url": "https://unstop.com/hackathons/cognition-ai-hackathon-techtonics-sri-guru-gobind-singh-college-of-commerce-sggscc-new-delhi-1790269",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-11-02T00:00:00",
+      "updated_at": "2026-11-02T14:33:28.582592+00:00"
+    },
+    {
+      "id": "d0ae3c8882e6143996385a790ed7aacb162ae0b99e378927ddae558242797c3b",
+      "fingerprint": "d0ae3c8882e6143996385a790ed7aacb162ae0b99e378927ddae558242797c3b",
+      "name": "Project Last Mile: Analytics Case Challenge",
+      "title": "Project Last Mile: Analytics Case Challenge",
+      "link": "https://unstop.com/hackathons/project-lastmile-analytics-case-challenge-xavier-school-of-management-xlri-1789982",
+      "url": "https://unstop.com/hackathons/project-lastmile-analytics-case-challenge-xavier-school-of-management-xlri-1789982",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-11-01T00:00:00",
+      "updated_at": "2026-11-02T14:33:28.582675+00:00"
+    },
+    {
+      "id": "2e1de459337f2be4ab3c275a4bf9b1de7a29b9b89bccad4d53f49e099533d543",
+      "fingerprint": "2e1de459337f2be4ab3c275a4bf9b1de7a29b9b89bccad4d53f49e099533d543",
+      "name": "CTF - Capture The Flag",
+      "title": "CTF - Capture The Flag",
+      "link": "https://unstop.com/hackathons/ctf-capture-the-flag-iit-madras-1782683",
+      "url": "https://unstop.com/hackathons/ctf-capture-the-flag-iit-madras-1782683",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-11-01T00:00:00",
+      "updated_at": "2026-11-02T14:33:28.582776+00:00"
     },
     {
       "id": "4abc3b427f7d2fae44938cc40562c2881802a0347d6de8402a542a2c79f8181c",
@@ -4082,6 +4096,58 @@
       "benefits": [],
       "created_at": "2026-10-17T06:40:38.682065+00:00",
       "updated_at": "2026-10-30T11:59:49.629463+00:00"
+    },
+    {
+      "id": "c1593abd2f2dc12c286ad2c1f34549055cec61f68713047a8cc212e5a292497e",
+      "fingerprint": "c1593abd2f2dc12c286ad2c1f34549055cec61f68713047a8cc212e5a292497e",
+      "name": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+      "link": "https://youcam-api-skin-ai-ecommerce.devpost.com",
+      "url": "https://youcam-api-skin-ai-ecommerce.devpost.com",
+      "source": "Devpost",
+      "deadline": "2026-11-02T00:00:00",
+      "reg_starts_at": "2026-09-29T00:00:00",
+      "reg_ends_at": "2026-11-02T00:00:00",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "Perfect Corp",
+      "tags": [
+        "ar/vr",
+        "e-commerce/retail",
+        "machine learning/ai"
+      ],
+      "prize": "$<span data-currency-value>6,000</span>",
+      "location": "Online",
+      "status": "ended",
+      "benefits": [],
+      "created_at": "2026-10-24T10:08:21.769665+00:00",
+      "updated_at": "2026-11-02T14:33:22.034799+00:00"
+    },
+    {
+      "id": "19387dc8fbc61ea57d8afba017267ccc98ed08dade2164c494cf1713fdcf628b",
+      "fingerprint": "19387dc8fbc61ea57d8afba017267ccc98ed08dade2164c494cf1713fdcf628b",
+      "name": "Codex x TwitchCon Hackathon",
+      "title": "Codex x TwitchCon Hackathon",
+      "link": "https://twitchcon-codex.devpost.com",
+      "url": "https://twitchcon-codex.devpost.com",
+      "source": "Devpost",
+      "deadline": "2026-11-02T00:00:00",
+      "reg_starts_at": "2026-10-23T00:00:00",
+      "reg_ends_at": "2026-11-02T00:00:00",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "Twitch",
+      "tags": [
+        "communication",
+        "gaming",
+        "machine learning/ai"
+      ],
+      "prize": "$<span data-currency-value>25,000</span>",
+      "location": "Online",
+      "status": "ended",
+      "benefits": [],
+      "created_at": "2026-10-27T11:32:47.361643+00:00",
+      "updated_at": "2026-11-02T14:33:22.034614+00:00"
     }
   ]
 }
