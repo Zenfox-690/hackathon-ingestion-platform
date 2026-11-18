@@ -1,16 +1,16 @@
 {
   "metadata": {
     "version": "1.0.0",
-    "generated_at": "2026-11-17T15:24:19.832357+00:00",
+    "generated_at": "2026-11-18T15:04:26.012071+00:00",
     "total_count": 216,
-    "active_count": 29,
-    "open_count": 28,
+    "active_count": 28,
+    "open_count": 27,
     "upcoming_count": 1,
-    "ended_count": 41,
+    "ended_count": 42,
     "unknown_count": 146,
     "sources": {
-      "Devpost": 35,
       "Devfolio": 35,
+      "Devpost": 35,
       "Unstop": 146
     },
     "formats": {
@@ -45,32 +45,6 @@
   },
   "hackathons": [
     {
-      "id": "b5946c918f7d9c8b115319c3714c2347b822d72a6631288d201a8904a2477378",
-      "fingerprint": "b5946c918f7d9c8b115319c3714c2347b822d72a6631288d201a8904a2477378",
-      "name": "Meta VR Start Developer Competition 2026",
-      "title": "Meta VR Start Developer Competition 2026",
-      "link": "https://start-developer-competition-26.devpost.com",
-      "url": "https://start-developer-competition-26.devpost.com",
-      "source": "Devpost",
-      "deadline": "2026-11-18T00:00:00",
-      "reg_starts_at": "2026-09-24T00:00:00",
-      "reg_ends_at": "2026-11-18T00:00:00",
-      "starts_at": "",
-      "ends_at": "",
-      "description": "Meta",
-      "tags": [
-        "ar/vr",
-        "machine learning/ai",
-        "web"
-      ],
-      "prize": "$<span data-currency-value>1,000,000</span>",
-      "location": "Online",
-      "status": "open",
-      "benefits": [],
-      "created_at": "2026-10-17T06:40:38.683379+00:00",
-      "updated_at": "2026-11-17T15:24:14.297463+00:00"
-    },
-    {
       "id": "d2be75eb12edf49b76d034afb63920980a5814fb283e2610930152a1e9c8edb6",
       "fingerprint": "d2be75eb12edf49b76d034afb63920980a5814fb283e2610930152a1e9c8edb6",
       "name": "Lean In Hacks 8.0",
@@ -78,12 +52,12 @@
       "link": "https://lean-in-hacks-8.devfolio.co",
       "url": "https://lean-in-hacks-8.devfolio.co",
       "source": "Devfolio",
-      "deadline": "2026-11-18T17:00:00+00:00",
+      "deadline": "2026-11-19T16:30:00+00:00",
       "reg_starts_at": "2026-10-20T10:30:00+00:00",
-      "reg_ends_at": "2026-11-18T17:00:00+00:00",
+      "reg_ends_at": "2026-11-19T16:30:00+00:00",
       "starts_at": "2026-11-19T18:30:00+00:00",
       "ends_at": "2026-11-22T17:00:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 857 participants",
+      "description": "Devfolio Hackathon (In-Person) • 964 participants",
       "tags": [
         "no restrictions"
       ],
@@ -92,7 +66,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-21T11:02:10.921500+00:00",
-      "updated_at": "2026-11-17T15:24:14.977597+00:00"
+      "updated_at": "2026-11-18T15:04:22.252696+00:00"
     },
     {
       "id": "ac12c1fc7dbe06914ad234acb1cbc26c7c0e63b424a0295979a170cf4aad7d4b",
@@ -107,7 +81,7 @@
       "reg_ends_at": "2026-11-19T18:30:00+00:00",
       "starts_at": "2026-11-27T18:30:00+00:00",
       "ends_at": "2026-11-28T18:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 2306 participants",
+      "description": "Devfolio Hackathon (In-Person) • 2355 participants",
       "tags": [
         "no restrictions"
       ],
@@ -116,7 +90,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-28T11:59:15.974617+00:00",
-      "updated_at": "2026-11-17T15:24:14.977897+00:00"
+      "updated_at": "2026-11-18T15:04:22.252995+00:00"
     },
     {
       "id": "b52ccb8675e3406a2f5c873c05ef2f16c94085127bf5ea751b6d452f9acf2d45",
@@ -131,7 +105,7 @@
       "reg_ends_at": "2026-11-20T18:29:00+00:00",
       "starts_at": "2026-11-21T18:30:00+00:00",
       "ends_at": "2026-11-24T18:29:00+00:00",
-      "description": "Devfolio Hackathon (Online) • 69 participants",
+      "description": "Devfolio Hackathon (Online) • 110 participants",
       "tags": [
         "no restrictions"
       ],
@@ -140,7 +114,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-15T13:19:43.948534+00:00",
-      "updated_at": "2026-11-17T15:24:14.978143+00:00"
+      "updated_at": "2026-11-18T15:04:22.253244+00:00"
     },
     {
       "id": "280675b327eaaf0b15c1b9678930a32ae3188cf1e2cdec5321ca7520355ba8f6",
@@ -155,7 +129,7 @@
       "reg_ends_at": "2026-11-23T02:45:00+00:00",
       "starts_at": "2026-11-23T02:45:00+00:00",
       "ends_at": "2026-11-23T10:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 162 participants",
+      "description": "Devfolio Hackathon (In-Person) • 257 participants",
       "tags": [
         "no restrictions"
       ],
@@ -164,7 +138,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-10T14:09:40.308355+00:00",
-      "updated_at": "2026-11-17T15:24:14.978415+00:00"
+      "updated_at": "2026-11-18T15:04:22.253512+00:00"
     },
     {
       "id": "e6ed19e7462c965c49cbd3476cb1796e257d2820ec010ea51ad57587a36a090d",
@@ -179,8 +153,9 @@
       "reg_ends_at": "2026-11-24T18:29:00+00:00",
       "starts_at": "2026-12-09T03:30:00+00:00",
       "ends_at": "2026-12-09T11:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 5 participants",
+      "description": "Devfolio Hackathon (In-Person) • 14 participants",
       "tags": [
+        "hardware",
         "no restrictions"
       ],
       "prize": "Unknown",
@@ -188,7 +163,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-17T15:24:14.978649+00:00",
-      "updated_at": "2026-11-17T15:24:14.978649+00:00"
+      "updated_at": "2026-11-18T15:04:22.253774+00:00"
     },
     {
       "id": "214cecbfbf2a16fe4a1488c5409bbe74cd89c6d016e4f564eabe5d607a2fd178",
@@ -203,7 +178,7 @@
       "reg_ends_at": "2026-11-24T18:30:00+00:00",
       "starts_at": "2026-11-08T18:30:00+00:00",
       "ends_at": "2026-11-24T18:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 226 participants",
+      "description": "Devfolio Hackathon (In-Person) • 245 participants",
       "tags": [
         "no restrictions"
       ],
@@ -212,7 +187,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-09T14:58:43.523812+00:00",
-      "updated_at": "2026-11-17T15:24:14.978884+00:00"
+      "updated_at": "2026-11-18T15:04:22.254009+00:00"
     },
     {
       "id": "f42c229a9115206dd725520cf69d8535fc0349577b25d9c85d89a1a6510661ae",
@@ -238,7 +213,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-12T14:30:32.680738+00:00",
-      "updated_at": "2026-11-17T15:24:14.297868+00:00"
+      "updated_at": "2026-11-18T15:04:20.919685+00:00"
     },
     {
       "id": "84e36c7270ee4e50ca3c7570c215a00778987f7f4b53833c6aacad3f93733a9c",
@@ -253,7 +228,7 @@
       "reg_ends_at": "2026-11-30T18:29:00+00:00",
       "starts_at": "2027-01-28T03:30:00+00:00",
       "ends_at": "2027-01-29T10:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 67 participants",
+      "description": "Devfolio Hackathon (In-Person) • 76 participants",
       "tags": [
         "no restrictions"
       ],
@@ -262,7 +237,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-09T14:58:43.524431+00:00",
-      "updated_at": "2026-11-17T15:24:14.979363+00:00"
+      "updated_at": "2026-11-18T15:04:22.254496+00:00"
     },
     {
       "id": "a6fadb839c402cc7da659b5a00413fc6061e4a12ba8abe00c8838e7675816aee",
@@ -277,7 +252,7 @@
       "reg_ends_at": "2026-11-30T18:29:00+00:00",
       "starts_at": "2026-12-04T04:30:00+00:00",
       "ends_at": "2026-12-05T12:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 329 participants",
+      "description": "Devfolio Hackathon (In-Person) • 373 participants",
       "tags": [
         "no restrictions"
       ],
@@ -286,7 +261,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-09T14:58:43.524128+00:00",
-      "updated_at": "2026-11-17T15:24:14.979111+00:00"
+      "updated_at": "2026-11-18T15:04:22.254245+00:00"
     },
     {
       "id": "2f0544e1c14cb6dc0baf94042c1fcb466e26be854a1417a32491562e13161138",
@@ -312,7 +287,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-31T11:34:38.445501+00:00",
-      "updated_at": "2026-11-17T15:24:14.297037+00:00"
+      "updated_at": "2026-11-18T15:04:20.918948+00:00"
     },
     {
       "id": "8f6df905fbcdaa201755734247cec2c511afe62e038bc8781be56c333d585caf",
@@ -327,7 +302,7 @@
       "reg_ends_at": "2026-12-05T18:29:00+00:00",
       "starts_at": "2027-01-02T04:30:00+00:00",
       "ends_at": "2027-01-03T04:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 363 participants",
+      "description": "Devfolio Hackathon (In-Person) • 388 participants",
       "tags": [
         "no restrictions"
       ],
@@ -336,7 +311,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:39.328858+00:00",
-      "updated_at": "2026-11-17T15:24:14.979598+00:00"
+      "updated_at": "2026-11-18T15:04:22.254728+00:00"
     },
     {
       "id": "9b9a3fca3dad19bdc3eee5de3ff19eb7a8fac99d9e5f934c4419cd1f86075a83",
@@ -362,7 +337,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-16T14:33:51.088862+00:00",
-      "updated_at": "2026-11-17T15:24:14.298450+00:00"
+      "updated_at": "2026-11-18T15:04:20.920243+00:00"
     },
     {
       "id": "36437adb22c8fbd6661299354d5584206b01a45435b00c2edc2b50a2bbb0fe50",
@@ -387,7 +362,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-13T13:47:55.141998+00:00",
-      "updated_at": "2026-11-17T15:24:14.298247+00:00"
+      "updated_at": "2026-11-18T15:04:20.920061+00:00"
     },
     {
       "id": "4f8f68c89faaa9bcb36413956a33d9663d133c212aa1ca482e36d57be30221f1",
@@ -402,7 +377,7 @@
       "reg_ends_at": "2026-12-09T17:00:00+00:00",
       "starts_at": "2026-12-26T01:00:00+00:00",
       "ends_at": "2026-12-27T01:00:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 36 participants",
+      "description": "Devfolio Hackathon (In-Person) • 39 participants",
       "tags": [
         "ai",
         "blockchain",
@@ -413,7 +388,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-11T13:26:09.974425+00:00",
-      "updated_at": "2026-11-17T15:24:14.979830+00:00"
+      "updated_at": "2026-11-18T15:04:22.254960+00:00"
     },
     {
       "id": "69cad48b5fe87bd96372967720dd4798562ed15bad6573de059d4e3dd3cdab64",
@@ -515,7 +490,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-03T13:29:20.774862+00:00",
-      "updated_at": "2026-11-17T15:24:14.298059+00:00"
+      "updated_at": "2026-11-18T15:04:20.919873+00:00"
     },
     {
       "id": "510f40fbb141a621d9c3c4558d5bf0ae395e3f5336703ef764b02e9b56428d9b",
@@ -565,7 +540,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-03T13:29:20.775053+00:00",
-      "updated_at": "2026-11-17T15:24:14.298819+00:00"
+      "updated_at": "2026-11-18T15:04:20.920685+00:00"
     },
     {
       "id": "cb77c2c325c20344b67fb15fff49972a0f2b1de2941956a37ad473de0b66a95f",
@@ -591,7 +566,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-30T11:59:49.632327+00:00",
-      "updated_at": "2026-11-17T15:24:14.297674+00:00"
+      "updated_at": "2026-11-18T15:04:20.919485+00:00"
     },
     {
       "id": "a3b585f2c17176e89d5a33df0a7a7136477999b9c64e24313b9b12e2d303b31b",
@@ -713,7 +688,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-15T13:19:43.632738+00:00",
-      "updated_at": "2026-11-17T15:24:14.298632+00:00"
+      "updated_at": "2026-11-18T15:04:20.920458+00:00"
     },
     {
       "id": "6c52ebb88ad663cfce6e87bc2b840cd0b697f70cc1b2a4b3955b14f3baed5ad7",
@@ -4975,6 +4950,32 @@
       "benefits": [],
       "created_at": "2026-10-28T11:59:14.523273+00:00",
       "updated_at": "2026-11-15T13:19:43.630986+00:00"
+    },
+    {
+      "id": "b5946c918f7d9c8b115319c3714c2347b822d72a6631288d201a8904a2477378",
+      "fingerprint": "b5946c918f7d9c8b115319c3714c2347b822d72a6631288d201a8904a2477378",
+      "name": "Meta VR Start Developer Competition 2026",
+      "title": "Meta VR Start Developer Competition 2026",
+      "link": "https://start-developer-competition-26.devpost.com",
+      "url": "https://start-developer-competition-26.devpost.com",
+      "source": "Devpost",
+      "deadline": "2026-11-18T00:00:00",
+      "reg_starts_at": "2026-09-24T00:00:00",
+      "reg_ends_at": "2026-11-18T00:00:00",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "Meta",
+      "tags": [
+        "ar/vr",
+        "machine learning/ai",
+        "web"
+      ],
+      "prize": "$<span data-currency-value>1,000,000</span>",
+      "location": "Online",
+      "status": "ended",
+      "benefits": [],
+      "created_at": "2026-10-17T06:40:38.683379+00:00",
+      "updated_at": "2026-11-18T15:04:20.919322+00:00"
     }
   ]
 }
