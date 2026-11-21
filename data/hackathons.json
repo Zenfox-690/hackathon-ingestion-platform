@@ -1,22 +1,22 @@
 {
   "metadata": {
     "version": "1.0.0",
-    "generated_at": "2026-11-20T14:47:31.977597+00:00",
-    "total_count": 227,
-    "active_count": 28,
-    "open_count": 27,
+    "generated_at": "2026-11-21T14:02:52.030988+00:00",
+    "total_count": 234,
+    "active_count": 27,
+    "open_count": 26,
     "upcoming_count": 1,
-    "ended_count": 43,
-    "unknown_count": 156,
+    "ended_count": 44,
+    "unknown_count": 163,
     "sources": {
       "Devfolio": 35,
       "Devpost": 36,
-      "Unstop": 156
+      "Unstop": 163
     },
     "formats": {
       "Online": 50,
-      "In-Person": 108,
-      "Hybrid": 68,
+      "In-Person": 111,
+      "Hybrid": 72,
       "Unknown": 1
     },
     "benefits_count": 0,
@@ -45,30 +45,6 @@
   },
   "hackathons": [
     {
-      "id": "b52ccb8675e3406a2f5c873c05ef2f16c94085127bf5ea751b6d452f9acf2d45",
-      "fingerprint": "b52ccb8675e3406a2f5c873c05ef2f16c94085127bf5ea751b6d452f9acf2d45",
-      "name": "CODEFESTTHON 2026",
-      "title": "CODEFESTTHON 2026",
-      "link": "https://codefestthon.devfolio.co",
-      "url": "https://codefestthon.devfolio.co",
-      "source": "Devfolio",
-      "deadline": "2026-11-20T18:29:00+00:00",
-      "reg_starts_at": "2026-11-15T06:00:00+00:00",
-      "reg_ends_at": "2026-11-20T18:29:00+00:00",
-      "starts_at": "2026-11-21T18:30:00+00:00",
-      "ends_at": "2026-11-24T18:29:00+00:00",
-      "description": "Devfolio Hackathon (Online) • 224 participants",
-      "tags": [
-        "no restrictions"
-      ],
-      "prize": "Unknown",
-      "location": "Online",
-      "status": "open",
-      "benefits": [],
-      "created_at": "2026-11-15T13:19:43.948534+00:00",
-      "updated_at": "2026-11-20T14:47:26.217867+00:00"
-    },
-    {
       "id": "ac12c1fc7dbe06914ad234acb1cbc26c7c0e63b424a0295979a170cf4aad7d4b",
       "fingerprint": "ac12c1fc7dbe06914ad234acb1cbc26c7c0e63b424a0295979a170cf4aad7d4b",
       "name": "DevNexus 2.0",
@@ -76,12 +52,12 @@
       "link": "https://devnexus2.devfolio.co",
       "url": "https://devnexus2.devfolio.co",
       "source": "Devfolio",
-      "deadline": "2026-11-20T18:30:00+00:00",
+      "deadline": "2026-11-21T17:30:00+00:00",
       "reg_starts_at": "2026-09-18T18:30:00+00:00",
-      "reg_ends_at": "2026-11-20T18:30:00+00:00",
+      "reg_ends_at": "2026-11-21T17:30:00+00:00",
       "starts_at": "2026-11-27T18:30:00+00:00",
       "ends_at": "2026-11-28T18:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 2439 participants",
+      "description": "Devfolio Hackathon (In-Person) • 2494 participants",
       "tags": [
         "no restrictions"
       ],
@@ -90,7 +66,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-28T11:59:15.974617+00:00",
-      "updated_at": "2026-11-20T14:47:26.218166+00:00"
+      "updated_at": "2026-11-21T14:02:46.022286+00:00"
     },
     {
       "id": "280675b327eaaf0b15c1b9678930a32ae3188cf1e2cdec5321ca7520355ba8f6",
@@ -105,7 +81,7 @@
       "reg_ends_at": "2026-11-23T02:45:00+00:00",
       "starts_at": "2026-11-23T02:45:00+00:00",
       "ends_at": "2026-11-23T10:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 331 participants",
+      "description": "Devfolio Hackathon (In-Person) • 373 participants",
       "tags": [
         "no restrictions"
       ],
@@ -114,7 +90,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-10T14:09:40.308355+00:00",
-      "updated_at": "2026-11-20T14:47:26.218420+00:00"
+      "updated_at": "2026-11-21T14:02:46.022596+00:00"
     },
     {
       "id": "214cecbfbf2a16fe4a1488c5409bbe74cd89c6d016e4f564eabe5d607a2fd178",
@@ -129,7 +105,7 @@
       "reg_ends_at": "2026-11-24T18:30:00+00:00",
       "starts_at": "2026-11-08T18:30:00+00:00",
       "ends_at": "2026-11-24T18:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 277 participants",
+      "description": "Devfolio Hackathon (In-Person) • 305 participants",
       "tags": [
         "no restrictions"
       ],
@@ -138,7 +114,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-09T14:58:43.523812+00:00",
-      "updated_at": "2026-11-20T14:47:26.218659+00:00"
+      "updated_at": "2026-11-21T14:02:46.022944+00:00"
     },
     {
       "id": "e6ed19e7462c965c49cbd3476cb1796e257d2820ec010ea51ad57587a36a090d",
@@ -153,7 +129,7 @@
       "reg_ends_at": "2026-11-25T18:29:00+00:00",
       "starts_at": "2026-12-09T03:30:00+00:00",
       "ends_at": "2026-12-09T11:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 72 participants",
+      "description": "Devfolio Hackathon (In-Person) • 97 participants",
       "tags": [
         "hardware",
         "no restrictions"
@@ -163,7 +139,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-17T15:24:14.978649+00:00",
-      "updated_at": "2026-11-20T14:47:26.218916+00:00"
+      "updated_at": "2026-11-21T14:02:46.023210+00:00"
     },
     {
       "id": "f42c229a9115206dd725520cf69d8535fc0349577b25d9c85d89a1a6510661ae",
@@ -189,7 +165,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-12T14:30:32.680738+00:00",
-      "updated_at": "2026-11-20T14:47:24.862723+00:00"
+      "updated_at": "2026-11-21T14:02:44.802700+00:00"
     },
     {
       "id": "84e36c7270ee4e50ca3c7570c215a00778987f7f4b53833c6aacad3f93733a9c",
@@ -204,7 +180,7 @@
       "reg_ends_at": "2026-11-30T18:29:00+00:00",
       "starts_at": "2027-01-28T03:30:00+00:00",
       "ends_at": "2027-01-29T10:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 94 participants",
+      "description": "Devfolio Hackathon (In-Person) • 108 participants",
       "tags": [
         "no restrictions"
       ],
@@ -213,7 +189,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-09T14:58:43.524431+00:00",
-      "updated_at": "2026-11-20T14:47:26.219401+00:00"
+      "updated_at": "2026-11-21T14:02:46.023701+00:00"
     },
     {
       "id": "a6fadb839c402cc7da659b5a00413fc6061e4a12ba8abe00c8838e7675816aee",
@@ -228,7 +204,7 @@
       "reg_ends_at": "2026-11-30T18:29:00+00:00",
       "starts_at": "2026-12-04T04:30:00+00:00",
       "ends_at": "2026-12-05T12:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 565 participants",
+      "description": "Devfolio Hackathon (In-Person) • 619 participants",
       "tags": [
         "no restrictions"
       ],
@@ -237,7 +213,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-09T14:58:43.524128+00:00",
-      "updated_at": "2026-11-20T14:47:26.219167+00:00"
+      "updated_at": "2026-11-21T14:02:46.023460+00:00"
     },
     {
       "id": "2f0544e1c14cb6dc0baf94042c1fcb466e26be854a1417a32491562e13161138",
@@ -263,7 +239,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-31T11:34:38.445501+00:00",
-      "updated_at": "2026-11-20T14:47:24.862115+00:00"
+      "updated_at": "2026-11-21T14:02:44.802312+00:00"
     },
     {
       "id": "8f6df905fbcdaa201755734247cec2c511afe62e038bc8781be56c333d585caf",
@@ -278,7 +254,7 @@
       "reg_ends_at": "2026-12-05T18:29:00+00:00",
       "starts_at": "2027-01-02T04:30:00+00:00",
       "ends_at": "2027-01-03T04:30:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 441 participants",
+      "description": "Devfolio Hackathon (In-Person) • 481 participants",
       "tags": [
         "no restrictions"
       ],
@@ -287,7 +263,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-17T06:40:39.328858+00:00",
-      "updated_at": "2026-11-20T14:47:26.219631+00:00"
+      "updated_at": "2026-11-21T14:02:46.023959+00:00"
     },
     {
       "id": "9b9a3fca3dad19bdc3eee5de3ff19eb7a8fac99d9e5f934c4419cd1f86075a83",
@@ -313,7 +289,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-16T14:33:51.088862+00:00",
-      "updated_at": "2026-11-20T14:47:24.863321+00:00"
+      "updated_at": "2026-11-21T14:02:44.803543+00:00"
     },
     {
       "id": "36437adb22c8fbd6661299354d5584206b01a45435b00c2edc2b50a2bbb0fe50",
@@ -338,7 +314,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-13T13:47:55.141998+00:00",
-      "updated_at": "2026-11-20T14:47:24.863133+00:00"
+      "updated_at": "2026-11-21T14:02:44.803357+00:00"
     },
     {
       "id": "4f8f68c89faaa9bcb36413956a33d9663d133c212aa1ca482e36d57be30221f1",
@@ -353,7 +329,7 @@
       "reg_ends_at": "2026-12-09T17:00:00+00:00",
       "starts_at": "2026-12-26T01:00:00+00:00",
       "ends_at": "2026-12-27T01:00:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 50 participants",
+      "description": "Devfolio Hackathon (In-Person) • 59 participants",
       "tags": [
         "ai",
         "blockchain",
@@ -364,7 +340,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-11T13:26:09.974425+00:00",
-      "updated_at": "2026-11-20T14:47:26.219884+00:00"
+      "updated_at": "2026-11-21T14:02:46.024198+00:00"
     },
     {
       "id": "69cad48b5fe87bd96372967720dd4798562ed15bad6573de059d4e3dd3cdab64",
@@ -379,7 +355,7 @@
       "reg_ends_at": "2026-12-10T18:29:00+00:00",
       "starts_at": "2027-01-03T05:00:00+00:00",
       "ends_at": "2027-01-04T05:00:00+00:00",
-      "description": "Devfolio Hackathon (In-Person) • 599 participants",
+      "description": "Devfolio Hackathon (In-Person) • 617 participants",
       "tags": [
         "ai",
         "fintech",
@@ -390,7 +366,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-25T10:33:38.341549+00:00",
-      "updated_at": "2026-11-16T14:33:52.469049+00:00"
+      "updated_at": "2026-11-21T14:02:46.024671+00:00"
     },
     {
       "id": "c99a4cd6ce44d1a74487113540794792238acdb173c7e7e2e0018c0f7e882cd4",
@@ -405,7 +381,7 @@
       "reg_ends_at": "2026-12-10T18:29:00+00:00",
       "starts_at": "2026-12-11T16:30:00+00:00",
       "ends_at": "2026-12-13T06:30:00+00:00",
-      "description": "Devfolio Hackathon (Online) • 1977 participants",
+      "description": "Devfolio Hackathon (Online) • 1996 participants",
       "tags": [
         "no restrictions"
       ],
@@ -414,7 +390,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-22T11:00:23.559297+00:00",
-      "updated_at": "2026-11-20T14:47:26.220115+00:00"
+      "updated_at": "2026-11-21T14:02:46.024435+00:00"
     },
     {
       "id": "1cbf0e60288b6a929d35760c9fe6b36cd61c67ee64f01b10b69a71c1f43bff5d",
@@ -466,7 +442,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-03T13:29:20.774862+00:00",
-      "updated_at": "2026-11-20T14:47:24.862920+00:00"
+      "updated_at": "2026-11-21T14:02:44.803161+00:00"
     },
     {
       "id": "510f40fbb141a621d9c3c4558d5bf0ae395e3f5336703ef764b02e9b56428d9b",
@@ -516,7 +492,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-03T13:29:20.775053+00:00",
-      "updated_at": "2026-11-20T14:47:24.863702+00:00"
+      "updated_at": "2026-11-21T14:02:44.803932+00:00"
     },
     {
       "id": "cb77c2c325c20344b67fb15fff49972a0f2b1de2941956a37ad473de0b66a95f",
@@ -542,7 +518,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-10-30T11:59:49.632327+00:00",
-      "updated_at": "2026-11-20T14:47:24.862491+00:00"
+      "updated_at": "2026-11-21T14:02:44.802954+00:00"
     },
     {
       "id": "a3b585f2c17176e89d5a33df0a7a7136477999b9c64e24313b9b12e2d303b31b",
@@ -664,7 +640,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-15T13:19:43.632738+00:00",
-      "updated_at": "2026-11-20T14:47:24.863504+00:00"
+      "updated_at": "2026-11-21T14:02:44.803732+00:00"
     },
     {
       "id": "6c9e494e6f6bf54ef3d509dfb18ff9d62e59863d3e432af828e35310b02e265d",
@@ -690,7 +666,7 @@
       "status": "open",
       "benefits": [],
       "created_at": "2026-11-20T14:47:24.863890+00:00",
-      "updated_at": "2026-11-20T14:47:24.863890+00:00"
+      "updated_at": "2026-11-21T14:02:44.804116+00:00"
     },
     {
       "id": "6c52ebb88ad663cfce6e87bc2b840cd0b697f70cc1b2a4b3955b14f3baed5ad7",
@@ -3974,7 +3950,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-11-20T00:00:00",
-      "updated_at": "2026-11-20T14:47:31.940625+00:00"
+      "updated_at": "2026-11-21T14:02:51.884988+00:00"
     },
     {
       "id": "b4d723d0a36b2770de4181593efc465543e6811e7ca55282daf6d26b19ea16f8",
@@ -4106,7 +4082,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-11-19T00:00:00",
-      "updated_at": "2026-11-20T14:47:31.940839+00:00"
+      "updated_at": "2026-11-21T14:02:51.885006+00:00"
     },
     {
       "id": "c4424230f06fb5a929401475495642d8710f7c43d7700b915850ca681f423d62",
@@ -4128,7 +4104,7 @@
       "status": "unknown",
       "benefits": [],
       "created_at": "2026-11-19T00:00:00",
-      "updated_at": "2026-11-20T14:47:31.940857+00:00"
+      "updated_at": "2026-11-21T14:02:51.885025+00:00"
     },
     {
       "id": "8f840c0c6d68a847531d00ebfbf1079aba192bdce78772f9ffd09996dbecfa8e",
@@ -4173,6 +4149,160 @@
       "benefits": [],
       "created_at": "2026-11-19T00:00:00",
       "updated_at": "2026-11-20T14:47:31.940893+00:00"
+    },
+    {
+      "id": "c01373439b3dadff972e04c09c4c9a481ad8d7ffdb64d95b616e431e599a0277",
+      "fingerprint": "c01373439b3dadff972e04c09c4c9a481ad8d7ffdb64d95b616e431e599a0277",
+      "name": "EinoHacks",
+      "title": "EinoHacks",
+      "link": "https://unstop.com/hackathons/einohacks-altairx-tech-1820882",
+      "url": "https://unstop.com/hackathons/einohacks-altairx-tech-1820882",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-11-21T00:00:00",
+      "updated_at": "2026-11-21T14:02:51.884739+00:00"
+    },
+    {
+      "id": "2cbea556d277d5c8a103285569cf66c7ac1a2fbef0ba286ea7f03984b464db2e",
+      "fingerprint": "2cbea556d277d5c8a103285569cf66c7ac1a2fbef0ba286ea7f03984b464db2e",
+      "name": "BIOFORGE 2026 – Interdisciplinary Healthcare Innovation Hackathon",
+      "title": "BIOFORGE 2026 – Interdisciplinary Healthcare Innovation Hackathon",
+      "link": "https://unstop.com/hackathons/bioforge-2026-interdisciplinary-healthcare-innovation-hackathon-dayananda-sagar-college-of-engineering-dsce-b-1819682",
+      "url": "https://unstop.com/hackathons/bioforge-2026-interdisciplinary-healthcare-innovation-hackathon-dayananda-sagar-college-of-engineering-dsce-b-1819682",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-11-21T00:00:00",
+      "updated_at": "2026-11-21T14:02:51.884819+00:00"
+    },
+    {
+      "id": "4938ea19783b7ceaaee096491aa3755543fc2a60451617f57ff28e610299e7d9",
+      "fingerprint": "4938ea19783b7ceaaee096491aa3755543fc2a60451617f57ff28e610299e7d9",
+      "name": "Buildathon: AI Hackathon",
+      "title": "Buildathon: AI Hackathon",
+      "link": "https://unstop.com/hackathons/buildathon-ai-hackathon-dr-mgr-institute-of-education-and-research-institute-1815227",
+      "url": "https://unstop.com/hackathons/buildathon-ai-hackathon-dr-mgr-institute-of-education-and-research-institute-1815227",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-11-21T00:00:00",
+      "updated_at": "2026-11-21T14:02:51.884849+00:00"
+    },
+    {
+      "id": "8a44f751a0a6ebda57a1d8376c9eb3e66dddf2df9a5e31765f1c875d0f947d9d",
+      "fingerprint": "8a44f751a0a6ebda57a1d8376c9eb3e66dddf2df9a5e31765f1c875d0f947d9d",
+      "name": "Protothon 2K26",
+      "title": "Protothon 2K26",
+      "link": "https://unstop.com/hackathons/protothon-2k26-hindustan-institute-of-technology-and-science-hits-chennai-1814983",
+      "url": "https://unstop.com/hackathons/protothon-2k26-hindustan-institute-of-technology-and-science-hits-chennai-1814983",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "In-Person",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-11-21T00:00:00",
+      "updated_at": "2026-11-21T14:02:51.884904+00:00"
+    },
+    {
+      "id": "203cf289094f090a1201d3157183644818fc64f2c1742a390bbd6bc25a0d1ccf",
+      "fingerprint": "203cf289094f090a1201d3157183644818fc64f2c1742a390bbd6bc25a0d1ccf",
+      "name": "Tauras by Revat: Crypto Trading Hackathon | Prove Your Edge, Then Trade It Live",
+      "title": "Tauras by Revat: Crypto Trading Hackathon | Prove Your Edge, Then Trade It Live",
+      "link": "https://unstop.com/hackathons/tauras-by-revat-crypto-trading-hackathon-prove-your-edge-then-trade-it-live-revat-crypto-fund-1820715",
+      "url": "https://unstop.com/hackathons/tauras-by-revat-crypto-trading-hackathon-prove-your-edge-then-trade-it-live-revat-crypto-fund-1820715",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-11-21T00:00:00",
+      "updated_at": "2026-11-21T14:02:51.884932+00:00"
+    },
+    {
+      "id": "1f40f0039d4f548980363ec0b7c3e3e1a2757371f53f83e036ff2ae233f23b15",
+      "fingerprint": "1f40f0039d4f548980363ec0b7c3e3e1a2757371f53f83e036ff2ae233f23b15",
+      "name": "Promptwars",
+      "title": "Promptwars",
+      "link": "https://unstop.com/hackathons/promptwars-techverse-solutions-1822078",
+      "url": "https://unstop.com/hackathons/promptwars-techverse-solutions-1822078",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-11-21T00:00:00",
+      "updated_at": "2026-11-21T14:02:51.884952+00:00"
+    },
+    {
+      "id": "b58a9567a8785a1de70084dae187c0c023d15d318c547f7c4634de2a63469ffd",
+      "fingerprint": "b58a9567a8785a1de70084dae187c0c023d15d318c547f7c4634de2a63469ffd",
+      "name": "ThinCovation 2026",
+      "title": "ThinCovation 2026",
+      "link": "https://unstop.com/hackathons/thincovation-2026-thincovation-2026-mdi-1821962",
+      "url": "https://unstop.com/hackathons/thincovation-2026-thincovation-2026-mdi-1821962",
+      "source": "Unstop",
+      "deadline": "Unknown",
+      "reg_starts_at": "",
+      "reg_ends_at": "",
+      "starts_at": "",
+      "ends_at": "",
+      "description": "",
+      "tags": [],
+      "prize": "Unknown",
+      "location": "Hybrid",
+      "status": "unknown",
+      "benefits": [],
+      "created_at": "2026-11-21T00:00:00",
+      "updated_at": "2026-11-21T14:02:51.884971+00:00"
     },
     {
       "id": "4abc3b427f7d2fae44938cc40562c2881802a0347d6de8402a542a2c79f8181c",
@@ -5222,6 +5352,30 @@
       "benefits": [],
       "created_at": "2026-10-21T11:02:10.921500+00:00",
       "updated_at": "2026-11-19T15:05:10.704597+00:00"
+    },
+    {
+      "id": "b52ccb8675e3406a2f5c873c05ef2f16c94085127bf5ea751b6d452f9acf2d45",
+      "fingerprint": "b52ccb8675e3406a2f5c873c05ef2f16c94085127bf5ea751b6d452f9acf2d45",
+      "name": "CODEFESTTHON 2026",
+      "title": "CODEFESTTHON 2026",
+      "link": "https://codefestthon.devfolio.co",
+      "url": "https://codefestthon.devfolio.co",
+      "source": "Devfolio",
+      "deadline": "2026-11-20T18:29:00+00:00",
+      "reg_starts_at": "2026-11-15T06:00:00+00:00",
+      "reg_ends_at": "2026-11-20T18:29:00+00:00",
+      "starts_at": "2026-11-21T18:30:00+00:00",
+      "ends_at": "2026-11-24T18:29:00+00:00",
+      "description": "Devfolio Hackathon (Online) • 224 participants",
+      "tags": [
+        "no restrictions"
+      ],
+      "prize": "Unknown",
+      "location": "Online",
+      "status": "ended",
+      "benefits": [],
+      "created_at": "2026-11-15T13:19:43.948534+00:00",
+      "updated_at": "2026-11-20T14:47:26.217867+00:00"
     }
   ]
 }
